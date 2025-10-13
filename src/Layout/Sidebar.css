@@ -1,0 +1,66 @@
+.sidebar-container {
+  margin-top: -1px;
+  width: 240px;
+  background-color: #0d1b2a; /* dark navy */
+  min-height: 100vh;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+/* Mobile devices ke liye condition */
+@media (max-width: 768px) {
+  .sidebar-container {
+    margin-top: -17px;
+  }
+}
+
+.sidebar-container.collapsed {
+  width: 70px;
+}
+
+.sidebar {
+  padding: 0;
+}
+
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 10px 0;
+}
+
+.menu-item {
+  cursor: pointer;
+}
+
+.menu-link {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  color: #c3c3c3;
+  font-size: 14px;
+  font-weight: 500;
+  transition: 0.2s ease-in-out;
+}
+
+.menu-icon {
+  font-size: 16px;
+  margin-right: 15px;
+  min-width: 20px;
+}
+
+.menu-text {
+  flex-grow: 1;
+}
+
+/* Hover */
+.menu-link:hover {
+  background-color: #1a2233;
+  color: #fff;
+}
+
+/* Active state */
+.menu-item.active .menu-link {
+  background-color: #1f1f1f; /* dark highlight */
+  color: #facc15; /* yellow */
+  font-weight: 600;
+}

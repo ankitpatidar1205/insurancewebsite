@@ -1,0 +1,590 @@
+/* /* Reset & Base
+* {
+  box-sizing: border-box;
+}
+
+/* Info Bar */
+.info-bar {
+  background-color: #0d1b2a;
+  color: white;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.info-text {
+  margin: 0;
+  font-weight: 500;
+  flex: 1;
+  min-width: 200px;
+  text-align: left;
+}
+
+.btn-modify {
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  padding: 6px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.btn-modify:hover {
+  background-color: #27ae60;
+}
+
+/* Modify Section */
+.modify-section {
+  background-color: #0d1b2a;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out, opacity 0.3s ease;
+  max-height: 0;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.modify-section.show {
+  max-height: 1200px;
+  opacity: 1;
+  visibility: visible;
+}
+
+.container-fluid {
+  padding: 20px;
+}
+
+/* Service Buttons */
+.service-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.btn-service {
+  padding: 10px 16px;
+  border: 1px solid #3a5a80;
+  background-color: transparent;
+  color: #b3c4d6;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.btn-service.active {
+  background-color: #fbb000;
+  color: white;
+  border-color: #fbb000;
+}
+
+.btn-service:hover:not(.active) {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Tab Buttons (Trip Type, Duration, Transfer) */
+.trip-tabs,
+.duration-options,
+.transfer-options {
+  display: flex;
+  gap: 8px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  background-color: #1a253c;
+  border-radius: 30px;
+  padding: 4px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 450px;
+}
+
+.tab-btn,
+.btn-duration,
+.btn-transfer {
+  flex: 1;
+  min-width: 120px;
+  padding: 10px 0;
+  background-color: transparent;
+  color: #b3c4d6;
+  border: none;
+  border-radius: 26px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-align: center;
+  outline: none;
+}
+
+.tab-btn:hover:not(.active),
+.btn-duration:hover:not(.active),
+.btn-transfer:hover:not(.active) {
+  background-color: white;
+  color: #007bff;
+}
+
+.tab-btn.active,
+.btn-duration.active {
+  background-color: white;
+  color: #007bff;
+  font-weight: bold;
+  transform: scale(1.02);
+}
+
+.btn-transfer {
+  white-space: nowrap;
+  padding: 8px 12px;
+}
+
+/* Form Container */
+.form-container {
+  padding: 20px;
+  background-color: white;
+  border-radius: 15px;
+  margin-top: 10px;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 15px;
+  justify-content: center;
+}
+
+.form-input {
+  flex: 1;
+  min-width: 150px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  background-color: white;
+  color: #333;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-input:focus {
+  border-color: #fbb000;
+  box-shadow: 0 0 0 2px rgba(255, 176, 0, 0.3);
+}
+
+.date-input,
+.time-input {
+  width: 140px;
+  min-width: auto;
+}
+
+.arrow {
+  font-size: 1.3rem;
+  color: #666;
+  margin: 0 8px;
+  white-space: nowrap;
+}
+
+/* Add Button */
+.btn-add {
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  align-self: center;
+}
+
+/* Search Button */
+.btn-search {
+  background-color: #fbb000;
+  color: white;
+  border: none;
+  padding: 14px 24px;
+  border-radius: 15px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.btn-search:hover {
+  background-color: #e6a000;
+}
+
+/* Custom Date Input */
+.custom-date-input {
+  position: relative;
+  flex: 1;
+  min-width: 150px;
+}
+
+.date-display {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid #ddd;
+  background-color: white;
+  color: #333;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.date-display:hover {
+  border-color: #fbb000;
+}
+
+.date-display:focus {
+  border-color: #fbb000;
+  box-shadow: 0 0 0 2px rgba(255, 176, 0, 0.3);
+}
+
+.date-display i {
+  color: #666;
+  margin-left: 8px;
+}
+
+/* Custom Calendar */
+.custom-calendar {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 100;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  width: 280px;
+  margin-top: 5px;
+  overflow: hidden;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background-color: #fbb000;
+  color: white;
+}
+
+.calendar-nav-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.calendar-nav-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.calendar-month-year {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  padding: 10px;
+}
+
+.calendar-day-name {
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: #666;
+  padding: 8px 0;
+}
+
+.calendar-empty-day {
+  padding: 8px 0;
+}
+
+.calendar-day {
+  text-align: center;
+  padding: 8px 0;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background-color 0.2s, color 0.2s;
+  font-size: 0.9rem;
+}
+
+.calendar-day:hover {
+  background-color: #f0f0f0;
+}
+
+.calendar-day.selected {
+  background-color: #fbb000;
+  color: white;
+  font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .info-bar {
+    flex-direction: column;
+    text-align: center;
+    padding: 15px;
+    gap: 12px;
+  }
+
+  .info-text {
+    font-size: 0.85rem;
+    text-align: center;
+    min-width: auto;
+    width: 100%;
+  }
+
+  .btn-modify {
+    padding: 8px 16px;
+    font-size: 0.875rem;
+  }
+
+  .service-buttons {
+    justify-content: center;
+  }
+
+  .btn-service {
+    flex: 1;
+    min-width: 100px;
+    justify-content: center;
+  }
+
+  .trip-tabs,
+  .duration-options,
+  .transfer-options {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto 20px;
+  }
+
+  .form-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .form-input {
+    width: 100%;
+    min-width: auto;
+  }
+
+  .arrow {
+    margin: 8px 0;
+    display: block;
+    text-align: center;
+  }
+
+  .date-time-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .date-input,
+  .time-input {
+    width: 100%;
+  }
+
+  .custom-date-input {
+    width: 100%;
+  }
+
+  .custom-calendar {
+    width: 100%;
+    max-width: 320px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .btn-search {
+    font-size: 1rem;
+    padding: 14px;
+  }
+
+  .container-fluid {
+    padding: 15px;
+  }
+
+  .form-container {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .info-bar {
+    padding: 12px 10px;
+  }
+
+  .info-text {
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+
+  .btn-modify {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+
+  .service-buttons {
+    gap: 8px;
+  }
+
+  .btn-service {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+    min-width: 90px;
+  }
+
+  .trip-tabs,
+  .duration-options,
+  .transfer-options {
+    padding: 3px;
+    gap: 5px;
+  }
+
+  .tab-btn,
+  .btn-duration,
+  .btn-transfer {
+    font-size: 0.85rem;
+    padding: 8px 0;
+    min-width: 100px;
+  }
+
+  .form-input {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .date-display {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .btn-add {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+
+  .btn-search {
+    padding: 12px;
+    font-size: 1rem;
+  }
+
+  .container-fluid {
+    padding: 10px;
+  }
+
+  .form-container {
+    padding: 12px;
+  }
+
+  .custom-calendar {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .calendar-days {
+    padding: 8px;
+  }
+
+  .calendar-day-name,
+  .calendar-day {
+    padding: 6px 0;
+    font-size: 0.85rem;
+  }
+}
+
+/* Extra small devices (phones, 360px and down) */
+@media (max-width: 360px) {
+  .info-text {
+    font-size: 0.75rem;
+  }
+
+  .btn-service {
+    padding: 6px 8px;
+    font-size: 0.8rem;
+    min-width: 80px;
+  }
+
+  .btn-service i {
+    display: none; /* Hide icons on very small screens */
+  }
+
+  .tab-btn,
+  .btn-duration,
+  .btn-transfer {
+    font-size: 0.8rem;
+    padding: 6px 0;
+    min-width: 90px;
+  }
+
+  .form-input {
+    padding: 8px;
+    font-size: 0.85rem;
+  }
+
+  .date-display {
+    padding: 8px;
+    font-size: 0.85rem;
+  }
+
+  .btn-search {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .custom-calendar {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .calendar-header {
+    padding: 10px;
+  }
+
+  .calendar-month-year {
+    font-size: 0.9rem;
+  }
+
+  .calendar-days {
+    padding: 5px;
+  }
+
+  .calendar-day-name,
+  .calendar-day {
+    padding: 5px 0;
+    font-size: 0.8rem;
+  }
+} 
