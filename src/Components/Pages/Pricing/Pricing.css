@@ -1,0 +1,67 @@
+/* Pricing Section Styles */
+.pricing {
+  padding: 80px 0;
+  background-color: var(--pricing-bg);
+}
+
+.pricing-card {
+  background-color: var(--text-light);
+  border-radius: 15px;
+  padding: 40px;
+  height: 100%;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 2px solid var(--primary-color);
+}
+
+.pricing-header {
+  margin-bottom: 30px;
+}
+
+.plan-name {
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: var(--text-dark);
+}
+
+.plan-price {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 5px;
+}
+
+.plan-period {
+  color: #6c757d;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.pricing-features {
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.feature-item {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  font-size: 1rem;
+}
+
+.feature-item:last-child {
+  border-bottom: none;
+}
+
+.pricing-cta {
+  margin-top: 20px;
+}
+
+.pricing-note {
+  max-width: 700px;
+  margin: 0 auto;
+  color: #6c757d;
+  font-size: 0.95rem;
+}

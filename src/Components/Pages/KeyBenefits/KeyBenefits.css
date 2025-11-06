@@ -1,0 +1,51 @@
+/* Key Benefits Section Styles */
+.key-benefits {
+  padding: 80px 0;
+  background-color: var(--benefits-bg);
+}
+
+.benefit-card {
+  text-align: center;
+  padding: 30px;
+  height: 100%;
+  background-color: var(--text-light);
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: var(--transition);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.benefit-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--card-shadow);
+}
+
+.benefit-icon {
+  width: 80px;
+  height: 80px;
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 2rem;
+  transition: var(--transition);
+}
+
+.benefit-card:hover .benefit-icon {
+  background-color: var(--secondary-color);
+}
+
+.benefit-title {
+  font-weight: 600;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  color: var(--text-dark);
+}
+
+.benefit-description {
+  color: #6c757d;
+  font-size: 0.95rem;
+}
