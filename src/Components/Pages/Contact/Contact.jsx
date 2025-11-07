@@ -174,7 +174,7 @@ const Contact = () => {
                       </div>
                       <div className="contact-content">
                         <h5>Email</h5>
-                        <a href="mailto:OfficialOfferiyo@gmail.com">OfficialOfferiyo@gmail.com</a>
+                        <a className='text-dark' href="mailto:OfficialOfferiyo@gmail.com">OfficialOfferiyo@gmail.com</a>
                       </div>
                     </div>
                     
@@ -184,7 +184,7 @@ const Contact = () => {
                       </div>
                       <div className="contact-content">
                         <h5>Website</h5>
-                        <a href="https://www.offeriyo.com" target="_blank" rel="noopener noreferrer">www.offeriyo.com</a>
+                        <a className='text-dark' href="https://www.offeriyo.com" target="_blank" rel="noopener noreferrer">www.offeriyo.com</a>
                       </div>
                     </div>
                     

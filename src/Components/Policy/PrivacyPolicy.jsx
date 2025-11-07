@@ -8,7 +8,8 @@ const PrivacyPolicy = () => {
         {/* Header Section */}
         <Row className="justify-content-center mb-5 mt-4">
           <Col lg={8} className="text-center">
-            <h6 className="display-4 fw-bold  fs-2 mt-4 mb-3">Privacy Policy</h6>
+            <h6 className="display-4 fw-bold fs-2 mt-4 mb-3">Privacy Policy</h6>
+          
           </Col>
         </Row>
 
@@ -17,11 +18,13 @@ const PrivacyPolicy = () => {
           <Col lg={10}>
             <Card className="border-0 shadow-sm">
               <Card.Body className="p-4">
-                <h2 className="h3 mb-3 text-primary">Introduction</h2>
+                <h2 className="h3 mb-3 text-primary">1. Introduction</h2>
                 <p className="text-muted">
-                  Welcome to Offeriyo. We respect your privacy and are committed to protecting your personal data. 
-                  This privacy policy will inform you about how we look after your personal data when you visit our website 
-                  and use our services and tell you about your privacy rights and how the law protects you.
+                  At Offeriyo, your privacy matters to us.
+                  This Privacy Policy explains how we collect, use, store, and protect your information when you use our mobile app or website.
+                </p>
+                <p className="text-muted">
+                  By using Offeriyo, you agree to the practices described in this policy.
                 </p>
               </Card.Body>
             </Card>
@@ -33,24 +36,29 @@ const PrivacyPolicy = () => {
           <Col lg={10}>
             <Card className="border-0 shadow-sm">
               <Card.Body className="p-4">
-                <h2 className="h3 mb-3 text-primary">1. Information We Collect</h2>
+                <h2 className="h3 mb-3 text-primary">2. Information We Collect</h2>
+                <p className="text-muted mb-3">
+                  We collect limited information necessary to provide and improve our services.
+                </p>
                 
-                <h5 className="fw-bold mb-3">📋 Personal Information:</h5>
+                <h5 className="fw-bold mb-3">a. Information You Provide Directly</h5>
                 <ul className="mb-4">
-                  <li>Name and contact details (email, phone number)</li>
-                  <li>Shop information and business details (for shop owners)</li>
-                  <li>Location data to provide hyperlocal offers</li>
-                  <li>Account credentials and preferences</li>
+                  <li>Name, contact number, email address (for registration).</li>
+                  <li>Shop details (name, location, photos, offers, etc.) for shop owners.</li>
+                  <li>Feedback, reviews, or queries you submit.</li>
                 </ul>
                 
-                <h5 className="fw-bold mb-3">💻 Technical Information:</h5>
-                <ul>
-                  <li>IP address and device information</li>
-                  <li>Browser type and operating system</li>
-                  <li>Usage data and app performance metrics</li>
-                  <li>Cookies and similar tracking technologies</li>
-                  <li>Location data for hyperlocal offer discovery</li>
+                <h5 className="fw-bold mb-3">b. Automatically Collected Information</h5>
+                <ul className="mb-4">
+                  <li>Device information (type, OS, version, and model).</li>
+                  <li>Location data (to show nearby shops and offers).</li>
+                  <li>App usage data (how you interact with features).</li>
                 </ul>
+                
+                <h5 className="fw-bold mb-3">c. Cookies & Analytics</h5>
+                <p className="text-muted">
+                  Offeriyo uses cookies and analytics tools to understand how users interact with our platform and to improve experience quality.
+                </p>
               </Card.Body>
             </Card>
           </Col>
@@ -61,148 +69,149 @@ const PrivacyPolicy = () => {
           <Col lg={10}>
             <Card className="border-0 shadow-sm">
               <Card.Body className="p-4">
-                <h2 className="h3 mb-3 text-primary">2. How We Use Your Information</h2>
-                <p className="mb-3">We use your personal information to:</p>
+                <h2 className="h3 mb-3 text-primary">3. How We Use Your Information</h2>
+                <p className="text-muted mb-3">We use collected information to:</p>
                 <ul>
-                  <li>✅ Provide and maintain our hyperlocal marketplace services</li>
-                  <li>✅ Connect local shop owners with nearby customers</li>
-                  <li>✅ Send you notifications about relevant local offers</li>
-                  <li>✅ Communicate with you about products, services, and events</li>
-                  <li>✅ Monitor and analyze trends and usage to improve our platform</li>
-                  <li>✅ Detect, prevent, and address technical issues</li>
-                  <li>✅ Fulfill legal and regulatory requirements</li>
-                </ul>
-              </Card.Body>
-            </Card>
-          </Col>
-        </Row>
-
-        {/* Data Sharing and Disclosure */}
-        <Row className="justify-content-center mb-4">
-          <Col lg={10}>
-            <Card className="border-0 shadow-sm">
-              <Card.Body className="p-4">
-                <h2 className="h3 mb-3 text-primary">3. Data Sharing and Disclosure</h2>
-                <p className="mb-3">We may share your personal information with:</p>
-                <ul>
-                  <li><strong>🤝 Local Shop Owners:</strong> To connect you with relevant offers in your area</li>
-                  <li><strong>🤝 Service Providers:</strong> Third-party companies that provide services on our behalf</li>
-                  <li><strong>⚖️ Legal Authorities:</strong> When required by law or to protect our rights</li>
-                  <li><strong>🤝 Business Partners:</strong> With your consent for joint marketing efforts</li>
+                  <li>Create and manage user accounts.</li>
+                  <li>Display relevant shops and offers based on location.</li>
+                  <li>Notify users about new deals, promotions, or platform updates.</li>
+                  <li>Communicate important information or support updates.</li>
+                  <li>Improve platform performance and user experience.</li>
                 </ul>
                 <div className="alert alert-info mt-3">
                   <i className="bi bi-info-circle me-2"></i>
-                  <strong>Note:</strong> We do not sell your personal information to third parties for marketing purposes.
+                  <strong>Note:</strong> We do not sell or rent your personal information to any third party.
                 </div>
               </Card.Body>
             </Card>
           </Col>
         </Row>
 
-        {/* Data Security */}
+        {/* Information Sharing */}
         <Row className="justify-content-center mb-4">
           <Col lg={10}>
             <Card className="border-0 shadow-sm">
               <Card.Body className="p-4">
-                <h2 className="h3 mb-3 text-primary">4. Data Security</h2>
-                <p className="mb-3">
-                  We implement appropriate technical and organizational measures to protect your personal data 
-                  against unauthorized access, alteration, disclosure, or destruction:
-                </p>
+                <h2 className="h3 mb-3 text-primary">4. Information Sharing</h2>
+                <p className="text-muted mb-3">We may share limited data only:</p>
                 <ul>
-                  <li>🔒 SSL encryption for data transmission</li>
-                  <li>🖥️ Secure servers and databases</li>
-                  <li>🔍 Regular security audits and updates</li>
-                  <li>👥 Employee training on data protection</li>
-                  <li>🔐 Access controls and authentication systems</li>
-                  <li>📍 Secure handling of location data</li>
+                  <li>With service providers who assist us in operating the app (analytics, hosting, etc.).</li>
+                  <li>If required by law or court order.</li>
+                  <li>To protect Offeriyo's rights, users, or property.</li>
                 </ul>
+                <p className="text-muted">
+                  All shared data is handled securely and only for legitimate operational purposes.
+                </p>
               </Card.Body>
             </Card>
           </Col>
         </Row>
+
+        {/* Data Retention */}
+        <Row className="justify-content-center mb-4">
+          <Col lg={10}>
+            <Card className="border-0 shadow-sm">
+              <Card.Body className="p-4">
+                <h2 className="h3 mb-3 text-primary">5. Data Retention</h2>
+                <p className="text-muted">
+                  We retain your data only as long as your account remains active or as needed for legal or operational reasons.
+                  You can delete your account anytime by contacting our support team.
+                </p>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+
+        {/* Security */}
+        <Row className="justify-content-center mb-4">
+          <Col lg={10}>
+            <Card className="border-0 shadow-sm">
+              <Card.Body className="p-4">
+                <h2 className="h3 mb-3 text-primary">6. Security</h2>
+                <p className="text-muted">
+                  We use industry-standard encryption and data protection practices to safeguard your personal information.
+                  However, no online platform is 100% secure — users are encouraged to protect their login credentials and devices.
+                </p>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+
+        {/* Location Access */}
+        <Row className="justify-content-center mb-4">
+          <Col lg={10}>
+            <Card className="border-0 shadow-sm">
+              <Card.Body className="p-4">
+                <h2 className="h3 mb-3 text-primary">7. Location Access</h2>
+                <p className="text-muted">
+                  Offeriyo requires access to your location (with permission) to show shops and offers near you.
+                  You can disable location access anytime from your phone settings, though it may limit functionality.
+                </p>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+
+        {/* Third-Party Services */}
+        <Row className="justify-content-center mb-4">
+          <Col lg={10}>
+            <Card className="border-0 shadow-sm">
+              <Card.Body className="p-4">
+                <h2 className="h3 mb-3 text-primary">8. Third-Party Services</h2>
+                <p className="text-muted">
+                  Our app may include links or references to third-party websites or apps.
+                  Offeriyo is not responsible for their content, privacy practices, or operations.
+                  We encourage users to review third-party policies before interacting with them.
+                </p>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+
+        {/* Children's Privacy */}
+        {/* <Row className="justify-content-center mb-4">
+          <Col lg={10}>
+            <Card className="border-0 shadow-sm">
+              <Card.Body className="p-4">
+                <h2 className="h3 mb-3 text-primary">9. Children's Privacy</h2>
+                <p className="text-muted">
+                  Offeriyo is not intended for users under the age of 18.
+                  We do not knowingly collect data from minors.
+                </p>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row> */}
 
         {/* Your Rights */}
         <Row className="justify-content-center mb-4">
           <Col lg={10}>
             <Card className="border-0 shadow-sm">
               <Card.Body className="p-4">
-                <h2 className="h3 mb-3 text-primary">5. Your Rights</h2>
-                <p className="mb-3">You have the right to:</p>
+                <h2 className="h3 mb-3 text-primary">9. Your Rights</h2>
+                <p className="text-muted mb-3">You have the right to:</p>
                 <ul>
-                  <li><strong>📂 Access:</strong> Request copies of your personal data</li>
-                  <li><strong>✏️ Rectification:</strong> Request correction of inaccurate data</li>
-                  <li><strong>🗑️ Erasure:</strong> Request deletion of your personal data</li>
-                  <li><strong>📤 Portability:</strong> Request transfer of your data to another service</li>
-                  <li><strong>❌ Objection:</strong> Object to processing of your personal data</li>
-                  <li><strong>⏸️ Restriction:</strong> Request restriction of processing</li>
-                  <li><strong>📍 Location Control:</strong> Control how your location data is used</li>
-                </ul>
-                <div className="alert alert-success mt-3">
-                  <i className="bi bi-check-circle me-2"></i>
-                  To exercise these rights, please contact us using the information below.
-                </div>
-              </Card.Body>
-            </Card>
-          </Col>
-        </Row>
-
-        {/* Cookies */}
-        <Row className="justify-content-center mb-4">
-          <Col lg={10}>
-            <Card className="border-0 shadow-sm">
-              <Card.Body className="p-4">
-                <h2 className="h3 mb-3 text-primary">6. Cookies and Tracking</h2>
-                <p className="mb-3">
-                  We use cookies and similar tracking technologies to track activity on our service and hold 
-                  certain information. You can instruct your browser to refuse all cookies or to indicate when 
-                  a cookie is being sent.
-                </p>
-                <h5 className="fw-bold mb-3">Types of cookies we use:</h5>
-                <ul>
-                  <li><strong>🔑 Essential Cookies:</strong> Required for the service to function</li>
-                  <li><strong>📊 Performance Cookies:</strong> Help us improve our service</li>
-                  <li><strong>⚙️ Functional Cookies:</strong> Remember your preferences and location settings</li>
-                  <li><strong>📢 Marketing Cookies:</strong> Used for advertising relevant local offers</li>
+                  <li>Access and update your information.</li>
+                  <li>Request deletion of your account and data.</li>
+                  <li>Opt out of promotional notifications.</li>
+                  <li>Withdraw consent to share location data.</li>
                 </ul>
               </Card.Body>
             </Card>
           </Col>
         </Row>
 
-        {/* Changes to Policy */}
+        {/* Changes to This Policy */}
         <Row className="justify-content-center mb-4">
           <Col lg={10}>
             <Card className="border-0 shadow-sm">
               <Card.Body className="p-4">
-                <h2 className="h3 mb-3 text-primary">7. Changes to This Policy</h2>
-                <p className="mb-3">
-                  We may update our Privacy Policy from time to time. We will notify you of any changes by 
-                  posting the new Privacy Policy on this page and updating the "Last updated" date at the top.
+                <h2 className="h3 mb-3 text-primary">10. Changes to This Policy</h2>
+                <p className="text-muted">
+                  Offeriyo may update this Privacy Policy periodically.
+                  Any changes will be reflected on this page with an updated "Last Updated" date.
+                  Continued use of the platform means you accept the revised policy.
                 </p>
-                <div className="alert alert-warning">
-                  <i className="bi bi-exclamation-triangle me-2"></i>
-                  You are advised to review this Privacy Policy periodically for any changes.
-                </div>
-              </Card.Body>
-            </Card>
-          </Col>
-        </Row>
-
-        {/* Contact Information */}
-        <Row className="justify-content-center mb-4">
-          <Col lg={10}>
-            <Card className="border-0 shadow-sm">
-              <Card.Body className="p-4">
-                <h2 className="h3 mb-3 text-primary">8. Contact Information</h2>
-                <p className="mb-3">
-                  If you have any questions about this Privacy Policy, please contact us:
-                </p>
-                <ul>
-                  <li>📧 Email: OfficialOfferiyo@gmail.com</li>
-                  <li>🌐 Website: www.offeriyo.com</li>
-                  <li>📍 Office: Indore, Madhya Pradesh, India</li>
-                </ul>
               </Card.Body>
             </Card>
           </Col>
@@ -212,7 +221,7 @@ const PrivacyPolicy = () => {
         <Row className="justify-content-center">
           <Col lg={10} className="text-center">
             <p className="text-muted">
-              Last updated: {new Date().toLocaleDateString()}
+              Last updated: November 2025
             </p>
           </Col>
         </Row>

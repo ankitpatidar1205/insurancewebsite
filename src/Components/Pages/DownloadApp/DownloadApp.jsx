@@ -35,7 +35,7 @@ const DownloadApp = () => {
           </Col>
           <Col md={6}>
             <div className="download-image">
-              <img src="https://img.freepik.com/free-vector/people-using-smartphones-online-shop_23-2148657200.jpg" alt="Offeriyo App" className="img-fluid" />
+              <img src="https://img.freepik.com/free-vector/special-offer-creative-sale-banner-design_1017-16284.jpg?semt=ais_hybrid&w=740&q=80" alt="Offeriyo App" className="img-fluid" />
             </div>
           </Col>
         </Row>

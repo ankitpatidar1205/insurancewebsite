@@ -7,6 +7,18 @@ import Footer from "./Components/Pages/Footer/Footer";
 import About from "./Components/Pages/About/About";
 import PrivacyPolicy from "./Components/Policy/PrivacyPolicy";
 import TermsConditions from "./Components/Policy/TermsConditions";
+import { useEffect } from "react";
+
+// ScrollToTop कंपोनेंट जो हर रूट बदलने पर पेज को ऊपर ले जाएगा
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
 
 function App() {
   const location = useLocation();
@@ -14,6 +26,7 @@ function App() {
   return (
     <>
       <Header />
+      <ScrollToTop /> {/* यह कंपोनेंट हर रूट बदलने पर स्क्रॉल टू टॉप करेगा */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/contact-us" element={<Contact />} />

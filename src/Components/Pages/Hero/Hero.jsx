@@ -32,7 +32,7 @@ const Hero = () => {
           </Col>
           <Col md={6} className="slide-in-right">
             <div className="hero-image">
-              <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Offeriyo App" className="img-fluid" />
+              <img src="https://www.transparentpng.com/download/special-offer/red-special-offer-png-transparent-image--14.png" alt="Offeriyo App" className="img-fluid" />
             </div>
           </Col>
         </Row>
