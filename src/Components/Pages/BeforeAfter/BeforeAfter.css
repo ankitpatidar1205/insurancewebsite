@@ -1,0 +1,173 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.before-after-section {
+  min-height: 100vh;
+  padding: 50px 60px;
+  transition: background 0.6s ease, color 0.6s ease;
+}
+
+/* Backgrounds */
+.dark-mode {
+  background: linear-gradient(135deg, #04312c, #0d514b);
+  color: #fff;
+}
+
+.light-mode {
+  background: linear-gradient(135deg, #e6f6f5, #ffffff);
+  color: #111;
+}
+
+/* Tabs */
+.tab-switcher {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 45px;
+  justify-content: center;
+}
+
+.switch-btn {
+  border: none;
+  padding: 12px 36px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  background-color: #104944;
+  color: #cfe9e6;
+  transition: all 0.3s ease;
+}
+
+.switch-btn.active {
+  background-color: #fff;
+  color: #04312c;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+.light-mode .switch-btn {
+  background-color: #cfe9e6;
+  color: #04312c;
+}
+
+.light-mode .switch-btn.active {
+  background-color: #04312c;
+  color: #fff;
+}
+
+/* Cards */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.card {
+  border-radius: 15px;
+  padding: 25px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.card h3 {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.card p {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* Card colors */
+.teal {
+  background-color: #0f4f4b;
+  color: #fff;
+}
+
+.white {
+  background-color: #ffffff;
+  color: #000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Image cards */
+.img-card {
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+}
+
+.img-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: filter 0.4s ease;
+}
+
+.img-card:hover img {
+  filter: grayscale(0%);
+}
+
+.img-caption {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.65);
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 12px;
+}
+
+.light-caption {
+  background: rgba(255, 255, 255, 0.9);
+  color: #000;
+}
+
+.author {
+  margin-top: 15px;
+  font-size: 13px;
+  line-height: 1.4;
+  color: #dcdcdc;
+}
+
+/* Animation */
+.fade-in {
+  animation: fadeIn 0.6s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .before-after-section {
+    padding: 30px 20px;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .switch-btn {
+    flex: 1;
+    text-align: center;
+  }
+}
