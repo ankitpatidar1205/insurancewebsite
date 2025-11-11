@@ -9,7 +9,7 @@ const Hero = () => {
         <div className="video-background">
           <video autoPlay loop muted playsInline className="hero-video">
             <source
-              src="https://videos.pexels.com/video-files/855469/855469-hd_1920_1080_30fps.mp4"
+              src="https://ik.imagekit.io/8x6rwnonn/fr_homepage_modal_video.mp4?updatedAt=1762893173607"
               type="video/mp4"
             />
             Your browser does not support the video tag.

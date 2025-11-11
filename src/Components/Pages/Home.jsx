@@ -18,7 +18,7 @@ const Home = () => {
       <HealthcareSystem />
       
       {/* 5. Testimonials - Social proof from real users */}
-      <Testimonials />
+      {/* <Testimonials /> */}
       
       {/* 6. CTA Section - Strong call to action */}
       <CTASection />

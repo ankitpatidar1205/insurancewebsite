@@ -1,6 +1,6 @@
 /* Header Styles */
 .header {
-  background-color: var(--text-light);
+  background-color: #FFEDDB;
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
   padding: 15px 0;
   position: fixed;
