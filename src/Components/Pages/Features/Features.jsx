@@ -3,75 +3,51 @@ import { Container, Row, Col } from 'react-bootstrap';
 import './Features.css';
 
 const Features = () => {
-  const features = [
-    {
-      icon: 'bi-shop',
-      title: 'Shop Listing',
-      description: 'Shop owners can list their stores in just 2 minutes and start getting visibility instantly.'
-    },
-    {
-      icon: 'bi-geo-alt-fill',
-      title: 'Geo-Based Offers',
-      description: 'Customers only see offers from shops within their nearby radius for relevant deals.'
-    },
-    {
-      icon: 'bi-megaphone-fill',
-      title: 'Smart Offer Management',
-      description: 'Shop owners can post, edit, and remove offers anytime from the dashboard.'
-    },
-    {
-      icon: 'bi-bell-fill',
-      title: 'Instant Notifications',
-      description: 'Customers get notified when a new deal is live near them.'
-    },
-    {
-      icon: 'bi-chat-dots-fill',
-      title: 'Direct Reach',
-      description: 'No middlemen or fake stores — customers connect directly with shop owners.'
-    },
-    {
-      icon: 'bi-patch-check-fill',
-      title: 'Verified Shops Only',
-      description: 'Every shop on Offeriyo is verified for authenticity and reliability.'
-    },
-    {
-      icon: 'bi-calendar-event-fill',
-      title: 'Festival Campaigns',
-      description: 'Get featured during local and national festivals to reach thousands more users.'
-    },
-    {
-      icon: 'bi-phone-vibrate-fill',
-      title: 'Mobile-First Platform',
-      description: 'Optimized for mobile devices to ensure seamless experience for both shop owners and customers.'
-    }
-  ];
-
   return (
-    <section className="features" id="features">
+    <section className="healthcare-crisis" id="crisis">
       <Container>
-        <h2 className="section-title">What Makes Offeriyo Unique</h2>
-        <p className="section-subtitle text-center mb-5">
-          Offeriyo isn't just another shopping app — it's a digital ecosystem that connects people with their local market.
-          We believe shopping locally should be as easy as shopping online, but faster, safer, and more genuine.
+        <h2 className="crisis-title">The healthcare system is on the verge of collapse.</h2>
+        <p className="crisis-subtitle">
+          Healthcare issues make it difficult for employees to take care of themselves, increasing costs for companies.
         </p>
-        <Row>
-          {features.map((feature, index) => (
-            <Col md={6} lg={3} key={index}>
-              <div className="feature-card card-hover">
-                <div className="feature-icon">
-                  <i className={`bi ${feature.icon}`}></i>
-                </div>
-                <h3 className="feature-title">{feature.title}</h3>
-                <p className="feature-description">{feature.description}</p>
+        <Row className="crisis-cards">
+          <Col md={4}>
+            <div className="crisis-card">
+              <div className="crisis-image">
+                <img src="https://picsum.photos/seed/empty-doctor-office/400/300.jpg" alt="Empty doctor's office" />
               </div>
-            </Col>
-          ))}
+              <div className="crisis-content">
+                <h3 className="crisis-card-title">Finding a doctor has become an ordeal</h3>
+                <p className="crisis-stat">65% General practitioners are no longer accepting patients as primary care physicians.</p>
+                <p className="crisis-source">DRESS, 2023</p>
+              </div>
+            </div>
+          </Col>
+          <Col md={4}>
+            <div className="crisis-card">
+              <div className="crisis-image">
+                <img src="https://picsum.photos/seed/pink-piggy-bank/400/300.jpg" alt="Pink piggy bank" />
+              </div>
+              <div className="crisis-content">
+                <h3 className="crisis-card-title">Inflation also affects health</h3>
+                <p className="crisis-stat">45% French people have forgone at least one treatment in 2024 due to excessively high fees.</p>
+                <p className="crisis-source">UFC Que Choisir, 2024</p>
+              </div>
+            </div>
+          </Col>
+          <Col md={4}>
+            <div className="crisis-card">
+              <div className="crisis-image">
+                <img src="https://picsum.photos/seed/office-productivity-loss/400/300.jpg" alt="Office productivity loss" />
+              </div>
+              <div className="crisis-content">
+                <h3 className="crisis-card-title">Inaction is costly for businesses</h3>
+                <p className="crisis-stat">€27,000 per employee / year lost to absenteeism and decreased productivity</p>
+                <p className="crisis-source">Alan x Pollfish study, May 2025</p>
+              </div>
+            </div>
+          </Col>
         </Row>
-        <div className="text-center mt-5">
-          <a href="#how-it-works" className="btn-primary-custom">
-            Explore All Features →
-          </a>
-        </div>
       </Container>
     </section>
   );

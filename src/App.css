@@ -1,15 +1,15 @@
-/* Global Styles */
+/* Root Variables - Theme Configuration */
 :root {
-  --primary-color: #FF6B35; 
+  --primary-color: #5c59f3; 
   --secondary-color: #004643; /* Deep teal for trust */
   --accent-color: #FAE042; /* Bright yellow for highlights */
-  --text-dark: #2B2D42;
+  --text-dark: #000000; /* Black text as requested */
   --text-light: #FFFFFF;
-  --bg-light: #F8F9FA;
+  --bg-light: #FFFFFF; /* White background as requested */
   --bg-dark: #1A1A2E;
   --light-gray: #E9ECEF;
   --hero-bg: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
-  --benefits-bg: #F8F9FA;
+  --benefits-bg: #FFFFFF; /* White background for benefits section */
   --features-bg: #FFFFFF;
   --pricing-bg: #F8F9FA;
   --testimonials-bg: #FFFFFF;
@@ -19,12 +19,14 @@
   --transition: all 0.3s ease;
 }
 
+/* Global Styles */
 body {
   font-family: 'Poppins', sans-serif;
   color: var(--text-dark);
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  background-color: #FFFFFF;
 }
 
 /* Common button styles */
@@ -164,6 +166,7 @@ section {
   opacity: 1;
   transform: translateY(0);
 }
+
 
 
 
