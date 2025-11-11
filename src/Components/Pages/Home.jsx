@@ -6,6 +6,7 @@ import CTASection from './CTASection/CTASection';
 import Slider from './Slider/Slider';
 import ServicesSection from './ServicesSection/ServicesSection';
 import HealthcareSystem from './HealthcareSystem/HealthcareSystem';
+import BeforeAfter from './BeforeAfter/BeforeAfter';
 
 const Home = () => {
   return (
@@ -21,7 +22,7 @@ const Home = () => {
       
       {/* 6. CTA Section - Strong call to action */}
       <CTASection />
-      
+      <BeforeAfter/>
    
     </div>
   );
