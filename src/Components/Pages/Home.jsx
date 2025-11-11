@@ -23,8 +23,7 @@ const Home = () => {
       {/* 6. CTA Section - Strong call to action */}
       <CTASection />
       
-      {/* 7. Download App - Final section to encourage app download */}
-      <DownloadApp />
+   
     </div>
   );
 };
