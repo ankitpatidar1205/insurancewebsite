@@ -4,34 +4,41 @@ import './Hero.css';
 
 const Hero = () => {
   return (
-    <section className="hero" id="home">
-      <Container fluid className="hero-container">
-        <Row className="align-items-center h-100">
-          <Col md={6} className="hero-left">
-            <div className="hero-content">
-              <h1 className="hero-title">Your health partner that prevents, insures and supports you every day</h1>
-              <div className="hero-buttons">
-                <Button href="#" className="btn-primary-custom">
-                  Get my quote in 2 minutes
-                </Button>
-                <Button href="#" className="btn-secondary-custom">
-                  Request a demo
-                </Button>
-              </div>
-              <div className="video-link">
-                <a href="#" className="video-text">
-                  <span className="play-icon"></span>
-                  Learn all about Alan in video
-                </a>
-              </div>
+    <section className="hero " id="home">
+      <Container className="hero-wrapper">
+        <div className="video-background">
+          <video autoPlay loop muted playsInline className="hero-video">
+            <source
+              src="https://videos.pexels.com/video-files/855469/855469-hd_1920_1080_30fps.mp4"
+              type="video/mp4"
+            />
+            Your browser does not support the video tag.
+          </video>
+          <div className="video-overlay"></div>
+
+          <div className="hero-content">
+            <h1 className="hero-title">
+              Your health partner that prevents, insures and supports you every day
+            </h1>
+            <div className="hero-buttons">
+              <Button href="#" className="btn-primary-custom">
+                Get my quote in 2 minutes
+              </Button>
+              <Button href="#" className="btn-secondary-custom">
+                Request a demo
+              </Button>
             </div>
-          </Col>
-          <Col md={6} className="hero-right">
-            <div className="hero-image">
-              <img src="https://z-cdn-media.chatglm.cn/files/977fa7bf-a5a8-40cd-8d93-9d6a8e949743_pasted_image_1762885480618.png?auth_key=1862885523-79ec81b08cbf40bbbb03179217b1c791-0-7b67c76cda0c68ea028559299dd8a4b6" alt="Person drinking orange juice" className="img-fluid" />
+            <div className="video-link">
+              <a href="#" className="video-text">
+                
+                Learn all about Alan in video
+                <span className="play-icon ms-2"></span>
+              </a>
             </div>
-          </Col>
-        </Row>
+          </div>
+        </div>
+
+        <Button className="help-button">Help</Button>
       </Container>
     </section>
   );

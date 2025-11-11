@@ -1,79 +1,78 @@
-import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
-import './HealthcareSystem.css';
+import React from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import "./HealthcareSystem.css";
 
 const HealthcareSystem = () => {
   return (
-    <section className="healthcare-section" id="wellbeing">
-      <Container fluid>
+    <section className="healthcare-wellbeing" id="wellbeing">
+      <Container>
         <Row className="align-items-center">
-          <Col md={6} className="left-content">
-            <h2 className="main-title">When your health is good, everything is good.</h2>
-            
-            <div className="stat-highlight">
-              <span className="stat-number">86%</span>
-              <span className="stat-text">of employees want their company to care about their well-being</span>
+          {/* ===== Left Content ===== */}
+          <Col lg={6} md={12} className="text-section">
+            <h2 className="headline">
+              When your health is good, everything is good.
+            </h2>
+            <p className="subtext">
+              86% of employees expect their company to act for their well-being
+              (Alan x Harris Barometer, 2023)
+            </p>
+
+            <p className="highlight-text">
+              Invest in the physical and mental well-being of your employees, and
+              they will repay you a hundredfold.
+            </p>
+
+            <div className="benefits-grid">
+              <div className="benefit-box">
+                <div className="benefit-header">
+                  <span>Retention</span> <i className="bi bi-heart-fill"></i>
+                </div>
+                <h3>3x</h3>
+                <p>greater chances of retaining their employees</p>
+              </div>
+
+              <div className="benefit-box">
+                <div className="benefit-header">
+                  <span>Productivity</span> <i className="bi bi-cloud-fill"></i>
+                </div>
+                <h3>2x</h3>
+                <p>more chances of exceeding their growth targets</p>
+              </div>
+
+              <div className="benefit-box">
+                <div className="benefit-header">
+                  <span>Absenteeism</span> <i className="bi bi-briefcase-fill"></i>
+                </div>
+                <h3>10x</h3>
+                <p>
+                  greater chances of maintaining an absenteeism rate lower than
+                  their sector
+                </p>
+              </div>
+
+             <div className="testimonial-box">
+  <div className="testimonial-overlay">
+    <p>
+      “It needs to be repeated again and again: well-being generates a return on investment.”
+    </p>
+    <span>
+      Cécile Ferlandin, former HR Director of Bleu Libellule (1200 employees)
+    </span>
+  </div>
+</div>
+
             </div>
-            
-            <p className="stat-source">Alan x Harris Barometer, 2023</p>
-            
-            <div className="benefits-container">
-              <div className="benefit-item">
-                <div className="benefit-icon">
-                  <span className="benefit-number">3x</span>
-                </div>
-                <div className="benefit-content">
-                  <h3 className="benefit-title">Retention</h3>
-                  <p className="benefit-desc">more likely to stay</p>
-                </div>
-              </div>
-              
-              <div className="benefit-item">
-                <div className="benefit-icon">
-                  <span className="benefit-number">2x</span>
-                </div>
-                <div className="benefit-content">
-                  <h3 className="benefit-title">Productivity</h3>
-                  <p className="benefit-desc">more likely to outperform</p>
-                </div>
-              </div>
-              
-              <div className="benefit-item">
-                <div className="benefit-icon">
-                  <span className="benefit-number">10x</span>
-                </div>
-                <div className="benefit-content">
-                  <h3 className="benefit-title">Absenteeism</h3>
-                  <p className="benefit-desc">less likely to be absent</p>
-                </div>
-              </div>
-            </div>
+
+            <p className="source">Source: Josh Bersin Company</p>
           </Col>
-          
-          <Col md={6} className="right-content">
-            <div className="illustration-container">
-              <img 
-                src="https://6vvt7k9n.twic.pics/prismic/ZhesCDjCgu4jzvuE_Media.png?twic=v1/cover=390x277" 
-                alt="Cartoon character at desk" 
-                className="character-image"
-              />
-            </div>
-            
-            <div className="quote-container">
-              <div className="quote-bubble">
-                <p className="quote-text">"Well-being generates a return on investment"</p>
-              </div>
-              <div className="quote-person">
-                <img 
-                  src="https://6vvt7k9n.twic.pics/prismic/ZiDilfPdc1huKmN7_video01.png" 
-                  alt="Person" 
-                  className="person-image"
-                />
-                <div className="person-info">
-                  <p className="person-name">Source</p>
-                </div>
-              </div>
-            </div>
+
+          {/* ===== Right Content ===== */}
+          <Col lg={6} md={12} className="illustration-side text-center">
+            <img
+              src="https://6vvt7k9n.twic.pics/prismic/ZhesCDjCgu4jzvuE_Media.png?twic=v1/cover=390x277"
+              alt="Character at desk"
+              className="illustration-img"
+            />
           </Col>
         </Row>
       </Container>
