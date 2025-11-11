@@ -3,7 +3,6 @@ import Hero from './Hero/Hero';
 import KeyBenefits from './KeyBenefits/KeyBenefits';
 import Testimonials from './Testimonials/Testimonials';
 import CTASection from './CTASection/CTASection';
-import DownloadApp from './DownloadApp/DownloadApp';
 import Slider from './Slider/Slider';
 import ServicesSection from './ServicesSection/ServicesSection';
 import HealthcareSystem from './HealthcareSystem/HealthcareSystem';
