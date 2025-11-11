@@ -40,8 +40,7 @@ const Header = () => {
         <Navbar expand="lg" expanded={mobileMenuOpen} onToggle={setMobileMenuOpen}>
           <Navbar.Brand as={Link} to="/" className="brand-container">
             <div className="brand-logo">
-              <span className="brand-text">Offeriyo</span>
-              <span className="brand-tagline text-dark">Har Local Offer Chutki Mai!</span>
+              <span className="brand-text">Alan</span>
             </div>
           </Navbar.Brand>
           

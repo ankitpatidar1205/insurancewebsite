@@ -5,34 +5,30 @@ import './Hero.css';
 const Hero = () => {
   return (
     <section className="hero" id="home">
-      <Container>
-        <Row className="align-items-center">
-          <Col md={6} className="slide-in-left">
+      <Container fluid className="hero-container">
+        <Row className="align-items-center h-100">
+          <Col md={6} className="hero-left">
             <div className="hero-content">
-              <h1 className="hero-title">Your Local Market, Now Online</h1>
-              <h2 className="hero-tagline">Har Local Offer Chutki Mai!</h2>
-              <p className="hero-subtitle">
-                Welcome to Offeriyo, India's first hyperlocal marketplace that brings local shop owners 
-                and nearby customers together on a single digital platform.
-              </p>
-              <p className="hero-description">
-                Whether you own a small store or love exploring local deals, Offeriyo helps you connect, 
-                discover, and save instantly — no fake products, no delivery delays, only real offers 
-                from real shops near you!
-              </p>
+              <h1 className="hero-title">Your health partner that prevents, insures and supports you every day</h1>
               <div className="hero-buttons">
-                <Button href="#shop-owners" className="btn-primary-custom me-3">
-                  🏪 List Your Shop
+                <Button href="#" className="btn-primary-custom">
+                  Get my quote in 2 minutes
                 </Button>
-                <Button href="#customers" className="btn-secondary-custom text-white">
-                  📱 Find Offers Near You
+                <Button href="#" className="btn-secondary-custom">
+                  Request a demo
                 </Button>
+              </div>
+              <div className="video-link">
+                <a href="#" className="video-text">
+                  <span className="play-icon"></span>
+                  Learn all about Alan in video
+                </a>
               </div>
             </div>
           </Col>
-          <Col md={6} className="slide-in-right">
+          <Col md={6} className="hero-right">
             <div className="hero-image">
-              <img src="https://www.transparentpng.com/download/special-offer/red-special-offer-png-transparent-image--14.png" alt="Offeriyo App" className="img-fluid" />
+              <img src="https://z-cdn-media.chatglm.cn/files/977fa7bf-a5a8-40cd-8d93-9d6a8e949743_pasted_image_1762885480618.png?auth_key=1862885523-79ec81b08cbf40bbbb03179217b1c791-0-7b67c76cda0c68ea028559299dd8a4b6" alt="Person drinking orange juice" className="img-fluid" />
             </div>
           </Col>
         </Row>

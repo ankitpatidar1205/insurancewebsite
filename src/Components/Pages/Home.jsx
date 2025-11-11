@@ -1,26 +1,21 @@
 import React from 'react';
 import Hero from './Hero/Hero';
 import KeyBenefits from './KeyBenefits/KeyBenefits';
-import Features from './Features/Features';
 import Testimonials from './Testimonials/Testimonials';
-import HowItWorks from './HowItWorks/HowItWorks';
 import CTASection from './CTASection/CTASection';
 import DownloadApp from './DownloadApp/DownloadApp';
+import Slider from './Slider/Slider';
+import ServicesSection from './ServicesSection/ServicesSection';
+import HealthcareSystem from './HealthcareSystem/HealthcareSystem';
 
 const Home = () => {
   return (
     <div className="home-page">
-      {/* 1. Hero Section - Main value proposition */}
       <Hero />
-      
-      {/* 2. Key Benefits - Core highlights */}
+      <Slider/>
       <KeyBenefits />
-      
-      {/* 3. How It Works - Simple process explanation */}
-      <HowItWorks />
-      
-      {/* 4. Features - Detailed features breakdown */}
-      <Features />
+      <ServicesSection />
+      <HealthcareSystem />
       
       {/* 5. Testimonials - Social proof from real users */}
       <Testimonials />

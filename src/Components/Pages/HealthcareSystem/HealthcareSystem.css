@@ -1,0 +1,200 @@
+/* Healthcare Section Styles */
+.healthcare-section {
+  padding: 80px 0;
+  background-color: #ffffff;
+  font-family: 'Arial', sans-serif;
+}
+
+.left-content {
+  padding: 0 60px 0 40px;
+}
+
+.main-title {
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #000000;
+  line-height: 1.2;
+}
+
+.stat-highlight {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.stat-number {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #FF6B35;
+  margin-right: 15px;
+  line-height: 1;
+}
+
+.stat-text {
+  font-size: 1.2rem;
+  color: #000000;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.stat-source {
+  font-size: 0.9rem;
+  color: #6c757d;
+  font-style: italic;
+  margin-bottom: 50px;
+}
+
+.benefits-container {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.benefit-item {
+  display: flex;
+  align-items: center;
+}
+
+.benefit-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #FF6B35;
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.benefit-number {
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.benefit-content {
+  flex: 1;
+}
+
+.benefit-title {
+  font-weight: 600;
+  font-size: 1.3rem;
+  margin-bottom: 5px;
+  color: #000000;
+}
+
+.benefit-desc {
+  font-size: 1.1rem;
+  color: #666666;
+  margin: 0;
+}
+
+.right-content {
+  padding: 0 40px 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.illustration-container {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.character-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.quote-container {
+  width: 100%;
+  max-width: 400px;
+}
+
+.quote-bubble {
+  background-color: #f8f9fa;
+  border-radius: 15px;
+  padding: 20px;
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.quote-bubble::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 30px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #f8f9fa;
+}
+
+.quote-text {
+  font-size: 1.1rem;
+  font-style: italic;
+  color: #000000;
+  margin: 0;
+}
+
+.quote-person {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.person-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 15px;
+  object-fit: cover;
+}
+
+.person-info {
+  flex: 1;
+}
+
+.person-name {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #000000;
+  margin: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .left-content, .right-content {
+    padding: 0 20px;
+    margin-bottom: 30px;
+  }
+  
+  .main-title {
+    font-size: 2rem;
+  }
+  
+  .stat-number {
+    font-size: 3rem;
+  }
+  
+  .stat-text {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .healthcare-section {
+    padding: 40px 0;
+  }
+  
+  .left-content {
+    margin-bottom: 40px;
+  }
+  
+  .right-content {
+    margin-bottom: 20px;
+  }
+}
