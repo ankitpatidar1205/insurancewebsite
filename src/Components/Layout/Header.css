@@ -1,6 +1,6 @@
 /* Header Styles */
 .header {
-  background-color: #FFEDDB;
+  background-color: #FFEDDB; /* Scroll se pehle ka color */
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
   padding: 15px 0;
   position: fixed;
@@ -14,7 +14,7 @@
   padding: 10px 0;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
   backdrop-filter: blur(10px);
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(255, 255, 255, 0.95); /* Scroll ke baad ka color */
 }
 
 /* Brand Styling */
@@ -25,28 +25,21 @@
 
 .brand-logo {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.brand-icon {
+  font-size: 1.2rem;
+  color: #5f4eee; /* Purple color as in image */
 }
 
 .brand-text {
   font-weight: 700;
-  font-size: 1.8rem;
-  color: var(--primary-color);
-  margin-bottom: -5px;
+  font-size: 1.2rem;
+  color: #5f4eee;
   letter-spacing: -0.5px;
-  transition: var(--transition);
-}
-
-.brand-tagline {
-  font-size: 0.75rem;
-  color: var(--accent-color);
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-}
-
-.navbar-brand:hover .brand-text {
-  color: var(--secondary-color);
+  margin: 0;
 }
 
 /* Custom Navbar Toggle */
@@ -62,9 +55,9 @@
   display: block;
   width: 100%;
   height: 3px;
-  background-color: var(--primary-color);
+  background-color: var(--primary-color, #333);
   margin: 5px 0;
-  transition: var(--transition);
+  transition: var(--transition, all 0.3s ease);
   border-radius: 3px;
 }
 
@@ -80,89 +73,28 @@
   transform: rotate(-45deg) translate(7px, -6px);
 }
 
-/* Navigation Links */
+/* Navigation Links (Desktop) */
 .nav-link-custom {
   font-weight: 500;
-  color: var(--text-dark) !important;
-  margin: 0 10px;
-  transition: var(--transition);
+  color: var(--text-dark, #333) !important;
+  margin: 0 15px;
+  transition: var(--transition, all 0.3s ease);
   position: relative;
   padding: 8px 0 !important;
   border-radius: 0;
-}
-
-.nav-link-custom::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-  transition: var(--transition);
-  transform: translateX(-50%);
-  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .nav-link-custom:hover {
-  color: var(--primary-color) !important;
+  color: var(--primary-color, #5f4eee) !important;
 }
 
-.nav-link-custom:hover::after {
-  width: 80%;
-}
-
-.nav-link-custom.active {
-  color: var(--primary-color) !important;
-}
-
-.nav-link-custom.active::after {
-  width: 80%;
-}
-
-/* Dropdown Styling */
-.nav-dropdown .dropdown-toggle-custom::after {
-  display: none;
-}
-
-.nav-dropdown .dropdown-toggle-custom::before {
-  content: '\25BC';
-  font-size: 0.6rem;
+.dropdown-indicator {
+  font-size: 0.7rem;
+  color: #666;
   margin-left: 5px;
-  transition: var(--transition);
-}
-
-.nav-dropdown.show .dropdown-toggle-custom::before {
-  transform: rotate(180deg);
-}
-
-.dropdown-menu {
-  border: none;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  padding: 10px 0;
-  margin-top: 15px;
-  background-color: var(--text-light);
-  border: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.dropdown-item {
-  padding: 10px 20px;
-  font-weight: 500;
-  color: var(--text-dark);
-  transition: var(--transition);
-  position: relative;
-}
-
-.dropdown-item:hover {
-  background-color: rgba(255, 107, 53, 0.1);
-  color: var(--primary-color);
-}
-
-.dropdown-item.active {
-  background-color: rgba(255, 107, 53, 0.1);
-  color: var(--primary-color);
-  font-weight: 600;
 }
 
 /* Header Actions */
@@ -170,24 +102,142 @@
   margin-left: 20px;
 }
 
-.btn-download-header {
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-  color: var(--text-light);
-  border: none;
+.btn-login-header {
+  background: transparent;
+  color: #5f4eee;
+  border: 1px solid #5f4eee;
   padding: 8px 20px;
   font-weight: 600;
   border-radius: 50px;
-  transition: var(--transition);
-  box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
-  display: flex;
-  align-items: center;
+  transition: var(--transition, all 0.3s ease);
   font-size: 0.9rem;
 }
 
-.btn-download-header:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(255, 107, 53, 0.4);
-  color: var(--text-light);
+.btn-login-header:hover {
+  background: #f0f0f0;
+  color: #5f4eee;
+  border-color: #5f4eee;
 }
 
-/* Mobile Responsive Adjustments
+/* Mobile Menu Overlay */
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: white;
+  z-index: 999;
+  display: none;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 20px 30px;
+  overflow-y: auto;
+}
+
+.mobile-menu-overlay.show {
+  display: flex;
+}
+
+.mobile-menu-content {
+  width: 100%;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #333;
+  align-self: flex-end;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.mobile-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.mobile-nav-item {
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+}
+
+.mobile-nav-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.mobile-dropdown-indicator {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.mobile-login-btn {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.mobile-login-btn .btn-login-header {
+  width: 100%;
+  max-width: 200px;
+  margin: 0 auto;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991px) {
+  .desktop-nav {
+    display: none !important;
+  }
+
+  .header {
+    padding: 15px 0;
+  }
+
+  .brand-logo {
+    gap: 3px;
+  }
+
+  .brand-text {
+    font-size: 1rem;
+  }
+
+  .nav-link-custom {
+    margin: 0 10px;
+    font-size: 0.9rem;
+  }
+
+  .btn-login-header {
+    padding: 6px 15px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .header {
+    padding: 10px 0;
+  }
+
+  .brand-text {
+    font-size: 0.9rem;
+  }
+
+  .mobile-menu-content {
+    padding: 20px 20px;
+  }
+
+  .mobile-nav-link {
+    font-size: 0.95rem;
+  }
+
+  .mobile-login-btn .btn-login-header {
+    max-width: 100%;
+  }
+}

@@ -53,11 +53,9 @@ const HealthcareSystem = () => {
              <div className="testimonial-box">
   <div className="testimonial-overlay">
     <p>
-      “It needs to be repeated again and again: well-being generates a return on investment.”
+      “It needs to be repeated again and again”
     </p>
-    <span>
-      Cécile Ferlandin, former HR Director of Bleu Libellule (1200 employees)
-    </span>
+
   </div>
 </div>
 

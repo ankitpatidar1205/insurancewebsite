@@ -7,6 +7,10 @@ import Slider from './Slider/Slider';
 import ServicesSection from './ServicesSection/ServicesSection';
 import HealthcareSystem from './HealthcareSystem/HealthcareSystem';
 import BeforeAfter from './BeforeAfter/BeforeAfter';
+import HealthApp from './HealthApp/HealthApp';
+import CustomerServiceSection from './CustomerServiceSection/CustomerServiceSection';
+import AlanHealthOffers from './AlanHealthOffers/AlanHealthOffers';
+import MarmotCTA from './MarmotCTA/MarmotCTA';
 
 const Home = () => {
   return (
@@ -16,13 +20,18 @@ const Home = () => {
       <KeyBenefits />
       <ServicesSection />
       <HealthcareSystem />
+      <HealthApp />
+      <CustomerServiceSection />
+      <AlanHealthOffers/>
+  
       
       {/* 5. Testimonials - Social proof from real users */}
       {/* <Testimonials /> */}
       
       {/* 6. CTA Section - Strong call to action */}
-      <CTASection />
+      {/* <CTASection /> */}
       <BeforeAfter/>
+          <MarmotCTA/>
    
     </div>
   );

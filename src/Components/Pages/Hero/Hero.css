@@ -1,3 +1,4 @@
+/* ===== Base Styles ===== */
 .hero {
   background-color: #FFEDDB;
   padding: 40px 0;
@@ -8,20 +9,20 @@
 }
 
 .hero-wrapper {
-  position: relative;
   width: 95%;
   max-width: 1250px;
   border-radius: 20px;
   overflow: hidden;
-  padding: 0;
   background-color: #fff8f3;
+  position: relative;
 }
 
-.video-background {
+/* ===== Desktop Default (Side-by-side not needed, content over video) ===== */
+.hero-video-section {
   position: relative;
   width: 100%;
   height: 500px;
-  border-radius: 20px;
+  border-radius: 20px 20px 0 0;
   overflow: hidden;
 }
 
@@ -29,11 +30,47 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
 
+.help-button {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background-color: white;
+  color: #333;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
 
-.hero-content {
+.help-button:hover {
+  background-color: #f8f8f8;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Content over video — ONLY on desktop */
+.hero-content-section {
   position: absolute;
   top: 50%;
   left: 7%;
@@ -42,8 +79,8 @@
   text-align: left;
   max-width: 600px;
   padding: 0 20px;
+  color: white;
 }
-
 
 .hero-title {
   color: white;
@@ -60,14 +97,22 @@
   margin-bottom: 20px;
 }
 
-.btn-primary-custom {
-  background-color: #7b3ff2;
-  color: #fff;
-  border: none;
+.btn-primary-custom,
+.btn-secondary-custom {
   padding: 12px 22px;
   border-radius: 8px;
   font-weight: 600;
   transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn-primary-custom {
+  background-color: #7b3ff2;
+  color: #fff;
+  border: none;
+  white-space: nowrap;
 }
 
 .btn-primary-custom:hover {
@@ -79,10 +124,7 @@
   background-color: white;
   color: #333;
   border: 2px solid #333;
-  padding: 10px 20px;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: all 0.3s ease;
+  white-space: nowrap;
 }
 
 .btn-secondary-custom:hover {
@@ -103,6 +145,7 @@
   text-decoration: none;
   color: white;
   font-weight: 600;
+  font-size: 1rem;
 }
 
 .video-text:hover {
@@ -115,6 +158,7 @@
   background-color: #333;
   border-radius: 50%;
   position: relative;
+  flex-shrink: 0;
 }
 
 .play-icon::after {
@@ -132,34 +176,9 @@
   background-color: #7b3ff2;
 }
 
-.help-button {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  background-color: white;
-  color: #333;
-  border: 1px solid #ddd;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  z-index: 10;
-  transition: all 0.3s ease;
-}
-
-.help-button:hover {
-  background-color: #f8f8f8;
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-}
-
-/* Responsive */
+/* ===== Tablet ===== */
 @media (max-width: 991px) {
-  .hero-video {
+  .hero-video-section {
     height: 400px;
   }
 
@@ -168,20 +187,115 @@
   }
 }
 
+/* ===== Mobile (Stacked Layout) ===== */
+/* ===== Mobile (Stacked Layout) ===== */
 @media (max-width: 767px) {
-  .hero-video {
-    height: 380px;
+  /* Video section: now fully rounded on all sides */
+  .hero-video-section {
+    height: 300px;
+    border-radius: 20px; /* 4 taraf rounded */
+    margin: 0 15px; /* optional: thoda side margin for breathing space */
   }
 
-  .hero-content {
+  /* Content section adjustments */
+  .hero-content-section {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    color: #333;
     text-align: center;
-  }
-
-  .hero-buttons {
-    justify-content: center;
+    padding: 25px 20px;
+    max-width: none;
+    /* ❌ Background white HATA diya */
+    background-color: transparent; /* ya #fff8f3 if you want subtle bg */
+    border-radius: 0; /* no need for radius now */
+    margin-top: 20px; /* ✅ gap between video and content */
   }
 
   .hero-title {
     font-size: 1.6rem;
+    color: #333;
+    line-height: 1.4;
+    margin-bottom: 20px;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .btn-primary-custom,
+  .btn-secondary-custom {
+    width: 100%;
+    max-width: 300px;
+    white-space: normal;
+  }
+
+  .video-link {
+    justify-content: center;
+  }
+
+  .video-text {
+    color: #333;
+  }
+
+  .video-text:hover {
+    color: #7b3ff2;
+  }
+
+  .play-icon {
+    background-color: #333;
+  }
+
+  .video-text:hover .play-icon {
+    background-color: #7b3ff2;
+  }
+
+  .help-button {
+    bottom: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    font-size: 12px;
+  }
+}
+
+/* Extra small mobile */
+@media (max-width: 480px) {
+  .hero-video-section {
+    height: 250px;
+    border-radius: 16px; /* slightly less on tiny screens */
+    margin: 0 10px;
+  }
+
+  .hero-content-section {
+    padding: 20px 15px;
+    margin-top: 16px; /* slightly less gap */
+  }
+
+  .hero-title {
+    font-size: 1.4rem;
+  }
+
+  .btn-primary-custom,
+  .btn-secondary-custom {
+    padding: 10px 16px;
+    font-size: 0.95rem;
+  }
+
+  .video-text {
+    font-size: 0.95rem;
+  }
+
+  .play-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .play-icon::after {
+    border-left: 8px solid white;
   }
 }

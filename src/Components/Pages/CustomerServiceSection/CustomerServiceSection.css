@@ -1,0 +1,284 @@
+/* CustomerServiceSection.css */
+.customer-service-card {
+  display: flex;
+  background-color: #1a4d48;
+  border-radius: 30px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  width: 90%;
+  margin-left: 70px;
+  margin-bottom: 50px;
+}
+
+.marmot-container {
+  position: relative;
+  flex: 0 0 45%;
+  overflow: hidden;
+  min-height: 300px;
+}
+
+.marmot-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transform: scale(1.1);
+  transform-origin: center;
+}
+
+.content-container {
+  flex: 1;
+  padding: 40px 30px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.team-avatars {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 5px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid white;
+  object-fit: cover;
+}
+
+.avatar-plus {
+  background-color: white;
+  color: #1a4d48;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.main-title {
+  color: white;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+
+.subtitle {
+  color: white;
+  font-size: 16px;
+  margin-bottom: 10px;
+  opacity: 0.9;
+}
+
+.description {
+  color: white;
+  font-size: 14px;
+  margin-bottom: 15px;
+  line-height: 1.5;
+  opacity: 0.9;
+}
+
+.rating {
+  color: white;
+  font-size: 14px;
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
+.tag {
+  position: absolute;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 14px;
+  color: #1a4d48;
+  white-space: nowrap;
+  z-index: 10;
+}
+
+/* Tag positions - exact as in image */
+.tag-effective {
+  top: 20px;
+  left: 120px;
+  background-color: #f5f0e6;
+  transform: rotate(-15deg);
+}
+
+.tag-pedagogue {
+  top: 100px;
+  left: 80px;
+  background-color: #f5f0e6;
+  transform: rotate(-5deg);
+}
+
+.tag-clear {
+  top: 180px;
+  left: 140px;
+  background-color: #e6f5f0;
+  transform: rotate(5deg);
+}
+
+.tag-kind {
+  bottom: 30px;
+  right: 200px;
+  background-color: #ffcce6;
+  transform: rotate(10deg);
+}
+
+.lightning-bolt {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-size: 30px;
+  color: #ff9933;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* Responsive design - updated for the container changes */
+@media (max-width: 768px) {
+  .customer-service-card {
+    flex-direction: column;
+    border-radius: 20px;
+    width: 95%;
+    margin-left: 15px;
+    margin-bottom: 30px;
+  }
+  
+  .marmot-container {
+    flex: 0 0 auto;
+    height: 200px;
+  }
+  
+  .marmot-image {
+    transform: scale(1.2);
+  }
+  
+  .content-container {
+    padding: 25px 20px;
+  }
+  
+  .main-title {
+    font-size: 20px;
+  }
+  
+  /* Adjust tag positions for tablet */
+  .tag-effective {
+    top: 10px;
+    left: 60px;
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+  
+  .tag-pedagogue {
+    top: 60px;
+    left: 40px;
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+  
+  .tag-clear {
+    top: 120px;
+    left: 80px;
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+  
+  .tag-kind {
+    bottom: 20px;
+    right: 20px;
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+  
+  .lightning-bolt {
+    font-size: 20px;
+    bottom: 15px;
+    right: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .customer-service-card {
+    border-radius: 15px;
+    width: 98%;
+    margin-left: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .marmot-container {
+    height: 150px;
+  }
+  
+  .content-container {
+    padding: 20px 15px;
+  }
+  
+  .main-title {
+    font-size: 18px;
+  }
+  
+  .team-avatars {
+    gap: 3px;
+  }
+  
+  .avatar {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .avatar-plus {
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+  }
+  
+  /* Adjust tag positions for mobile */
+  .tag-effective {
+    top: 5px;
+    left: 30px;
+    font-size: 10px;
+    padding: 4px 8px;
+  }
+  
+  .tag-pedagogue {
+    top: 40px;
+    left: 20px;
+    font-size: 10px;
+    padding: 4px 8px;
+  }
+  
+  .tag-clear {
+    top: 90px;
+    left: 50px;
+    font-size: 10px;
+    padding: 4px 8px;
+  }
+  
+  .tag-kind {
+    bottom: 15px;
+    right: 15px;
+    font-size: 10px;
+    padding: 4px 8px;
+  }
+  
+  .lightning-bolt {
+    font-size: 16px;
+    bottom: 10px;
+    right: 10px;
+  }
+}
