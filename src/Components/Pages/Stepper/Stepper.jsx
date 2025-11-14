@@ -113,10 +113,6 @@ const Stepper = () => {
           ))}
         </div>
       </div>
-      
-    
-      
-    
     </div>
   );
 };
