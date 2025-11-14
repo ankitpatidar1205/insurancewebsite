@@ -22,15 +22,11 @@ const Home = () => {
       <ServicesSection />
       <HealthcareSystem />
       <HealthApp />
+      <Stepper/>
       <CustomerServiceSection />
       <AlanHealthOffers/>
   
       
-      {/* 5. Testimonials - Social proof from real users */}
-      {/* <Testimonials /> */}
-      
-      {/* 6. CTA Section - Strong call to action */}
-      <Stepper/>
       <BeforeAfter/>
           <MarmotCTA/>
    
