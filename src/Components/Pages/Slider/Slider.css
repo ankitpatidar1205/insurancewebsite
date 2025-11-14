@@ -3,11 +3,13 @@
   padding: 20px 0;
   background-color: #FFFFFF;
   overflow: hidden;
+
 }
 
 .logo-slider-container {
   position: relative;
   width: 100%;
+    max-width: 100%;
   overflow: hidden;
 }
 

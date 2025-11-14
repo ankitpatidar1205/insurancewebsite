@@ -45,6 +45,30 @@
   text-decoration: underline;
 }
 
+/* External link icon */
+.external-icon {
+  color: #007BFF;
+  font-size: 12px;
+  margin-left: 4px;
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons a {
+  color: #CCCCCC;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #FFFFFF;
+}
+
+/* App Buttons */
 .app-buttons {
   display: flex;
   flex-direction: column;
@@ -65,6 +89,7 @@
   object-fit: cover;
 }
 
+/* Country Selector */
 .country-selector {
   margin-top: 20px;
 }
@@ -100,33 +125,32 @@
   pointer-events: none;
 }
 
+/* Legal Footer */
 .footer-bottom {
   margin-top: 40px;
   padding-top: 20px;
   border-top: 1px solid #333333;
 }
 
-.footer-copyright p {
-  margin: 0;
-  font-size: 14px;
+.legal-text p {
+  margin: 0 0 15px 0;
+  font-size: 12px;
   color: #999999;
+  line-height: 1.6;
 }
 
-.footer-legal-links {
-  display: flex;
-  justify-content: flex-end;
-  gap: 20px;
+.legal-text .small-text {
+  font-size: 11px;
+  color: #777777;
 }
 
-.footer-legal-links a {
-  color: #999999;
-  text-decoration: none;
-  font-size: 14px;
-  transition: color 0.3s ease;
+.legal-text a {
+  color: #007BFF;
+  text-decoration: underline;
 }
 
-.footer-legal-links a:hover {
-  color: #FFFFFF;
+.legal-text a:hover {
+  color: #0056b3;
 }
 
 /* Responsive Design */
@@ -143,5 +167,13 @@
   .app-buttons {
     flex-direction: row;
     flex-wrap: wrap;
+  }
+  
+  .social-icons {
+    gap: 10px;
+  }
+  
+  .country-select {
+    width: 100%;
   }
 }

@@ -32,7 +32,7 @@ const KeyBenefits = () => {
 
   return (
     <section className="key-benefits" id="benefits">
-      <Container>
+     
         <div className="benefits-header">
           <h2 className="sections-title">Find the solution designed for you</h2>
           <p className="sections-subtitle">Alan supports freelancers and businesses of all sizes and sectors so that they are never alone again when it comes to their health.</p>
@@ -58,7 +58,7 @@ const KeyBenefits = () => {
             </Col>
           ))}
         </Row>
-      </Container>
+    
     </section>
   );
 };

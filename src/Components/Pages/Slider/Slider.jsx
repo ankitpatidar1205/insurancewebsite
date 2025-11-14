@@ -15,7 +15,7 @@ const Slider = () => {
 
   return (
     <section className="logo-slider-section">
-      <Container>
+      
         <div className="logo-slider-container">
           <div className="logo-slider-track">
             {logos.map((logo, index) => (
@@ -36,7 +36,7 @@ const Slider = () => {
         <p className="logo-slider-text">
           Over 710,000 members and 33,000 companies take care of their health with Alan
         </p>
-      </Container>
+   
     </section>
   );
 };

@@ -1,6 +1,6 @@
 /* Header Styles */
 .header {
-  background-color: #FFEDDB; /* Scroll se pehle ka color */
+  background-color: #FFEDDB;
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
   padding: 15px 0;
   position: fixed;
@@ -14,7 +14,7 @@
   padding: 10px 0;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
   backdrop-filter: blur(10px);
-  background-color: rgba(255, 255, 255, 0.95); /* Scroll ke baad ka color */
+  background-color: rgba(255, 255, 255, 0.95);
 }
 
 /* Brand Styling */
@@ -23,23 +23,13 @@
   align-items: center;
 }
 
-.brand-logo {
-  display: flex;
-  align-items: center;
-  gap: 5px;
+.alan-logo svg {
+  color: #2d3436;
+  transition: color 0.3s ease;
 }
 
-.brand-icon {
-  font-size: 1.2rem;
-  color: #5f4eee; /* Purple color as in image */
-}
-
-.brand-text {
-  font-weight: 700;
-  font-size: 1.2rem;
-  color: #5f4eee;
-  letter-spacing: -0.5px;
-  margin: 0;
+.alan-logo:hover svg {
+  color: #5B66F5;
 }
 
 /* Custom Navbar Toggle */
@@ -55,9 +45,9 @@
   display: block;
   width: 100%;
   height: 3px;
-  background-color: var(--primary-color, #333);
+  background-color: #333;
   margin: 5px 0;
-  transition: var(--transition, all 0.3s ease);
+  transition: all 0.3s ease;
   border-radius: 3px;
 }
 
@@ -73,50 +63,555 @@
   transform: rotate(-45deg) translate(7px, -6px);
 }
 
+/* Navigation Wrapper */
+.nav-item-wrapper {
+  position: relative;
+}
+
 /* Navigation Links (Desktop) */
 .nav-link-custom {
   font-weight: 500;
-  color: var(--text-dark, #333) !important;
+  color: #2d3436 !important;
   margin: 0 15px;
-  transition: var(--transition, all 0.3s ease);
+  transition: all 0.3s ease;
   position: relative;
   padding: 8px 0 !important;
   border-radius: 0;
   display: flex;
   align-items: center;
   gap: 5px;
+  font-size: 15px;
+  background: none !important;
+  border: none !important;
+  cursor: pointer;
 }
 
-.nav-link-custom:hover {
-  color: var(--primary-color, #5f4eee) !important;
+.nav-link-custom:hover,
+.nav-link-custom.dropdown-active {
+  color: #5B66F5 !important;
 }
 
 .dropdown-indicator {
-  font-size: 0.7rem;
+  font-size: 0.6rem;
   color: #666;
-  margin-left: 5px;
+  margin-left: 3px;
+  transition: transform 0.3s ease;
+}
+
+.nav-item-wrapper:hover .dropdown-indicator,
+.nav-link-custom.dropdown-active .dropdown-indicator {
+  transform: rotate(180deg);
 }
 
 /* Header Actions */
 .header-actions {
   margin-left: 20px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
 }
 
 .btn-login-header {
-  background: transparent;
-  color: #5f4eee;
-  border: 1px solid #5f4eee;
-  padding: 8px 20px;
+  background: transparent !important;
+  color: #2d3436 !important;
+  border: 2px solid #2d3436 !important;
+  padding: 10px 24px !important;
   font-weight: 600;
   border-radius: 50px;
-  transition: var(--transition, all 0.3s ease);
-  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  font-size: 14px;
 }
 
 .btn-login-header:hover {
+  background: #2d3436 !important;
+  color: #fff !important;
+}
+
+.btn-quote-header {
+  background: #5B66F5 !important;
+  color: #fff !important;
+  border: none !important;
+  padding: 10px 24px !important;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.btn-quote-header:hover {
+  background: #4954d9 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(91, 102, 245, 0.3);
+}
+
+/* Mega Dropdown Base */
+.mega-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  margin-top: 20px;
+  padding: 40px;
+  z-index: 999;
+  animation: dropdownFade 0.3s ease;
+  max-height: 75vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Scrollbar styling */
+.mega-dropdown::-webkit-scrollbar {
+  width: 8px;
+}
+
+.mega-dropdown::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.mega-dropdown::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 10px;
+}
+
+.mega-dropdown::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* Common Dropdown Elements */
+.dropdown-header {
+  margin-bottom: 30px;
+}
+
+.dropdown-header h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #2d3436;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+.dropdown-subtitle {
+  font-size: 16px;
+  color: #636e72;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.dropdown-subtitle a {
+  color: #636e72;
+  text-decoration: underline;
+}
+
+.section-heading {
+  font-size: 13px;
+  font-weight: 600;
+  color: #95a5a6;
+  margin: 0 0 16px 0;
+  text-transform: capitalize;
+  letter-spacing: 0.3px;
+}
+
+.section-items {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dropdown-item {
+  display: flex;
+  gap: 14px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  align-items: flex-start;
+}
+
+.dropdown-item:hover {
+  background: #f8f9fa;
+}
+
+.item-icon {
+  font-size: 22px;
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-text h4 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #2d3436;
+  margin: 0 0 4px 0;
+  line-height: 1.3;
+}
+
+.item-text p {
+  font-size: 13px;
+  color: #636e72;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* OFFERS DROPDOWN */
+.offers-dropdown {
+  width: 900px;
+}
+
+.offers-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  margin-bottom: 30px;
+}
+
+.offers-column {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.dropdown-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.bottom-card {
+  padding: 24px 28px;
+  border-radius: 12px;
+  margin-top: 10px;
+}
+
+.bottom-card h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #2d3436;
+  margin: 0 0 8px 0;
+}
+
+.bottom-card p {
+  font-size: 14px;
+  color: #636e72;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* WHY ALAN DROPDOWN */
+.why-alan-dropdown {
+  width: 950px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+}
+
+.section-main-heading {
+  font-size: 13px;
+  font-weight: 600;
+  color: #95a5a6;
+  margin: 0 0 24px 0;
+  text-transform: capitalize;
+  letter-spacing: 0.3px;
+}
+
+.benefits-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 20px;
+}
+
+.benefit-item {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.benefit-image-placeholder {
+  width: 100%;
+  height: 140px;
   background: #f0f0f0;
-  color: #5f4eee;
-  border-color: #5f4eee;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: #999;
+}
+
+.benefit-content h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #2d3436;
+  margin: 0 0 6px 0;
+  line-height: 1.4;
+}
+
+.benefit-content p {
+  font-size: 14px;
+  color: #636e72;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.link-more {
+  color: #5B66F5;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.link-more:hover {
+  text-decoration: underline;
+}
+
+.right-section {
+  padding: 30px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.section-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #2d3436;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.section-description {
+  font-size: 14px;
+  color: #636e72;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.section-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.section-buttons .btn-primary {
+  background: #5B66F5;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.section-buttons .btn-primary:hover {
+  background: #4954d9;
+  transform: translateY(-2px);
+}
+
+.section-buttons .btn-secondary {
+  background: transparent;
+  color: #5B66F5;
+  border: 2px solid #5B66F5;
+  padding: 10px 24px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.section-buttons .btn-secondary:hover {
+  background: rgba(91, 102, 245, 0.1);
+}
+
+.section-image-placeholder {
+  width: 100%;
+  height: 280px;
+  background: #e8f4fd;
+  border-radius: 12px;
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: #999;
+}
+
+/* RESOURCES DROPDOWN */
+.resources-dropdown {
+  width: 950px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.resources-left {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.resources-right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.resource-card {
+  padding: 28px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.card-image-placeholder {
+  width: 100%;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: #999;
+}
+
+.resource-card h4 {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.resource-card p {
+  font-size: 14px;
+  margin: 0;
+  opacity: 0.9;
+  line-height: 1.4;
+}
+
+.btn-download {
+  background: #5B66F5;
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+  margin-top: 8px;
+}
+
+.btn-download:hover {
+  background: #4954d9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(91, 102, 245, 0.3);
+}
+
+/* ABOUT ALAN DROPDOWN */
+.about-dropdown {
+  width: 850px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.about-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-card {
+  padding: 32px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: 100%;
+}
+
+.about-card h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #2d3436;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.about-card p {
+  font-size: 14px;
+  color: #636e72;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.btn-learn-more {
+  background: #5B66F5;
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+  margin-top: 8px;
+}
+
+.btn-learn-more:hover {
+  background: #4954d9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(91, 102, 245, 0.3);
+}
+
+.about-image-placeholder {
+  width: 100%;
+  height: 280px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: #999;
+}
+
+.about-right {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
 /* Mobile Menu Overlay */
@@ -201,32 +696,14 @@
     padding: 15px 0;
   }
 
-  .brand-logo {
-    gap: 3px;
-  }
-
-  .brand-text {
-    font-size: 1rem;
-  }
-
-  .nav-link-custom {
-    margin: 0 10px;
-    font-size: 0.9rem;
-  }
-
-  .btn-login-header {
-    padding: 6px 15px;
-    font-size: 0.8rem;
+  .mega-dropdown {
+    display: none !important;
   }
 }
 
 @media (max-width: 767px) {
   .header {
     padding: 10px 0;
-  }
-
-  .brand-text {
-    font-size: 0.9rem;
   }
 
   .mobile-menu-content {
@@ -239,5 +716,24 @@
 
   .mobile-login-btn .btn-login-header {
     max-width: 100%;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1400px) {
+  .mega-dropdown {
+    max-width: 850px;
+  }
+
+  .offers-dropdown {
+    width: 800px;
+  }
+
+  .why-alan-dropdown,
+  .resources-dropdown {
+    width: 850px;
+  }
+
+  .about-dropdown {
+    width: 750px;
   }
 }

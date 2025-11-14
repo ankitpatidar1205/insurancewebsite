@@ -50,7 +50,7 @@ const HealthApp = () => {
 
   return (
     <section className="health-section">
-      <Container>
+
         <Row className="align-items-center">
           {/* LEFT SIDE */}
           <Col md={7}>
@@ -102,7 +102,7 @@ const HealthApp = () => {
             </div>
           </Col>
         </Row>
-      </Container>
+
     </section>
   );
 };

@@ -32,7 +32,7 @@ const ServicesSection = () => {
 
   return (
     <section className="healthcare-section">
-      <Container>
+      
         <div className="section-header">
           <h2 className="sectionss-title">The healthcare system is on the verge of collapse.</h2>
           <p className="section-subtitle">
@@ -65,7 +65,7 @@ const ServicesSection = () => {
             </Col>
           ))}
         </Row>
-      </Container>
+    
     </section>
   );
 };

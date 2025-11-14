@@ -17,7 +17,7 @@ const BeforeAfter = () => {
           className={`switch-btn ${activeTab === "after" ? "active" : ""}`}
           onClick={() => setActiveTab("after")}
         >
-          After Alan
+          With Alan
         </button>
       </div>
 
@@ -25,59 +25,59 @@ const BeforeAfter = () => {
       {activeTab === "before" && (
         <div className="cards-grid fade-in">
           <div className="card teal">
-            <h3>7 out of 10 French people</h3>
-            <p>believe mental health is still a taboo topic. (Odoxa, 2023)</p>
+            <h3>7 out of 10<br/>French people</h3>
+            <p>believe that mental health is still a taboo subject<br/>(Odoxa, 2023)</p>
           </div>
 
           <div className="card img-card">
             <img
-              src="https://6vvt7k9n.twic.pics/prismic/Zh_91vPdc1huKlPr_video06.png?twic=v1/cover=400x262"
+              src="https://6vvt7k9n.twic.pics/prismic/ZiDYTPPdc1huKmIt_video7.png?twic=v1/cover=560x367"
               alt="mother with baby"
             />
             <div className="img-caption">
-              “There’s nothing more stressful than having your baby sick on the weekend.”  
-              <br />– Laurie, young mother working in tech
+              <p>"There's nothing more stressful than having your baby sick on the weekend."</p>
+              <p className="caption-author">Laurie, a young mother working in tech</p>
             </div>
           </div>
 
           <div className="card teal">
-            <p>
-              “We used to manage an Excel file that we had to send every month to our insurer.
-              It was time-consuming, and often we sent it with a one-month delay.”
+            <p className="quote-text">
+              "We were working on an Excel file, which we had to send to our health insurance company every month. It took time and very often, we sent this list a month late."
             </p>
             <div className="author">
-              <strong>Apolline de la Taille</strong>  
-              <br />HR Manager, Groupe Machafer – 250 employees – Hospitality
+              <div className="author-image"></div>
+              <div className="author-info">
+                <strong>Apolline de la Taille</strong><br/>
+                HR Manager @ Machaffert Group<br/>
+                (250 employees) - Hospitality
+              </div>
             </div>
           </div>
 
           <div className="card img-card">
             <img
-              src="https://6vvt7k9n.twic.pics/prismic/Zh_3tPPdc1huKlM-_video05.png?twic=v1/cover=400x263"
+              src="https://6vvt7k9n.twic.pics/prismic/ZiDXkvPdc1huKmIf_video4.png?twic=v1/cover=560x368"
               alt="office worker"
             />
             <div className="img-caption">
-              “My team was overwhelmed with admin work — invoices, receipts, and duplicate reimbursements.”  
-              <br />– Cécilia Bonami, HR & CSR Director, Olympique de Marseille
+              <p>"My team was drowning in administrative work: invoices and quotes to receive and send back... Meanwhile, the Works Council kept reporting problems with expense reimbursements."</p>
+              <p className="caption-author">Cécilia Barontini, HR and CSR Director of Olympique de Marseille</p>
             </div>
           </div>
 
           <div className="card teal">
             <h3>95 days</h3>
-            <p>
-              is the average waiting time to see a dermatologist — nearly twice as long as 10 years ago.
-              (Ifop, 2023)
-            </p>
+            <p>This is the average wait time for a dermatologist appointment, almost twice as long as it was 10 years ago.<br/>(Ifop, 2023)</p>
           </div>
 
           <div className="card img-card">
             <img
-              src="https://6vvt7k9n.twic.pics/prismic/Zh__BPPdc1huKlQA_video04.png?twic=v1/cover=320x267"
+              src="https://6vvt7k9n.twic.pics/prismic/ZiDW-vPdc1huKmH8_video03.png?twic=v1/cover=440x367"
               alt="industrial worker"
             />
             <div className="img-caption">
-              “At first, insurance was too complicated for me — so I didn’t bother.”  
-              <br />– Nananissa, Industrial employee
+              <p>"At first, health insurance was too complicated for me, so I didn't deal with it."</p>
+              <p className="caption-author">Nananissa, an employee in the industry</p>
             </div>
           </div>
         </div>
@@ -86,25 +86,50 @@ const BeforeAfter = () => {
       {/* AFTER SECTION */}
       {activeTab === "after" && (
         <div className="cards-grid fade-in">
-          <div className="card white">
+          <div className="card cream">
             <h3>70%</h3>
-            <p>of employees feel better supported thanks to Alan.</p>
+            <p>Members who had worked on their mental health with Alan had never done so before</p>
+          </div>
+
+          <div className="card img-card">
+            <img
+              src="https://6vvt7k9n.twic.pics/prismic/Zh_91vPdc1huKlPr_video06.png?twic=v1/cover=400x262"
+              alt="smiling team"
+            />
+            <div className="img-caption light-caption">
+              <p>"With Alan, it's a bit like having a doctor in the family."</p>
+              <p className="caption-author">Laurie, a young mother working in tech</p>
+            </div>
+          </div>
+
+          <div className="card cream">
+            <p className="quote-text">
+              "When there is a transfer of an employee to another site or an employee leaves, all the data is transferred with a single click!"
+            </p>
+            <div className="author dark-author">
+              <div className="author-image"></div>
+              <div className="author-info">
+                <strong>Apolline de la Taille</strong><br/>
+                HR Manager @ Machaffert Group<br/>
+                (250 employees) - Hospitality
+              </div>
+            </div>
           </div>
 
           <div className="card img-card">
             <img
               src="https://6vvt7k9n.twic.pics/prismic/Zh_3tPPdc1huKlM-_video05.png?twic=v1/cover=400x263"
-              alt="smiling team"
+              alt="office worker"
             />
             <div className="img-caption light-caption">
-              “With Alan, everything is simpler, faster, and more human.”  
-              <br />– Camille, HR at a startup
+              <p>"The fact that the dialogue takes place directly between Alan and the employee means that HR is no longer caught in the middle. This frees up invaluable time for us."</p>
+              <p className="caption-author">Cécilia Barontini, HR and CSR Director of Olympique de Marseille</p>
             </div>
           </div>
 
-          <div className="card white">
-            <h3>24h</h3>
-            <p>is the average time to receive a reimbursement confirmation.</p>
+          <div className="card cream">
+            <h3>24 hours</h3>
+            <p>This is the average wait time to get a response from a dermatologist at Clinique Alan via chat.</p>
           </div>
 
           <div className="card img-card">
@@ -113,14 +138,9 @@ const BeforeAfter = () => {
               alt="employee smiling"
             />
             <div className="img-caption light-caption">
-              “No more waiting — it’s instant now. Such a relief!”  
-              <br />– Hugo, Administrative employee
+              <p>"It's like night and day compared to my old health insurance company."</p>
+              <p className="caption-author">Nananissa, an employee in the industry</p>
             </div>
-          </div>
-
-          <div className="card white">
-            <h3>5000+</h3>
-            <p>companies have already chosen Alan.</p>
           </div>
         </div>
       )}

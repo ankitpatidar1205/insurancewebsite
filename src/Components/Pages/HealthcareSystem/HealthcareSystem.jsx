@@ -5,7 +5,7 @@ import "./HealthcareSystem.css";
 const HealthcareSystem = () => {
   return (
     <section className="healthcare-wellbeing" id="wellbeing">
-      <Container>
+     
         <Row className="align-items-center">
           {/* ===== Left Content ===== */}
           <Col lg={6} md={12} className="text-section">
@@ -73,7 +73,7 @@ const HealthcareSystem = () => {
             />
           </Col>
         </Row>
-      </Container>
+    
     </section>
   );
 };

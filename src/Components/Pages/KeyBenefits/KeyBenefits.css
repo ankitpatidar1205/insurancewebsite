@@ -1,6 +1,6 @@
 /* Key Benefits Section Styles */
 .key-benefits {
-  padding: 40px 0;
+  padding: 80px 0;
   background-color: #FFFFFF;
 }
 
@@ -9,7 +9,7 @@
   
   max-width: 800px;
   margin-left: 0; /* Changed from auto to 0 */
-  padding: 0px;
+  padding: 20px;
   margin-right: auto; /* Keep right margin auto for responsiveness */
 }
 
@@ -33,6 +33,7 @@
 
 .services-grid {
   margin-top: 40px;
+    padding-left: 20px;
 }
 
 .service-card {

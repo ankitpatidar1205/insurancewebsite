@@ -55,7 +55,7 @@ const AlanIndividualsSection = () => {
 
   return (
     <section className="health-section">
-      <Container>
+
         <Row className="align-items-center">
           {/* LEFT SIDE */}
           <Col md={7}>
@@ -110,7 +110,7 @@ const AlanIndividualsSection = () => {
             </div>
           </Col>
         </Row>
-      </Container>
+   
     </section>
   );
 };
