@@ -1,5 +1,6 @@
 import React from 'react';
 import './Hero.css';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   return (
@@ -24,12 +25,12 @@ const Hero = () => {
             Your health partner that prevents, insures and supports you every day
           </h1>
           <div className="hero-buttons">
-            <a href="#" className="btn-primary-custom">
+            <Link to="/dispatch" className="btn-primary-custom">
               Get my quote in 2 minutes
-            </a>
-            <a href="#" className="btn-secondary-custom">
+            </Link>
+            <Link to="/request-demo" className="btn-secondary-custom">
               Request a demo
-            </a>
+            </Link>
           </div>
           <div className="video-link">
             <a href="#" className="video-text">

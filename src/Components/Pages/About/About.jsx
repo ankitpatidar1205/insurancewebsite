@@ -35,70 +35,171 @@ const About = () => {
 
   return (
     <div className="about-page">
-      {/* Hero Section */}
-      <section className="about-hero">
-        <Container>
-          <Row className="justify-content-center text-center">
-            <Col lg={8}>
-              <h1 className="about-title">Empowering Local Businesses, Digitally</h1>
-              <p className="about-subtitle">
-                Building India's first "Digital Local Marketplace" — where Har Local Offer Chutki Mai!
-              </p>
-            </Col>
-          </Row>
-        </Container>
-      </section>
-
       {/* Company Story */}
       <section className="company-story">
         <Container>
           <Row className="align-items-center">
             <Col md={6}>
               <div className="story-content">
-                <h2>Our Story</h2>
+                <h2>Alan. Where insurance, care, and prevention finally work together.</h2>
                 <p>
-                  Offeriyo was built with one mission — to digitally empower small and medium-sized businesses across India.
-                  In today's world, local stores often lose visibility because everything has shifted online.
+                 Healthcare works best when it isn't fragmented. That's why we built the first truly integrated model, making prevention the norm, care accessible, and insurance delightful.
                 </p>
                 <p>
-                  Offeriyo bridges that gap — helping shop owners go digital and connect directly with their nearby customers.
-                  We believe every shop — big or small — deserves to be seen.
+                Today, we’re serving over 1 million members in France, Belgium, Spain, and Canada.
                 </p>
-                <p>
-                  Every customer deserves to discover nearby offers quickly and confidently.
-                  With Offeriyo, we're building India's first "Digital Local Marketplace" — where Har Local Offer Chutki Mai!
-                </p>
+               
+               <button className='btn btn-primary'>Our unique model</button>
               </div>
             </Col>
             <Col md={6}>
               <div className="story-image">
-                <img src="https://www.transparentpng.com/download/special-offer/red-special-offer-png-transparent-image--14.png" alt="Our Story" className="img-fluid rounded" />
+                <img src="https://6vvt7k9n.twic.pics/v1/image:prismic/aQxlK7pReVYa4Hly_Homepage_HeroIllustration_Desktop.png" alt="Our Story" className="img-fluid rounded" />
               </div>
             </Col>
           </Row>
         </Container>
       </section>
 
+         <section className="company-story">
+        <Container>
+          <Row className="align-items-center">
+        
+            <Col md={6}>
+              <div className="story-image">
+                <img src="https://6vvt7k9n.twic.pics/prismic/aQDMb7pReVYa3wD1_Imagewrapper-1--1-.png?rect=0%2C14%2C976%2C692&w=2368&h=1680&auto=format&twic=v1/cover=470x333" alt="Our Story" className="img-fluid rounded" />
+              </div>
+            </Col>
+                <Col md={6}>
+              <div className="story-content">
+                <h2>A letter from our CEO</h2>
+                <p>
+               Health is the universal thread that connects every human story. We will all face its challenges, whether watching a loved one battle schizophrenia or bipolar disorder, losing someone dear to cancer, struggling with fertility or weight control, or enduring endometriosis every single month. making prevention the norm, care accessible, and insurance delightful.
+                </p>
+                <p>
+          Those are the shared realities that define our humanity. Health touches every life, every family, every future. It's the foundation of life, happiness, and society.
+                </p>
+               <p>Great health unlocks our best life and our best work. When it's strong, our potential expands at home, at work, across families, teams, and society. When it's fragile, everything else becomes brittle. That simple truth is why we started Alan, and why we pour so much energy into it every single day.</p>
+               <button className='btn btn-primary'>Our unique model</button>
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+
+      <section className="cta-section">
+        <Container>
+          <Row className="justify-content-center text-center">
+            <Col lg={8}>
+              <h2>Our vision is to make prevention the new norm of care</h2>
+              <p>
+Too often, people face a system that is complex, reactive, and anxiety‑inducing. They delay care because of forms, jargon, waiting lists, or stigma. Employers want to help, but fragmentation and friction get in the way.</p>
+          
+          <p>At Alan we want to ensure people live in good health to 100 while helping employers feel proud, turning health benefits from a cost center into their most valuable investment.</p>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+
+        <section className="company-story">
+        <Container>
+          <Row className="align-items-center">
+            <Col md={6}>
+              <div className="story-content">
+                <h2>Our model</h2>
+                <p>
+             At the heart of Alan is a bold idea: healthcare works best when it isn’t fragmented. Insurance, care access, and prevention shouldn’t live in silos. They should reinforce each other.
+                </p>
+                <p>
+             That’s why we built the first truly integrated healthcare partner.
+
+A model where prevention fuels long-term health, where care is immediate and accessible, and where insurance is simple, transparent, and fast.
+
+This integrated approach unlocks better outcomes for individuals, higher performance for companies, and lasting value for the healthcare system.
+
+Our customers are companies of all sizes & industriessegments, consumers (retirees, self-employed and governments (Ministries, local collectivities, …).
+                </p>
+               
+               <button className='btn btn-primary'>Our business model</button>
+              </div>
+            </Col>
+            <Col md={6}>
+              <div className="story-image">
+                <img src="https://6vvt7k9n.twic.pics/prismic/aQDODLpReVYa3wGd_ImageforPrismic.png?rect=16%2C0%2C1151%2C840&w=1952&h=1424&auto=format&twic=v1/cover=390x284" alt="Our Story" className="img-fluid rounded" />
+              </div>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+
+        <section className="cta-section">
+        <Container>
+          <Row className="justify-content-center text-center">
+            <Col lg={8}>
+              <h2>Healthcare that actually works</h2>
+          <p>Every decision we make, every feature we build, every partnership we form serves our mission to make healthcare simple, engaging, and effective. Here's how we do it;</p>
+            </Col>
+          </Row>
+        </Container>
+      </section>
+
+        <section className="company-story">
+        <Container>
+          <Row className="align-items-center">
+                <Col md={6}>
+              <div className="story-image">
+                <img src="https://6vvt7k9n.twic.pics/prismic/aQDOxLpReVYa3wIV_Imagewrapper-2--1-.png?rect=0%2C4%2C976%2C712&w=1952&h=1424&auto=format&twic=v1/cover=390x284" alt="Our Story" className="img-fluid rounded" />
+              </div>
+            </Col>
+            <Col md={6}>
+              <div className="story-content">
+                <h2>Health without gaps</h2>
+                <p>
+          With full-stack health insurance, instant reimbursements, smart healthcare, and human support at every step, Alan bridges payers, providers, and members for better care.
+                </p>
+            
+              </div>
+            </Col>
+        
+          </Row>
+        </Container>
+      </section>
       {/* Mission & Vision */}
       <section className="mission-vision">
         <Container>
+           <Row className="justify-content-center text-center">
+            <Col lg={8}>
+              <h2>The most engaging prevention & care</h2>
+          <p>We make prevention and care something people actually use and enjoy.</p>
+            </Col>
+          </Row>
           <Row>
-            <Col md={6}>
+            <Col md={4}>
               <Card className="mission-card">
                 <Card.Body>
-                  <h3>Our Mission</h3>
+                  <h3>30%+</h3>
                   <p>
-                    To connect every shop owner with every nearby customer through real-time digital offers and trusted local discovery.
+                Weekly active users in team and individual challenges.
                   </p>
                 </Card.Body>
               </Card>
             </Col>
-            <Col md={6}>
+            <Col md={4}>
               <Card className="vision-card">
                 <Card.Body>
-                  <h3>Our Vision</h3>
+                  <h3>260k</h3>
                   <p>
-                    To make every local business visible, reachable, and digitally successful.
+                Medical conversations delivered, each equal to a doctor’s visit.
+                  </p>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col md={4}>
+              <Card className="vision-card">
+                <Card.Body>
+                  <h3>95%</h3>
+                  <p>
+              Of AI-powered medical chats rated good or excellent by members (reviewed daily by our medical team).
                   </p>
                 </Card.Body>
               </Card>
@@ -178,24 +279,7 @@ const About = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="cta-section">
-        <Container>
-          <Row className="justify-content-center text-center">
-            <Col lg={8}>
-              <h2>Ready to Transform Your Local Shopping Experience?</h2>
-              <p>Join thousands of shop owners and customers who are already benefiting from Offeriyo's hyperlocal marketplace</p>
-              <div className="cta-buttons">
-                <a href="#shop-owners" className="btn-primary-custom me-3">
-                  🏪 List Your Shop
-                </a>
-                <a href="#customers" className="btn-secondary-custom">
-                  📱 Find Offers
-                </a>
-              </div>
-            </Col>
-          </Row>
-        </Container>
-      </section>
+    
     </div>
   );
 };

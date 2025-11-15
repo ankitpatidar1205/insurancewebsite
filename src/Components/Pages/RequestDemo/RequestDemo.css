@@ -1,0 +1,142 @@
+.demo-wrapper {
+  background: #fff4e9;
+  padding: 60px 0;
+  font-family: "Inter", sans-serif;
+}
+
+.container-large {
+  max-width: 1250px;
+  margin: auto;
+}
+
+.form-box {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* LEFT SIDE */
+.left-area {
+  background: #fff4e9;
+  padding: 60px;
+  position: relative;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.features {
+  list-style: none;
+  padding: 0;
+  margin-top: 25px;
+}
+
+.features li {
+  font-size: 18px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.tick {
+  width: 25px;
+  height: 25px;
+  background: #7c3aed;
+  border-radius: 50%;
+  color: white;
+  margin-right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-img {
+  position: absolute;
+  bottom: 50px;
+  left: 40%;
+  width: 220px;
+  border-radius: 50%;
+}
+
+.flower {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  width: 80px;
+}
+
+/* RIGHT SIDE */
+.right-area {
+  padding: 50px;
+  background: white;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 20px;
+}
+
+.tabs button {
+  background: #f4f2ff;
+  padding: 12px 22px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.tabs .active {
+  background: #ece5ff;
+  border: 2px solid #7c3aed;
+}
+
+/* Inputs */
+.input {
+  width: 100%;
+  padding: 14px 18px;
+  border: 1px solid #dcdcdc;
+  border-radius: 12px;
+  font-size: 16px;
+}
+
+.input:focus {
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.2);
+}
+
+.error {
+  border-color: red !important;
+}
+
+.error-text {
+  color: red;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+/* Button */
+.continue-btn {
+  width: 100%;
+  background: #7c3aed;
+  color: white;
+  padding: 16px;
+  font-size: 18px;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  margin-top: 15px;
+}
+
+.continue-btn:hover {
+  background: #6929d9;
+}
+
+/* Privacy text */
+.privacy {
+  font-size: 12px;
+  margin-top: 15px;
+  color: #555;
+}

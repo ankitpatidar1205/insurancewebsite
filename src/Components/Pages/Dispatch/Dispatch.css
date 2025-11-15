@@ -1,0 +1,99 @@
+/* PAGE WRAP */
+.wizard-main {
+  padding: 60px 120px;
+  font-family: "Inter", sans-serif;
+}
+
+/* TOP NAV */
+.wizard-nav {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.back-button {
+  margin-right: 20px;
+  font-size: 18px;
+  cursor: pointer;
+  color: #535353;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: 0.2s;
+}
+
+.back-button:hover {
+  background: #f3f3f7;
+}
+
+/* TAB BAR */
+.wizard-tabs {
+  display: flex;
+  gap: 25px;
+}
+
+.wizard-tab {
+  font-size: 15px;
+  padding: 8px 18px;
+  border-radius: 30px;
+  color: #8d8d8d;
+  background: transparent;
+  transition: 0.25s ease;
+}
+
+.wizard-tab.active {
+  background: #e9ebff;
+  color: #4b51ff;
+  font-weight: 600;
+}
+
+/* TITLES */
+.wizard-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #242424;
+}
+
+.wizard-sub {
+  color: #6c6c6c;
+  margin-bottom: 40px;
+  font-size: 16px;
+}
+
+/* LIST */
+.wizard-list {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  max-width: 620px;
+}
+
+/* CARDS */
+.wizard-card {
+  border-radius: 18px;
+  padding: 24px 28px;
+  background: #ffffff;
+  border: 1px solid #eef0fb;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0px 2px 6px rgba(0,0,0,0.02);
+}
+
+.wizard-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 8px 25px rgba(0,0,0,0.07);
+}
+
+.wizard-card-text h4 {
+  margin: 0;
+  color: #5048ff;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.wizard-code {
+  display: block;
+  margin-top: 6px;
+  color: #818181;
+  font-size: 15px;
+}
