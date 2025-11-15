@@ -28,7 +28,7 @@ const RequestDemo = () => {
                 <span className="tick">✓</span> Share your health insurance needs
               </li>
               <li>
-                <span className="tick">✓</span> Discover Alan, your new health partner
+                <span className="tick">✓</span> Discover Lifesecure, your new health partner
               </li>
               <li>
                 <span className="tick">✓</span> Find the ideal health plan
@@ -37,12 +37,12 @@ const RequestDemo = () => {
 
             <img
               className="main-img"
-              src="https://alan.com/website-assets/alan-alan-website:dfb2b4dc96c8394b8b4d7c0e65d7722ebbca1096/contact-person-with-phone-f97eae74af8383d1.webp"
+              src="https://Lifesecure.com/website-assets/Lifesecure-Lifesecure-website:dfb2b4dc96c8394b8b4d7c0e65d7722ebbca1096/contact-person-with-phone-f97eae74af8383d1.webp"
               alt="person"
             />
 
             <img
-              src="https://alan.com/website-assets/alan-alan-website:4c03e26f4e1aef2df0d614020841b25c52dbf3f4/pink-flower-1886591798fc09ce.webp"
+              src="https://Lifesecure.com/website-assets/Lifesecure-Lifesecure-website:4c03e26f4e1aef2df0d614020841b25c52dbf3f4/pink-flower-1886591798fc09ce.webp"
               className="flower"
               alt=""
             />
@@ -57,7 +57,7 @@ const RequestDemo = () => {
                 className={activeTab === "discover" ? "active" : ""}
                 onClick={() => setActiveTab("discover")}
               >
-                I'm discovering Alan
+                I'm discovering Lifesecure
               </button>
 
               <button

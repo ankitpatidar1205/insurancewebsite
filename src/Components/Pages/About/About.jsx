@@ -41,7 +41,7 @@ const About = () => {
           <Row className="align-items-center">
             <Col md={6}>
               <div className="story-content">
-                <h2>Alan. Where insurance, care, and prevention finally work together.</h2>
+                <h2>Lifesecure. Where insurance, care, and prevention finally work together.</h2>
                 <p>
                  Healthcare works best when it isn't fragmented. That's why we built the first truly integrated model, making prevention the norm, care accessible, and insurance delightful.
                 </p>
@@ -79,7 +79,7 @@ const About = () => {
                 <p>
           Those are the shared realities that define our humanity. Health touches every life, every family, every future. It's the foundation of life, happiness, and society.
                 </p>
-               <p>Great health unlocks our best life and our best work. When it's strong, our potential expands at home, at work, across families, teams, and society. When it's fragile, everything else becomes brittle. That simple truth is why we started Alan, and why we pour so much energy into it every single day.</p>
+               <p>Great health unlocks our best life and our best work. When it's strong, our potential expands at home, at work, across families, teams, and society. When it's fragile, everything else becomes brittle. That simple truth is why we started Lifesecure, and why we pour so much energy into it every single day.</p>
                <button className='btn btn-primary'>Our unique model</button>
               </div>
             </Col>
@@ -95,7 +95,7 @@ const About = () => {
               <p>
 Too often, people face a system that is complex, reactive, and anxiety‑inducing. They delay care because of forms, jargon, waiting lists, or stigma. Employers want to help, but fragmentation and friction get in the way.</p>
           
-          <p>At Alan we want to ensure people live in good health to 100 while helping employers feel proud, turning health benefits from a cost center into their most valuable investment.</p>
+          <p>At Lifesecure we want to ensure people live in good health to 100 while helping employers feel proud, turning health benefits from a cost center into their most valuable investment.</p>
             </Col>
           </Row>
         </Container>
@@ -108,7 +108,7 @@ Too often, people face a system that is complex, reactive, and anxiety‑inducin
               <div className="story-content">
                 <h2>Our model</h2>
                 <p>
-             At the heart of Alan is a bold idea: healthcare works best when it isn’t fragmented. Insurance, care access, and prevention shouldn’t live in silos. They should reinforce each other.
+             At the heart of Lifesecure is a bold idea: healthcare works best when it isn’t fragmented. Insurance, care access, and prevention shouldn’t live in silos. They should reinforce each other.
                 </p>
                 <p>
              That’s why we built the first truly integrated healthcare partner.
@@ -155,7 +155,7 @@ Our customers are companies of all sizes & industriessegments, consumers (retire
               <div className="story-content">
                 <h2>Health without gaps</h2>
                 <p>
-          With full-stack health insurance, instant reimbursements, smart healthcare, and human support at every step, Alan bridges payers, providers, and members for better care.
+          With full-stack health insurance, instant reimbursements, smart healthcare, and human support at every step, Lifesecure bridges payers, providers, and members for better care.
                 </p>
             
               </div>

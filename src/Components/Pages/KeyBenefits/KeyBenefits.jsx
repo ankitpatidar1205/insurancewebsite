@@ -5,25 +5,25 @@ import './KeyBenefits.css';
 const KeyBenefits = () => {
   const services = [
     {
-      image: 'https://6vvt7k9n.twic.pics/website-assets/alan-alan-website:74afe341c0e242b55ae2ba0f68ed7c5c0b5751ac/tpe-400aa87c8d132a40.png?twic=v1/cover=360x241',
+      image: 'https://6vvt7k9n.twic.pics/website-assets/Lifesecure-Lifesecure-website:74afe341c0e242b55ae2ba0f68ed7c5c0b5751ac/tpe-400aa87c8d132a40.png?twic=v1/cover=360x241',
       title: 'Startups & Very Small Businesses',
       subtitle: '5 people or less',
       description: 'Simplified setup process for small teams just getting started.'
     },
     {
-      image: 'https://6vvt7k9n.twic.pics/website-assets/alan-alan-website:74afe341c0e242b55ae2ba0f68ed7c5c0b5751ac/pme-3c6d8854de163d86.png?twic=v1/cover=360x241',
+      image: 'https://6vvt7k9n.twic.pics/website-assets/Lifesecure-Lifesecure-website:74afe341c0e242b55ae2ba0f68ed7c5c0b5751ac/pme-3c6d8854de163d86.png?twic=v1/cover=360x241',
       title: 'Small and medium-sized enterprises',
       subtitle: '6 - 100 people',
       description: 'Cost-effective solutions with comprehensive employee benefits.'
     },
     {
-      image: 'https://6vvt7k9n.twic.pics/website-assets/alan-alan-website:74afe341c0e242b55ae2ba0f68ed7c5c0b5751ac/large-enterprise-2df75ddc7375c6ea.png?twic=v1/cover=360x241',
+      image: 'https://6vvt7k9n.twic.pics/website-assets/Lifesecure-Lifesecure-website:74afe341c0e242b55ae2ba0f68ed7c5c0b5751ac/large-enterprise-2df75ddc7375c6ea.png?twic=v1/cover=360x241',
       title: 'Key Accounts',
       subtitle: 'Hundreds or thousands of employees',
       description: 'Integrated model with customized team solutions.'
     },
     {
-      image: 'https://6vvt7k9n.twic.pics/website-assets/alan-alan-website:74afe341c0e242b55ae2ba0f68ed7c5c0b5751ac/tns-54f05f7e7f9c2dd9.png?twic=v1/cover=360x241',
+      image: 'https://6vvt7k9n.twic.pics/website-assets/Lifesecure-Lifesecure-website:74afe341c0e242b55ae2ba0f68ed7c5c0b5751ac/tns-54f05f7e7f9c2dd9.png?twic=v1/cover=360x241',
       title: 'Self-employed workers',
       subtitle: 'Freelancers, etc.',
       description: 'Targeted services for independent professionals.'
@@ -35,7 +35,7 @@ const KeyBenefits = () => {
      
         <div className="benefits-header">
           <h2 className="sections-title">Find the solution designed for you</h2>
-          <p className="sections-subtitle">Alan supports freelancers and businesses of all sizes and sectors so that they are never alone again when it comes to their health.</p>
+          <p className="sections-subtitle">Lifesecure supports freelancers and businesses of all sizes and sectors so that they are never alone again when it comes to their health.</p>
         </div>
         <Row className="services-grid">
           {services.map((service, index) => (

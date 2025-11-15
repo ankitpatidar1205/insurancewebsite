@@ -23,12 +23,12 @@
   align-items: center;
 }
 
-.alan-logo svg {
+.Lifesecure-logo svg {
   color: #2d3436;
   transition: color 0.3s ease;
 }
 
-.alan-logo:hover svg {
+.Lifesecure-logo:hover svg {
   color: #5B66F5;
 }
 
@@ -315,8 +315,8 @@
   line-height: 1.5;
 }
 
-/* WHY ALAN DROPDOWN */
-.why-alan-dropdown {
+/* WHY Lifesecure DROPDOWN */
+.why-Lifesecure-dropdown {
   width: 950px;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -538,7 +538,7 @@
   box-shadow: 0 4px 12px rgba(91, 102, 245, 0.3);
 }
 
-/* ABOUT ALAN DROPDOWN */
+/* ABOUT Lifesecure DROPDOWN */
 .about-dropdown {
   width: 850px;
   display: grid;
@@ -728,7 +728,7 @@
     width: 800px;
   }
 
-  .why-alan-dropdown,
+  .why-Lifesecure-dropdown,
   .resources-dropdown {
     width: 850px;
   }

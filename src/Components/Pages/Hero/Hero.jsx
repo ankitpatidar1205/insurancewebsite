@@ -10,7 +10,7 @@ const Hero = () => {
         <div className="hero-video-section">
           <video autoPlay loop muted playsInline className="hero-video">
             <source
-              src="https://ik.imagekit.io/8x6rwnonn/fr_homepage_modal_video.mp4?updatedAt=1762893173607"
+              src="https://www.pexels.com/download/video/8439137/"
               type="video/mp4"
             />
             Your browser does not support the video tag.
@@ -34,7 +34,7 @@ const Hero = () => {
           </div>
           <div className="video-link">
             <a href="#" className="video-text">
-              Learn all about Alan in video
+              Learn all about Lifesecure in video
               <span className="play-icon ms-2"></span>
             </a>
           </div>

@@ -14,7 +14,7 @@ const HealthcareSystem = () => {
             </h2>
             <p className="subtext">
               86% of employees expect their company to act for their well-being
-              (Alan x Harris Barometer, 2023)
+              (Lifesecure x Harris Barometer, 2023)
             </p>
 
             <p className="highlight-text">

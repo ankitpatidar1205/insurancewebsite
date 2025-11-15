@@ -11,13 +11,13 @@ const BeforeAfter = () => {
           className={`switch-btn ${activeTab === "before" ? "active" : ""}`}
           onClick={() => setActiveTab("before")}
         >
-          Before Alan
+          Before Lifesecure
         </button>
         <button
           className={`switch-btn ${activeTab === "after" ? "active" : ""}`}
           onClick={() => setActiveTab("after")}
         >
-          With Alan
+          With Lifesecure
         </button>
       </div>
 
@@ -88,7 +88,7 @@ const BeforeAfter = () => {
         <div className="cards-grid fade-in">
           <div className="card cream">
             <h3>70%</h3>
-            <p>Members who had worked on their mental health with Alan had never done so before</p>
+            <p>Members who had worked on their mental health with Lifesecure had never done so before</p>
           </div>
 
           <div className="card img-card">
@@ -97,7 +97,7 @@ const BeforeAfter = () => {
               alt="smiling team"
             />
             <div className="img-caption light-caption">
-              <p>"With Alan, it's a bit like having a doctor in the family."</p>
+              <p>"With Lifesecure, it's a bit like having a doctor in the family."</p>
               <p className="caption-author">Laurie, a young mother working in tech</p>
             </div>
           </div>
@@ -122,14 +122,14 @@ const BeforeAfter = () => {
               alt="office worker"
             />
             <div className="img-caption light-caption">
-              <p>"The fact that the dialogue takes place directly between Alan and the employee means that HR is no longer caught in the middle. This frees up invaluable time for us."</p>
+              <p>"The fact that the dialogue takes place directly between Lifesecure and the employee means that HR is no longer caught in the middle. This frees up invaluable time for us."</p>
               <p className="caption-author">Cécilia Barontini, HR and CSR Director of Olympique de Marseille</p>
             </div>
           </div>
 
           <div className="card cream">
             <h3>24 hours</h3>
-            <p>This is the average wait time to get a response from a dermatologist at Clinique Alan via chat.</p>
+            <p>This is the average wait time to get a response from a dermatologist at Clinique Lifesecure via chat.</p>
           </div>
 
           <div className="card img-card">
