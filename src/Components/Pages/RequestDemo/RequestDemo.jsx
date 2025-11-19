@@ -37,7 +37,7 @@ const RequestDemo = () => {
 
             <img
               className="main-img"
-              src="https://Lifesecure.com/website-assets/Lifesecure-Lifesecure-website:dfb2b4dc96c8394b8b4d7c0e65d7722ebbca1096/contact-person-with-phone-f97eae74af8383d1.webp"
+              src="https://i.postimg.cc/SRn11ZLf/contact-person-with-phone-f97eae74af8383d1.webp"
               alt="person"
             />
 

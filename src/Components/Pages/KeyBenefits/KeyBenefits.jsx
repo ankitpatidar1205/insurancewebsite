@@ -5,25 +5,25 @@ import './KeyBenefits.css';
 const KeyBenefits = () => {
   const services = [
     {
-      image: 'https://6vvt7k9n.twic.pics/website-assets/Lifesecure-Lifesecure-website:74afe341c0e242b55ae2ba0f68ed7c5c0b5751ac/tpe-400aa87c8d132a40.png?twic=v1/cover=360x241',
+      image: 'https://i.postimg.cc/hvfNFZrQ/tpe-400aa87c8d132a40.webp',
       title: 'Startups & Very Small Businesses',
       subtitle: '5 people or less',
       description: 'Simplified setup process for small teams just getting started.'
     },
     {
-      image: 'https://6vvt7k9n.twic.pics/website-assets/Lifesecure-Lifesecure-website:74afe341c0e242b55ae2ba0f68ed7c5c0b5751ac/pme-3c6d8854de163d86.png?twic=v1/cover=360x241',
+      image: 'https://i.postimg.cc/2S4MfZ4Z/pme-3c6d8854de163d86.webp',
       title: 'Small and medium-sized enterprises',
       subtitle: '6 - 100 people',
       description: 'Cost-effective solutions with comprehensive employee benefits.'
     },
     {
-      image: 'https://6vvt7k9n.twic.pics/website-assets/Lifesecure-Lifesecure-website:74afe341c0e242b55ae2ba0f68ed7c5c0b5751ac/large-enterprise-2df75ddc7375c6ea.png?twic=v1/cover=360x241',
+      image: 'https://i.postimg.cc/Y9SsgDTb/large-enterprise-2df75ddc7375c6ea.webp',
       title: 'Key Accounts',
       subtitle: 'Hundreds or thousands of employees',
       description: 'Integrated model with customized team solutions.'
     },
     {
-      image: 'https://6vvt7k9n.twic.pics/website-assets/Lifesecure-Lifesecure-website:74afe341c0e242b55ae2ba0f68ed7c5c0b5751ac/tns-54f05f7e7f9c2dd9.png?twic=v1/cover=360x241',
+      image: 'https://i.postimg.cc/Kzss5r2G/tns-54f05f7e7f9c2dd9.webp',
       title: 'Self-employed workers',
       subtitle: 'Freelancers, etc.',
       description: 'Targeted services for independent professionals.'

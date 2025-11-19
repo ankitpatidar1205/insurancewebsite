@@ -1,7 +1,7 @@
 /* ===== Section Layout ===== */
 .healthcare-wellbeing {
   background: #fff;
-  padding: 20px;
+  padding: 60px 0;
   font-family: "Inter", sans-serif;
   color: #000;
 }
@@ -16,12 +16,14 @@
   color: #000;
   margin-bottom: 20px;
   line-height: 1.3;
+  padding: 20px;
 }
 
 .subtext {
   font-size: 1.05rem;
   color: #555;
   margin-bottom: 25px;
+  padding: 20px;
 }
 
 .highlight-text {
@@ -29,6 +31,7 @@
   font-weight: 500;
   color: #000;
   margin-bottom: 40px;
+  padding: 20px;
 }
 
 /* ===== Benefits Grid ===== */
@@ -36,6 +39,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 25px;
+  padding: 20px;
 }
 
 .benefit-box {
@@ -136,34 +140,6 @@
   color: #dcdcdc;
 }
 
-/* ===== Responsive ===== */
-@media (max-width: 991px) {
-  .testimonial-box {
-    height: auto;
-    min-height: 260px;
-    background-position: top;
-  }
-
-  .testimonial-overlay {
-    max-width: 100%;
-    padding: 30px;
-    background: rgba(0, 0, 0, 0.55);
-    border-radius: 16px;
-    margin: 20px;
-  }
-}
-
-@media (max-width: 576px) {
-  .testimonial-overlay p {
-    font-size: 1rem;
-  }
-
-  .testimonial-overlay span {
-    font-size: 0.8rem;
-  }
-}
-
-
 .source {
   margin-top: 20px;
   font-size: 0.9rem;
@@ -183,32 +159,192 @@
 }
 
 /* ===== Responsive ===== */
-@media (max-width: 991px) {
-  .benefits-grid {
-    grid-template-columns: 1fr;
-  }
 
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .healthcare-wellbeing {
+    padding: 80px 0;
+  }
+}
+
+/* Medium devices (tablets, 768px to 991px) */
+@media (max-width: 991px) {
+  .healthcare-wellbeing {
+    padding: 50px 0;
+  }
+  
   .text-section {
     padding-right: 0;
+    margin-bottom: 40px;
   }
-
+  
+  .headline {
+    font-size: 2.2rem;
+  }
+  
+  .benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
   .testimonial-box {
-    flex-direction: column;
+    height: auto;
+    min-height: 260px;
+    background-position: top;
   }
 
-  .testimonial-box img {
-    width: 100%;
-    border-radius: 16px 16px 0 0;
+  .testimonial-overlay {
+    max-width: 100%;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.55);
+    border-radius: 16px;
+    margin: 20px;
   }
-
-  .testimonial-text {
-    width: 100%;
-  }
-
+  
   .illustration-side {
-    margin-top: 40px;
+    margin-top: 30px;
   }
+  
+  .illustration-img {
+    width: 90%;
+  }
+}
 
+/* Small devices (landscape phones, 576px to 767px) */
+@media (max-width: 767px) {
+  .healthcare-wellbeing {
+    padding: 40px 0;
+  }
+  
+  .text-section {
+    padding: 0 15px;
+    margin-bottom: 30px;
+  }
+  
+  .headline {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+  
+  .subtext {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+  
+  .highlight-text {
+    font-size: 1.05rem;
+    margin-bottom: 30px;
+  }
+  
+  .benefits-grid {
+    gap: 15px;
+  }
+  
+  .benefit-box {
+    padding: 18px;
+  }
+  
+  .benefit-box h3 {
+    font-size: 1.8rem;
+  }
+  
+  .testimonial-box {
+    min-height: 220px;
+  }
+  
+  .testimonial-overlay {
+    padding: 25px;
+    margin: 15px;
+  }
+  
+  .testimonial-overlay p {
+    font-size: 1.05rem;
+  }
+  
+  .source {
+    margin-top: 15px;
+    font-size: 0.85rem;
+  }
+  
+  .illustration-side {
+    margin-top: 20px;
+  }
+  
+  .illustration-img {
+    width: 95%;
+  }
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575px) {
+  .healthcare-wellbeing {
+    padding: 30px 0;
+  }
+  
+  .text-section {
+    padding: 0 15px;
+    margin-bottom: 25px;
+  }
+  
+  .headline {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+  
+  .subtext {
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+  }
+  
+  .highlight-text {
+    font-size: 1rem;
+    margin-bottom: 25px;
+  }
+  
+  .benefits-grid {
+    gap: 12px;
+  }
+  
+  .benefit-box {
+    padding: 15px;
+  }
+  
+  .benefit-header {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+  }
+  
+  .benefit-box h3 {
+    font-size: 1.6rem;
+    margin-bottom: 6px;
+  }
+  
+  .benefit-box p {
+    font-size: 0.9rem;
+  }
+  
+  .testimonial-box {
+    min-height: 200px;
+  }
+  
+  .testimonial-overlay {
+    padding: 20px;
+    margin: 10px;
+  }
+  
+  .testimonial-overlay p {
+    font-size: 1rem;
+  }
+  
+  .source {
+    margin-top: 10px;
+    font-size: 0.8rem;
+  }
+  
+  .illustration-side {
+    margin-top: 15px;
+  }
+  
   .illustration-img {
     width: 100%;
   }

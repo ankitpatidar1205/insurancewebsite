@@ -1,6 +1,7 @@
 import React from 'react';
 
 import './MarmotCTA.css'; // Custom CSS file for exact styling
+import { Link } from 'react-router-dom';
 
 const MarmotCTA = () => {
   return (
@@ -13,12 +14,17 @@ const MarmotCTA = () => {
           92% of our members report being satisfied or very satisfied with Lifesecure (May 2025).
         </p>
         <div className="button-group">
+          <Link to="/dispatch">
           <button className="btn btn-primary btn-quote">
             Get my quote in 2 minutes
           </button>
+          </Link>
+
+          <Link to="/request-demo">
           <button className="btn btn-outline-primary btn-demo">
             Request a demo
           </button>
+          </Link>
         </div>
       </div>
       <div className="marmot-image">

@@ -98,10 +98,10 @@ const Footer = () => {
               <h5 className="footer-heading">Download our app</h5>
               <div className="app-buttons">
                 <a href="#" className="app-button">
-                  <img src="https://6vvt7k9n.twic.pics/website-assets/Lifesecure-Lifesecure-website:b7017ca19f9f16d229fc70ee738339bbd45f1ccc/appstore-black-fr-c546e5d819618556.png" alt="App Store" />
+                  <img src="https://6vvt7k9n.twic.pics/v1/quality=50/image:website-assets/alan-alan-website:dfb2b4dc96c8394b8b4d7c0e65d7722ebbca1096/appstore-black-fr-c546e5d819618556.png" alt="App Store" />
                 </a>
                 <a href="#" className="app-button">
-                  <img src="https://6vvt7k9n.twic.pics/website-assets/Lifesecure-Lifesecure-website:b7017ca19f9f16d229fc70ee738339bbd45f1ccc/playstore-black-fr-bb386b8bc9a858b8.png" alt="Google Play" />
+                  <img src="https://6vvt7k9n.twic.pics/website-assets/alan-alan-website:dfb2b4dc96c8394b8b4d7c0e65d7722ebbca1096/playstore-black-fr-bb386b8bc9a858b8.png" alt="Google Play" />
                 </a>
               </div>
             </div>

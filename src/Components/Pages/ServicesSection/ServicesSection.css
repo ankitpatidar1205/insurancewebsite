@@ -1,6 +1,6 @@
 /* ======== Section ======== */
 .healthcare-section {
-  padding: 20px;
+  padding: 60px 0;
   background-color: #fff;
 }
 
@@ -8,9 +8,10 @@
   margin-bottom: 60px;
   text-align: left;
   max-width: 800px;
-  margin-left: auto;
+  margin-left: 0;
   margin-right: auto;
- 
+  padding: 0 20px;
+  padding: 20px;
 }
 
 .sectionss-title {
@@ -19,7 +20,7 @@
   color: #000;
   margin-bottom: 20px;
   line-height: 1.2;
-
+  padding: 20px;
 }
 
 .section-subtitle {
@@ -27,7 +28,7 @@
   color: #000;
   opacity: 0.8;
   line-height: 1.6;
-   
+  padding: 20px;
 }
 
 /* ======== Cards ======== */
@@ -38,7 +39,8 @@
   overflow: visible;
   box-shadow: none;
   transition: transform 0.3s ease;
- 
+  margin-bottom: 30px;
+  padding: 20px;
 }
 
 .service-card:hover {
@@ -127,98 +129,202 @@
 
 /* ======== Responsive ======== */
 
-/* Small phones (portrait) */
-@media (max-width: 480px) {
-  .sectionss-title {
-    font-size: 2rem;
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .healthcare-section {
+    padding: 80px 0;
   }
-
-  .section-subtitle {
-    font-size: 1rem;
-  }
-
-  .service-card {
-    padding-top: 50px;
-  }
-
-  .overlay-badge {
-    padding: 12px 16px;
-    font-size: 0.85rem;
-    max-width: 85%;
-  }
-
-  .overlay-heading {
-    font-size: 1rem;
-  }
-
-  .overlay-badge.top-left,
-  .overlay-badge.bottom-left {
-    left: -15px;
-  }
-
-  .overlay-badge.top-right {
-    top: -25px;
-    right: -30px;
-  }
-
-  .overlay-badge.bottom-left {
-    bottom: 90px;
-  }
-
-  .service-image {
-    height: 180px;
+  
+  .services-grid {
+    padding: 0 15px;
   }
 }
 
-/* Phones (landscape) & small tablets */
-@media (min-width: 481px) and (max-width: 767px) {
+/* Medium devices (tablets, 768px to 991px) */
+@media (max-width: 991px) {
+  .healthcare-section {
+    padding: 50px 0;
+  }
+  
+  .sections-header {
+    padding: 0 15px;
+    margin-bottom: 40px;
+  }
+  
   .sectionss-title {
     font-size: 2.2rem;
   }
-
+  
+  .services-grid {
+    padding: 0 15px;
+  }
+  
+  .service-card {
+    margin-bottom: 25px;
+  }
+  
   .overlay-badge {
-    padding: 15px 18px;
-    max-width: 90%;
+    max-width: 280px;
+    padding: 16px 20px;
   }
-
-  .overlay-badge.top-right {
-    right: -35px;
-    top: -30px;
-  }
-
+  
   .overlay-badge.top-left {
+    top: -20px;
     left: -20px;
   }
-
+  
   .overlay-badge.bottom-left {
-    bottom: 95px;
-    left: -18px;
+    bottom: 90px;
+    left: -15px;
   }
-
+  
+  .overlay-badge.top-right {
+    top: -30px;
+    right: -45px;
+  }
+  
   .service-image {
     height: 200px;
   }
 }
 
-/* Tablets */
-@media (min-width: 768px) and (max-width: 991px) {
-  .overlay-badge.top-right {
-    right: -45px;
+/* Small devices (landscape phones, 576px to 767px) */
+@media (max-width: 767px) {
+  .healthcare-section {
+    padding: 40px 0;
   }
-
+  
+  .sections-header {
+    padding: 0 15px;
+    margin-bottom: 30px;
+  }
+  
+  .sectionss-title {
+    font-size: 2rem;
+    margin-bottom: 15px;
+  }
+  
+  .section-subtitle {
+    font-size: 1rem;
+  }
+  
+  .services-grid {
+    padding: 0 15px;
+  }
+  
+  .service-card {
+    margin-bottom: 20px;
+  }
+  
+  .overlay-badge {
+    max-width: 250px;
+    padding: 14px 18px;
+    font-size: 0.9rem;
+  }
+  
+  .overlay-heading {
+    font-size: 1.05rem;
+  }
+  
+  .overlay-badge.top-left {
+    top: -15px;
+    left: -15px;
+  }
+  
   .overlay-badge.bottom-left {
-    bottom: 100px;
+    bottom: 85px;
+    left: -12px;
   }
-
+  
+  .overlay-badge.top-right {
+    top: -25px;
+    right: -35px;
+  }
+  
   .service-image {
-    height: 210px;
+    height: 180px;
+  }
+  
+  .service-content {
+    margin-top: 20px;
+  }
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575px) {
+  .healthcare-section {
+    padding: 30px 0;
+  }
+  
+  .sections-header {
+    padding: 0 15px;
+    margin-bottom: 25px;
+  }
+  
+  .sectionss-title {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+  }
+  
+  .section-subtitle {
+    font-size: 0.95rem;
+  }
+  
+  .services-grid {
+    padding: 0 10px;
+  }
+  
+  .service-card {
+    margin-bottom: 20px;
+  }
+  
+  .overlay-badge {
+    max-width: 85%;
+    padding: 12px 15px;
+    font-size: 0.85rem;
+  }
+  
+  .overlay-heading {
+    font-size: 1rem;
+  }
+  
+  .overlay-badge.top-left {
+    top: -12px;
+    left: -12px;
+  }
+  
+  .overlay-badge.bottom-left {
+    bottom: 80px;
+    left: -10px;
+  }
+  
+  .overlay-badge.top-right {
+    top: -20px;
+    right: -25px;
+  }
+  
+  .service-image {
+    height: 160px;
+  }
+  
+  .service-content {
+    margin-top: 15px;
+    padding-left: 5px;
+  }
+  
+  .service-title {
+    font-size: 1.05rem;
+  }
+  
+  .service-subtitle {
+    font-size: 0.85rem;
   }
 }
 
 /* Ensure consistent grid spacing */
 @media (max-width: 767px) {
   .services-grid > [class*="col-"] {
-    padding-left: 8px;
-    padding-right: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
