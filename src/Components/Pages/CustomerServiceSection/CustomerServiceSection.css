@@ -8,8 +8,7 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   max-width: 100%;
   width: 90%;
-  margin-left: 70px;
-  margin-bottom: 50px;
+  margin: 50px auto;
 }
 
 .marmot-container {
@@ -150,13 +149,54 @@
 }
 
 /* Responsive design - updated for the container changes */
+@media (min-width: 1200px) {
+  .customer-service-card {
+    width: 85%;
+  }
+}
+
+@media (max-width: 991px) {
+  .customer-service-card {
+    width: 95%;
+    margin: 40px auto;
+  }
+  
+  .content-container {
+    padding: 35px 25px;
+  }
+  
+  .main-title {
+    font-size: 22px;
+  }
+  
+  /* Adjust tag positions */
+  .tag-effective {
+    top: 15px;
+    left: 100px;
+  }
+  
+  .tag-pedagogue {
+    top: 80px;
+    left: 60px;
+  }
+  
+  .tag-clear {
+    top: 150px;
+    left: 110px;
+  }
+  
+  .tag-kind {
+    bottom: 25px;
+    right: 150px;
+  }
+}
+
 @media (max-width: 768px) {
   .customer-service-card {
     flex-direction: column;
     border-radius: 20px;
     width: 95%;
-    margin-left: 15px;
-    margin-bottom: 30px;
+    margin: 30px auto;
   }
   
   .marmot-container {
@@ -212,12 +252,11 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 575px) {
   .customer-service-card {
     border-radius: 15px;
     width: 98%;
-    margin-left: 10px;
-    margin-bottom: 20px;
+    margin: 20px auto;
   }
   
   .marmot-container {

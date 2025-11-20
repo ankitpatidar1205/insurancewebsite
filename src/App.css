@@ -1,8 +1,11 @@
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif !important;
   overflow-x: hidden;
 }
+*{
+  font-family: "Poppins", sans-serif !important;
 
+}
 
 /* Root Variables - Theme Configuration */
 :root {

@@ -34,7 +34,7 @@ const Slider = () => {
 
         {/* ✅ Add this bottom line text */}
         <p className="logo-slider-text">
-          Over 710,000 members and 33,000 companies take care of their health with Alan
+          Over 710,000 members and 33,000 companies take care of their health with Lifesecure
         </p>
    
     </section>

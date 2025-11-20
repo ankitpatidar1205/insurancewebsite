@@ -23,7 +23,7 @@ const ServicesSection = () => {
     {
       image: 'https://6vvt7k9n.twic.pics/prismic/aGz2F0MqNJQqHqz8_Data.png?rect=0%2C2%2C384%2C280&w=1952&h=1424&auto=format&twic=v1/cover=290x212',
       title: 'Inaction is costly for businesses',
-      subtitle: 'Alan x Pollfish study, May 2025',
+      subtitle: 'Lifesecure x Pollfish study, May 2025',
       overlayHeading: '€27,000 per employee / year',
       overlayText: 'lost to absenteeism and decreased productivity.',
       position: 'top-right'

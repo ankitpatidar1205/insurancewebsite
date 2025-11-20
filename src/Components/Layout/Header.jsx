@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Container, Nav, Navbar, Button } from 'react-bootstrap';
 import { useLocation, Link } from 'react-router-dom';
 import './Header.css';
@@ -10,6 +10,8 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [dropdownMode, setDropdownMode] = useState('hover');
+  const [activeMobileDropdown, setActiveMobileDropdown] = useState(null);
+  const dropdownRef = useRef(null);
 
   useEffect(() => {
     setActivePath(location.pathname);
@@ -25,7 +27,7 @@ const Header = () => {
     };
     
     const handleClickOutside = (event) => {
-      if (dropdownMode === 'click' && !event.target.closest('.nav-item-wrapper')) {
+      if (dropdownMode === 'click' && dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setActiveDropdown(null);
         setDropdownMode('hover');
       }
@@ -42,7 +44,7 @@ const Header = () => {
 
   const handleNavClick = (path, e) => {
     e.preventDefault();
-    if (activeDropdown === path) {
+    if (activeDropdown === path && dropdownMode === 'click') {
       setActiveDropdown(null);
       setDropdownMode('hover');
     } else {
@@ -63,6 +65,162 @@ const Header = () => {
     }
   };
 
+  const handleMobileNavClick = (path) => {
+    if (activeMobileDropdown === path) {
+      setActiveMobileDropdown(null);
+    } else {
+      setActiveMobileDropdown(path);
+    }
+  };
+
+  const renderMobileDropdown = (path) => {
+    const content = dropdownContent[path];
+    
+    switch(path) {
+      case '/offers':
+        return (
+          <div className="mobile-dropdown-content">
+            <div className="mobile-dropdown-header">
+              <h4>{content.title}</h4>
+              <p>{content.subtitle}</p>
+            </div>
+            
+            {content.columns.map((column, colIdx) => (
+              <div key={colIdx} className="mobile-dropdown-column">
+                {column.sections.map((section, secIdx) => (
+                  <div key={secIdx} className="mobile-dropdown-section">
+                    <h5>{section.heading}</h5>
+                    <div className="mobile-dropdown-items">
+                      {section.items.map((item, itemIdx) => (
+                        <div key={itemIdx} className="mobile-dropdown-item">
+                          <span className="mobile-item-icon">{item.icon}</span>
+                          <div>
+                            <h6>{item.title}</h6>
+                            <p>{item.description}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ))}
+            
+            <div className="mobile-bottom-card" style={{ backgroundColor: content.bottomCard.bgColor }}>
+              <h5>{content.bottomCard.title}</h5>
+              <p>{content.bottomCard.description}</p>
+            </div>
+          </div>
+        );
+        
+      case '/why-Lifesecure':
+        return (
+          <div className="mobile-dropdown-content">
+            <h4>{content.leftSection.heading}</h4>
+            
+            {content.leftSection.items.map((item, idx) => (
+              <div key={idx} className="mobile-benefit-item">
+                <div className="mobile-benefit-image">
+                  <img src={item.image} alt={item.title} />
+                </div>
+                <div className="mobile-benefit-content">
+                  <h5>{item.title}</h5>
+                  <p>{item.description}</p>
+                </div>
+              </div>
+            ))}
+            
+            <a href="#" className="mobile-link-more">{content.leftSection.link}</a>
+            
+            <div className="mobile-right-section" style={{ backgroundColor: content.rightSection.bgColor }}>
+              <h4>{content.rightSection.heading}</h4>
+              <h5>{content.rightSection.title}</h5>
+              <p>{content.rightSection.description}</p>
+              
+              <div className="mobile-section-buttons">
+                {content.rightSection.buttons.map((btn, idx) => (
+                  <button key={idx} className={btn.primary ? 'btn-primary' : 'btn-secondary'}>
+                    {btn.text}
+                  </button>
+                ))}
+              </div>
+              
+              <div className="mobile-section-image">
+                <img src={content.rightSection.image} alt="App" />
+              </div>
+            </div>
+          </div>
+        );
+        
+      case '/resources':
+        return (
+          <div className="mobile-dropdown-content">
+            {content.leftSidebar.map((section, secIdx) => (
+              <div key={secIdx} className="mobile-dropdown-section">
+                <h5>{section.heading}</h5>
+                <div className="mobile-dropdown-items">
+                  {section.items.map((item, itemIdx) => (
+                    <div key={itemIdx} className="mobile-dropdown-item">
+                      <span className="mobile-item-icon">{item.icon}</span>
+                      <div>
+                        <h6>{item.title}</h6>
+                        <p>{item.description}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+            
+            {content.rightCards.map((card, idx) => (
+              <div key={idx} className="mobile-resource-card" style={{ backgroundColor: card.bgColor, color: card.textColor || '#2d3436' }}>
+                <div className="mobile-card-image">
+                  <img src={card.image} alt="Guide" />
+                </div>
+                <h5>{card.title}</h5>
+                <p>{card.description}</p>
+                <button className="btn-download">{card.buttonText}</button>
+              </div>
+            ))}
+          </div>
+        );
+        
+      case '/about-Lifesecure':
+        return (
+          <div className="mobile-dropdown-content">
+            <div className="mobile-about-card" style={{ backgroundColor: content.leftCard.bgColor }}>
+              <h4>{content.leftCard.title}</h4>
+              <p>{content.leftCard.description}</p>
+              <button className="btn-learn-more">{content.leftCard.buttonText}</button>
+              <div className="mobile-about-image">
+                <img src={content.leftCard.image} alt="Team" />
+              </div>
+            </div>
+            
+            {content.rightSections.map((section, secIdx) => (
+              <div key={secIdx} className="mobile-dropdown-section">
+                <h5>{section.heading}</h5>
+                <div className="mobile-dropdown-items">
+                  {section.items.map((item, itemIdx) => (
+                    <div key={itemIdx} className="mobile-dropdown-item">
+                      <span className="mobile-item-icon">{item.icon}</span>
+                      <div>
+                        <h6>{item.title}</h6>
+                        <p>{item.description}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        );
+        
+      default:
+        return null;
+    }
+  };
+
   const dropdownContent = {
     '/offers': {
       title: 'Find the offer designed for you.',
@@ -78,37 +236,15 @@ const Header = () => {
             {
               heading: 'By company size',
               items: [
-                {
-                  icon: '👤',
-                  title: 'Self-employed workers (TNS)',
-                  description: 'Freelancers, business owners, etc.'
-                },
-                {
-                  icon: '👥',
-                  title: 'Start-ups and very small businesses',
-                  description: '1 to 5 employees'
-                },
-                {
-                  icon: '🏠',
-                  title: 'Small and medium-sized enterprises (SMEs)',
-                  description: '6 to 100 employees'
-                },
-                {
-                  icon: '🏢',
-                  title: 'Key accounts',
-                  description: 'From 100 to several thousand employees'
-                }
+                { icon: '👤', title: 'Self-employed workers (TNS)', description: 'Freelancers, business owners, etc.' },
+                { icon: '👥', title: 'Start-ups and very small businesses', description: '1 to 5 employees' },
+                { icon: '🏠', title: 'Small and medium-sized enterprises (SMEs)', description: '6 to 100 employees' },
+                { icon: '🏢', title: 'Key accounts', description: 'From 100 to several thousand employees' }
               ]
             },
             {
               heading: 'For individuals',
-              items: [
-                {
-                  icon: '☀️',
-                  title: 'Retirees',
-                  description: 'Enjoy comprehensive and preventative coverage'
-                }
-              ]
+              items: [{ icon: '☀️', title: 'Retirees', description: 'Enjoy comprehensive and preventative coverage' }]
             }
           ]
         },
@@ -117,41 +253,17 @@ const Header = () => {
             {
               heading: 'By sector of activity',
               items: [
-                {
-                  icon: '💻',
-                  title: 'Tech',
-                  description: 'Start-ups and scale-ups'
-                },
-                {
-                  icon: '☕',
-                  title: 'Hotels, cafes, restaurants',
-                  description: 'Franchisees or independent'
-                },
-                {
-                  icon: '🛍️',
-                  title: 'Shops and supermarkets',
-                  description: 'For small and large stores'
-                },
-                {
-                  icon: '🔧',
-                  title: 'Industrialists and trading companies',
-                  description: 'For SMEs and mid-sized companies with an industrial focus'
-                }
+                { icon: '💻', title: 'Tech', description: 'Start-ups and scale-ups' },
+                { icon: '☕', title: 'Hotels, cafes, restaurants', description: 'Franchisees or independent' },
+                { icon: '🛍️', title: 'Shops and supermarkets', description: 'For small and large stores' },
+                { icon: '🔧', title: 'Industrialists and trading companies', description: 'For SMEs and mid-sized companies with an industrial focus' }
               ]
             },
             {
               heading: 'For the public sector',
               items: [
-                {
-                  icon: '🚶',
-                  title: 'Local government employees',
-                  description: 'Offers eligible for local authority participation'
-                },
-                {
-                  icon: '🏛️',
-                  title: 'Public institutions',
-                  description: 'For structures in the public domain'
-                }
+                { icon: '🚶', title: 'Local government employees', description: 'Offers eligible for local authority participation' },
+                { icon: '🏛️', title: 'Public institutions', description: 'For structures in the public domain' }
               ]
             }
           ]
@@ -159,28 +271,29 @@ const Header = () => {
       ],
       bottomCard: {
         title: 'Chartered accountants?',
-        description: 'Become an Alan partner and offer your customers the best experience in the industry.',
+        description: 'Become an Lifesecure partner and offer your customers the best experience in the industry.',
         bgColor: '#FFF4E6'
       }
     },
-    '/why-alan': {
+
+    '/why-Lifesecure': {
       title: null,
       layout: 'two-section',
       leftSection: {
-        heading: 'The benefits of Alan for your business',
+        heading: 'The benefits of Lifesecure for your business',
         items: [
           {
-            imagePlaceholder: true,
-            title: 'Get your first employees covered in 5 minutes with Alan',
+            image: "https://i.postimg.cc/hGXyMZSX/Reasons-to-buy-a-life-insurance-policy.jpg",
+            title: 'Get your first employees covered in 5 minutes with Lifesecure',
             description: 'When conformity rhymes with simplicity'
           },
           {
-            imagePlaceholder: true,
+            image: "https://i.postimg.cc/qMBGjDL5/Keseimbangan-Kemampuan-Berbelanja-Purchasing-Power-Parity.jpg",
             title: 'Preserve the purchasing power of your employees',
             description: 'More care, less out-of-pocket expense.'
           },
           {
-            imagePlaceholder: true,
+            image: "https://images.unsplash.com/photo-1552581234-26160f608093?auto=format&fit=crop&w=300&q=60",
             title: 'Put health at the heart of your HR strategy',
             description: 'Concrete actions for the well-being of your employees'
           }
@@ -196,9 +309,10 @@ const Header = () => {
           { text: 'Discover the app', primary: true },
           { text: 'Discover the new products', primary: false }
         ],
-        imagePlaceholder: true
+        image: "https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=400&q=60"
       }
     },
+
     '/resources': {
       title: null,
       layout: 'sidebar',
@@ -206,41 +320,17 @@ const Header = () => {
         {
           heading: 'Themes',
           items: [
-            {
-              icon: '🏢',
-              title: 'The company health insurance plan',
-              description: 'Company health insurance: all the concepts you need to understand'
-            },
-            {
-              icon: '☕',
-              title: 'Health insurance for self-employed workers',
-              description: 'Self-employed health insurance: the complete guide to choosing the right one!'
-            },
-            {
-              icon: '•••',
-              title: 'All our themes',
-              description: 'Health insurance, supplementary insurance: everything you need to know'
-            }
+            { icon: '🏢', title: 'The company health insurance plan', description: 'Company health insurance: all the concepts you need to understand' },
+            { icon: '☕', title: 'Health insurance for self-employed workers', description: 'Self-employed health insurance: the complete guide to choosing the right one!' },
+            { icon: '•••', title: 'All our themes', description: 'Health insurance, supplementary insurance: everything you need to know' }
           ]
         },
         {
           heading: 'Resources',
           items: [
-            {
-              icon: '📖',
-              title: 'Guides',
-              description: 'Our guides for HR professionals, managers and freelancers'
-            },
-            {
-              icon: '✉️',
-              title: 'Tools',
-              description: 'Letter templates for terminating a contract, etc.'
-            },
-            {
-              icon: '💬',
-              title: 'Testimonials',
-              description: 'What our members & customers say about us'
-            }
+            { icon: '📖', title: 'Guides', description: 'Our guides for HR professionals, managers and freelancers' },
+            { icon: '✉️', title: 'Tools', description: 'Letter templates for terminating a contract, etc.' },
+            { icon: '💬', title: 'Testimonials', description: 'What our members & customers say about us' }
           ]
         }
       ],
@@ -250,7 +340,7 @@ const Header = () => {
           description: 'The guide to integrating AI into your HR teams',
           buttonText: 'Download',
           bgColor: '#F8E8F4',
-          imagePlaceholder: true
+          image: "https://images.unsplash.com/photo-1560264418-c4445382edbc?auto=format&fit=crop&w=350&q=60"
         },
         {
           title: 'Download the health insurance guide',
@@ -258,11 +348,12 @@ const Header = () => {
           buttonText: 'Download',
           bgColor: '#1E5651',
           textColor: '#FFFFFF',
-          imagePlaceholder: true
+          image: "https://i.postimg.cc/qBwshXT6/Health-Insurance-Guide.jpg"
         }
       ]
     },
-    '/about-alan': {
+
+    '/about-Lifesecure': {
       title: null,
       layout: 'about',
       leftCard: {
@@ -270,42 +361,22 @@ const Header = () => {
         description: 'Reimagine healthcare with ambitious and caring international talent.',
         buttonText: 'Learn more',
         bgColor: '#F8E8F4',
-        imagePlaceholder: true
+        image: "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=350&q=60"
       },
       rightSections: [
         {
-          heading: 'About Alan',
+          heading: 'About Lifesecure',
           items: [
-            {
-              icon: '🎯',
-              title: 'Our business model',
-              description: 'The principles of our economic model'
-            },
-            {
-              icon: '💪',
-              title: 'Our financial strength',
-              description: 'Our finances, explained simply'
-            },
-            {
-              icon: '📰',
-              title: 'Our news',
-              description: 'New features, letters to our investors, etc.'
-            },
-            {
-              icon: '🔧',
-              title: 'Tech at Alan',
-              description: "Learn more about Alan's tech culture"
-            }
+            { icon: '🎯', title: 'Our business model', description: 'The principles of our economic model' },
+            { icon: '💪', title: 'Our financial strength', description: 'Our finances, explained simply' },
+            { icon: '📰', title: 'Our news', description: 'New features, letters to our investors, etc.' },
+            { icon: '🔧', title: 'Tech at Lifesecure', description: "Learn more about Lifesecure's tech culture" }
           ]
         },
         {
-          heading: 'Discover Alan',
+          heading: 'Discover Lifesecure',
           items: [
-            {
-              icon: '🌍',
-              title: 'About us',
-              description: 'Everything you need to know about the company (in English 😉)'
-            }
+            { icon: '🌍', title: 'About us', description: 'Everything you need to know about the company (in English 😉)' }
           ]
         }
       ]
@@ -317,18 +388,14 @@ const Header = () => {
       <Container>
         <Navbar expand="lg" expanded={mobileMenuOpen} onToggle={setMobileMenuOpen}>
           <Navbar.Brand as={Link} to="/" className="brand-container">
-            <a href="/" className="alan-logo">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 681 142"
-                width="100px"
-                height="28px"
-                aria-label="Alan"
-              >
-                <g fill="currentColor" fillRule="evenodd">
-                  <path d="M58.228 25.335C55.406 8.675 40.153-2.477 24.224.473 12.468 2.651 3.593 11.915.878 23.316q-.007.035-.017.07-.148.628-.27 1.264l-.03.149q-.116.618-.207 1.243-.014.078-.025.155a32 32 0 0 0-.17 1.402l-.01.098q-.061.635-.093 1.272-.013.204-.021.408c-.015.335-.02.672-.025 1.01 0 .133-.01.265-.01.4 0 .115.007.229.01.344q.003.27.012.54c.045 1.444.184 2.902.431 4.367 1.611 9.506 10.284 15.847 19.375 14.164 3.281-.609 6.17-2.18 8.444-4.387a6.47 6.47 0 0 1 7.095-1.28 15.96 15.96 0 0 0 9.317 1.061c8.726-1.616 14.658-10.04 13.696-19.122a19 19 0 0 0-.152-1.14m70.276-20.9c-32.175 0-52.163 11.366-52.163 29.659 0 21.327 20.476 50.44 52.163 50.44 31.2 0 52.163-29.44 52.163-50.44 0-18.571-19.5-29.659-52.163-29.659m128.462 24.943q-.008-.212-.02-.422-.034-.63-.093-1.258l-.01-.098q-.07-.705-.17-1.402l-.025-.155a31 31 0 0 0-.508-2.655l-.017-.071C253.408 11.915 244.533 2.65 232.777.473c-15.929-2.95-31.182 8.202-34.004 24.862a18 18 0 0 0-.152 1.139c-.963 9.083 4.97 17.506 13.696 19.122 3.262.605 6.47.176 9.318-1.062a6.47 6.47 0 0 1 7.094 1.28c2.275 2.208 5.163 3.78 8.445 4.388 9.09 1.683 17.764-4.658 19.374-14.164.247-1.465.385-2.923.431-4.367q.01-.27.014-.54c0-.115.007-.23.007-.345 0-.134-.007-.266-.01-.4q-.003-.506-.024-1.01m-82.21 71.979c-8.447-3.802-19.804 2.69-29.398 4.263-5.65.968-11.246 1.47-16.854 1.527a106.4 106.4 0 0 1-16.855-1.527c-9.595-1.573-20.95-8.062-29.399-4.263-4.283 1.943-5.603 6.681-3.863 12.339 1.197 3.866 3.507 7.436 6.443 10.31 6.1 6.004 13.902 10.547 21.086 13.421 7.313 2.947 14.944 4.52 22.588 4.575 7.645-.054 15.274-1.626 22.588-4.575 7.183-2.87 14.986-7.421 21.087-13.422 2.933-2.875 5.246-6.445 6.442-10.31 1.74-5.652.42-10.4-3.864-12.338M645.863 38.3c-12.668 0-22.46 4.606-29.567 15.165V44.3a3.89 3.89 0 0 0-3.89-3.89H587.17a3.89 3.89 0 0 0-3.892 3.89v91.668a3.89 3.89 0 0 0 3.892 3.891h25.235a3.89 3.89 0 0 0 3.891-3.89V86.104c0-11.328 4.031-21.313 15.937-21.313 12.093 0 15.743 11.713 15.743 21.313v49.863a3.89 3.89 0 0 0 3.891 3.891h25.242a3.89 3.89 0 0 0 3.891-3.89V84.182c0-21.694-6.144-45.883-35.137-45.883m-195.458 77.58-5.213-.012c-4.138-.143-5.96-3.287-5.96-7.536V106.4h.013V6.891a3.89 3.89 0 0 0-3.892-3.89h-24.567a3.89 3.89 0 0 0-3.892 3.89v99.74c0 28.554 18.343 35.173 35.551 35.173 2.367 0 4.64-.155 8.268-.456a3.897 3.897 0 0 0 3.574-3.878v-17.699a3.89 3.89 0 0 0-3.882-3.89m62.845.172c-14.012 0-22.656-11.518-22.656-26.11 0-14.016 8.256-25.535 22.275-25.535 14.012 0 23.418 10.56 23.418 26.493 0 15.743-9.982 25.152-23.037 25.152m51.401-75.644H539.41a3.89 3.89 0 0 0-3.89 3.891v9.36c-6.144-9.216-17.275-15.36-30.33-15.36-29.18 0-47.806 22.846-47.806 51.642 0 29.374 19.387 52.03 48 52.03 14.01 0 23.804-5.954 30.135-15.744v9.74a3.89 3.89 0 0 0 3.891 3.891h25.242a3.89 3.89 0 0 0 3.891-3.89V44.3a3.89 3.89 0 0 0-3.89-3.89m-227.786 75.643c-14.012 0-22.655-11.518-22.655-26.11 0-14.016 8.256-25.535 22.274-25.535 14.012 0 23.418 10.56 23.418 26.493 0 15.743-9.98 25.152-23.037 25.152m51.401-75.644h-25.242a3.89 3.89 0 0 0-3.89 3.891v9.36c-6.144-9.216-17.275-15.36-30.33-15.36C299.624 38.3 281 61.146 281 89.942c0 29.374 19.386 52.03 47.998 52.03 14.012 0 23.805-5.954 30.136-15.744v9.74a3.89 3.89 0 0 0 3.891 3.891h25.242a3.89 3.89 0 0 0 3.891-3.89V44.3a3.89 3.89 0 0 0-3.89-3.89"></path>
-                </g>
-              </svg>
+            <a href="/" className="Lifesecure-logo">
+              <img 
+                src="https://i.postimg.cc/PJK9XZ73/Whats-App-Image-2025-11-14-at-21-02-46-6f198ba5-removebg-preview.png"
+                alt="Lifesecure Logo"
+                width="150"
+                height="35"
+                style={{ objectFit: "contain" }}
+              />
             </a>
           </Navbar.Brand>
 
@@ -346,6 +413,7 @@ const Header = () => {
                   className="nav-item-wrapper"
                   onMouseEnter={() => handleMouseEnter(path)}
                   onMouseLeave={handleMouseLeave}
+                  ref={activeDropdown === path ? dropdownRef : null}
                 >
                   <Nav.Link
                     as="button"
@@ -353,14 +421,15 @@ const Header = () => {
                     onClick={(e) => handleNavClick(path, e)}
                   >
                     {path === '/offers' && 'Our offers'}
-                    {path === '/why-alan' && 'Why Alan?'}
+                    {path === '/why-Lifesecure' && 'Why Lifesecure?'}
                     {path === '/resources' && 'Resources'}
-                    {path === '/about-alan' && 'About Alan'}
+                    {path === '/about-Lifesecure' && 'About Lifesecure'}
                     <span className="dropdown-indicator">▼</span>
                   </Nav.Link>
                   
                   {activeDropdown === path && (
                     <div className={`mega-dropdown ${dropdownContent[path].layout}`}>
+                      
                       {/* OFFERS DROPDOWN */}
                       {path === '/offers' && (
                         <div className="offers-dropdown">
@@ -368,6 +437,7 @@ const Header = () => {
                             <h2>{dropdownContent[path].title}</h2>
                             <p className="dropdown-subtitle">{dropdownContent[path].subtitle}</p>
                           </div>
+
                           <div className="offers-grid">
                             {dropdownContent[path].columns.map((column, colIdx) => (
                               <div key={colIdx} className="offers-column">
@@ -390,6 +460,7 @@ const Header = () => {
                               </div>
                             ))}
                           </div>
+
                           <div className="bottom-card" style={{ backgroundColor: dropdownContent[path].bottomCard.bgColor }}>
                             <h4>{dropdownContent[path].bottomCard.title}</h4>
                             <p>{dropdownContent[path].bottomCard.description}</p>
@@ -397,17 +468,20 @@ const Header = () => {
                         </div>
                       )}
 
-                      {/* WHY ALAN DROPDOWN */}
-                      {path === '/why-alan' && (
-                        <div className="why-alan-dropdown">
+                      {/* WHY LIFESECURE DROPDOWN */}
+                      {path === '/why-Lifesecure' && (
+                        <div className="why-Lifesecure-dropdown">
+                          
                           <div className="left-section">
                             <h3 className="section-main-heading">{dropdownContent[path].leftSection.heading}</h3>
+
                             <div className="benefits-list">
                               {dropdownContent[path].leftSection.items.map((item, idx) => (
                                 <div key={idx} className="benefit-item">
                                   <div className="benefit-image-placeholder">
-                                    {/* Add your image here */}
+                                    <img src={item.image} alt="Benefit" />
                                   </div>
+
                                   <div className="benefit-content">
                                     <h4>{item.title}</h4>
                                     <p>{item.description}</p>
@@ -415,12 +489,15 @@ const Header = () => {
                                 </div>
                               ))}
                             </div>
+
                             <a href="#" className="link-more">{dropdownContent[path].leftSection.link}</a>
                           </div>
+
                           <div className="right-section" style={{ backgroundColor: dropdownContent[path].rightSection.bgColor }}>
                             <h3 className="section-main-heading">{dropdownContent[path].rightSection.heading}</h3>
                             <h2 className="section-title">{dropdownContent[path].rightSection.title}</h2>
                             <p className="section-description">{dropdownContent[path].rightSection.description}</p>
+
                             <div className="section-buttons">
                               {dropdownContent[path].rightSection.buttons.map((btn, idx) => (
                                 <button key={idx} className={btn.primary ? 'btn-primary' : 'btn-secondary'}>
@@ -428,10 +505,12 @@ const Header = () => {
                                 </button>
                               ))}
                             </div>
+
                             <div className="section-image-placeholder">
-                              {/* Add your image here */}
+                              <img src={dropdownContent[path].rightSection.image} alt="App" />
                             </div>
                           </div>
+
                         </div>
                       )}
 
@@ -456,21 +535,21 @@ const Header = () => {
                               </div>
                             ))}
                           </div>
+
                           <div className="resources-right">
-                            {dropdownContent[path].rightCards.map((card, cardIdx) => (
-                              <div
-                                key={cardIdx}
+                            {dropdownContent[path].rightCards.map((card, idx) => (
+                              <div 
+                                key={idx}
                                 className="resource-card"
-                                style={{
-                                  backgroundColor: card.bgColor,
-                                  color: card.textColor || '#2d3436'
-                                }}
+                                style={{ backgroundColor: card.bgColor, color: card.textColor || '#2d3436' }}
                               >
                                 <div className="card-image-placeholder">
-                                  {/* Add your image here */}
+                                  <img src={card.image} alt="Guide" />
                                 </div>
+
                                 <h4>{card.title}</h4>
                                 <p>{card.description}</p>
+
                                 <button className="btn-download">{card.buttonText}</button>
                               </div>
                             ))}
@@ -478,19 +557,22 @@ const Header = () => {
                         </div>
                       )}
 
-                      {/* ABOUT ALAN DROPDOWN */}
-                      {path === '/about-alan' && (
+                      {/* ABOUT LIFESECURE DROPDOWN */}
+                      {path === '/about-Lifesecure' && (
                         <div className="about-dropdown">
+                          
                           <div className="about-left">
                             <div className="about-card" style={{ backgroundColor: dropdownContent[path].leftCard.bgColor }}>
                               <h3>{dropdownContent[path].leftCard.title}</h3>
                               <p>{dropdownContent[path].leftCard.description}</p>
                               <button className="btn-learn-more">{dropdownContent[path].leftCard.buttonText}</button>
+
                               <div className="about-image-placeholder">
-                                {/* Add your image here */}
+                                <img src={dropdownContent[path].leftCard.image} alt="Team" />
                               </div>
                             </div>
                           </div>
+
                           <div className="about-right">
                             {dropdownContent[path].rightSections.map((section, secIdx) => (
                               <div key={secIdx} className="dropdown-section">
@@ -509,52 +591,63 @@ const Header = () => {
                               </div>
                             ))}
                           </div>
+
                         </div>
                       )}
+
                     </div>
                   )}
+
                 </div>
               ))}
             </Nav>
+
             <div className="header-actions">
-              <Button as={Link} to="/login" className="btn-login-header">
-                Log in
-              </Button>
-              <Button className="btn-quote-header">
-                Get my quote in 2 minutes
-              </Button>
+              <Button as={Link} to="/login" className="btn-login-header">Log in</Button>
+              <Link to="/dispatch">
+                <Button className="btn-quote-header">Get my quote in 2 minutes</Button>
+              </Link>
             </div>
+
           </Navbar.Collapse>
 
+          {/* MOBILE MENU */}
           <div className={`mobile-menu-overlay ${mobileMenuOpen ? 'show' : ''}`}>
             <div className="mobile-menu-content">
-              <button className="close-btn" onClick={() => setMobileMenuOpen(false)}>
-                ×
-              </button>
+              
+              <button className="close-btn" onClick={() => {
+                setMobileMenuOpen(false);
+                setActiveMobileDropdown(null);
+              }}>×</button>
+
               <div className="mobile-nav-list">
                 {Object.keys(dropdownContent).map((path) => (
                   <div key={path} className="mobile-nav-item">
-                    <Link
-                      to={path}
+                    <button 
                       className="mobile-nav-link"
-                      onClick={() => setMobileMenuOpen(false)}
+                      onClick={() => handleMobileNavClick(path)}
                     >
                       {path === '/offers' && 'Our offers'}
-                      {path === '/why-alan' && 'Why Alan?'}
+                      {path === '/why-Lifesecure' && 'Why Lifesecure?'}
                       {path === '/resources' && 'Resources'}
-                      {path === '/about-alan' && 'About Alan'}
+                      {path === '/about-Lifesecure' && 'About Lifesecure'}
                       <span className="mobile-dropdown-indicator">▼</span>
-                    </Link>
+                    </button>
+                    
+                    {activeMobileDropdown === path && renderMobileDropdown(path)}
                   </div>
                 ))}
               </div>
+
               <div className="mobile-login-btn">
                 <Button as={Link} to="/login" className="btn-login-header">
                   Log in
                 </Button>
               </div>
+
             </div>
           </div>
+
         </Navbar>
       </Container>
     </header>

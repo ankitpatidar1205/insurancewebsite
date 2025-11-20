@@ -2,15 +2,15 @@ import React, { useState } from "react";
 import { Container, Row, Col, Collapse } from "react-bootstrap";
 import "../HealthApp/HealthApp.css";
 
-const AlanIndividualsSection = () => {
+const LifesecureIndividualsSection = () => {
   const [openSection, setOpenSection] = useState("retirees");
 
   const sections = [
     {
       id: "retirees",
       title: "Supplementary health insurance for retirees",
-      description: `Discover Alan Dolce Vita, our plan dedicated to retirees. Benefit from comprehensive coverage at fair prices, simplify your paperwork, and fully enjoy your retirement.`,
-      linkText: "Discover Alan Dolce Vita",
+      description: `Discover Lifesecure Dolce Vita, our plan dedicated to retirees. Benefit from comprehensive coverage at fair prices, simplify your paperwork, and fully enjoy your retirement.`,
+      linkText: "Discover Lifesecure Dolce Vita",
       linkUrl: "#",
       images: [
         "https://images.unsplash.com/photo-1507537509458-b8312d35a233?auto=format&fit=crop&w=800&q=80", // happy elderly couple outdoors
@@ -59,7 +59,7 @@ const AlanIndividualsSection = () => {
         <Row className="align-items-center">
           {/* LEFT SIDE */}
           <Col md={7}>
-            <h2 className="main-heading">Alan for individuals</h2>
+            <h2 className="main-heading">Lifesecure for individuals</h2>
             <p className="sub-heading">
               We also offer deals for individuals: retirees, self-employed workers and — very soon — public sector employees!
             </p>
@@ -115,4 +115,4 @@ const AlanIndividualsSection = () => {
   );
 };
 
-export default AlanIndividualsSection;
+export default LifesecureIndividualsSection;

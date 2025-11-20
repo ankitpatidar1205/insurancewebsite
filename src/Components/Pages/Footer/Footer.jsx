@@ -98,10 +98,10 @@ const Footer = () => {
               <h5 className="footer-heading">Download our app</h5>
               <div className="app-buttons">
                 <a href="#" className="app-button">
-                  <img src="https://6vvt7k9n.twic.pics/website-assets/alan-alan-website:b7017ca19f9f16d229fc70ee738339bbd45f1ccc/appstore-black-fr-c546e5d819618556.png" alt="App Store" />
+                  <img src="https://6vvt7k9n.twic.pics/v1/quality=50/image:website-assets/alan-alan-website:dfb2b4dc96c8394b8b4d7c0e65d7722ebbca1096/appstore-black-fr-c546e5d819618556.png" alt="App Store" />
                 </a>
                 <a href="#" className="app-button">
-                  <img src="https://6vvt7k9n.twic.pics/website-assets/alan-alan-website:b7017ca19f9f16d229fc70ee738339bbd45f1ccc/playstore-black-fr-bb386b8bc9a858b8.png" alt="Google Play" />
+                  <img src="https://6vvt7k9n.twic.pics/website-assets/alan-alan-website:dfb2b4dc96c8394b8b4d7c0e65d7722ebbca1096/playstore-black-fr-bb386b8bc9a858b8.png" alt="Google Play" />
                 </a>
               </div>
             </div>
@@ -128,10 +128,10 @@ const Footer = () => {
           <Col md={12}>
             <div className="legal-text">
               <p>
-                Alan Insurance is a public limited company with fully paid-up share capital of €203,000,000 (Siren: 908 311 103 RCS Paris) governed by the French Insurance Code. Its registered office is located at 117 Quai de Valmy - 75010 Paris, France. Alan Insurance is subject to the supervision of the French Prudential Control and Resolution Authority (ACPR), 4, place de Budapest, CS 92459, 75436 Paris Cedex 09, France. Alan makes available to the public the <Link to="/solvency-report">Solvency and Financial Condition Report of the Alan Group</Link> and that of the Alan Insurance company (2024 financial year).
+                Lifesecure Insurance is a public limited company with fully paid-up share capital of €203,000,000 (Siren: 908 311 103 RCS Paris) governed by the French Insurance Code. Its registered office is located at 117 Quai de Valmy - 75010 Paris, France. Lifesecure Insurance is subject to the supervision of the French Prudential Control and Resolution Authority (ACPR), 4, place de Budapest, CS 92459, 75436 Paris Cedex 09, France. Lifesecure makes available to the public the <Link to="/solvency-report">Solvency and Financial Condition Report of the Lifesecure Group</Link> and that of the Lifesecure Insurance company (2024 financial year).
               </p>
               <p className="small-text mt-3">
-                Publishing Director: Charles Gorintin • <strong>Publisher</strong>: This site is produced by Alan SA. For any questions regarding the use of the alan.com website, you can contact us directly online. • <strong>Hosting</strong>: The alan.com website is hosted by Amazon Web Services (AWS) Europe. In accordance with French law no. 78-17, you have the right to access, rectify, and object to the processing of your personal data. This right can be exercised by sending an email to <a href="mailto:privacy@alan.com">privacy@alan.com</a>. <strong>Important</strong>: This email address is solely for exercising your rights regarding personal data. No other requests will be processed. Do not send any health-related documents.
+                Publishing Director: Charles Gorintin • <strong>Publisher</strong>: This site is produced by Lifesecure SA. For any questions regarding the use of the Lifesecure.com website, you can contact us directly online. • <strong>Hosting</strong>: The Lifesecure.com website is hosted by Amazon Web Services (AWS) Europe. In accordance with French law no. 78-17, you have the right to access, rectify, and object to the processing of your personal data. This right can be exercised by sending an email to <a href="mailto:privacy@Lifesecure.com">privacy@Lifesecure.com</a>. <strong>Important</strong>: This email address is solely for exercising your rights regarding personal data. No other requests will be processed. Do not send any health-related documents.
               </p>
             </div>
           </Col>

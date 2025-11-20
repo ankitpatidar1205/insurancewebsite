@@ -22,7 +22,7 @@ const Home = () => {
       <ServicesSection />
       <HealthcareSystem />
       <HealthApp />
-      <Stepper/>
+      {/* <Stepper/> */}
       <CustomerServiceSection />
       <AlanHealthOffers/>
   
