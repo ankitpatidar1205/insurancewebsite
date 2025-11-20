@@ -33,42 +33,37 @@
 }
 
 /* Custom Navbar Toggle */
-/* Toggle: stacked 3 lines (vertical) */
 .navbar-toggle-custom {
   width: 44px;
   height: 44px;
   border: none;
-  background-color: #fff7ef; /* हल्का बैकग्राउंड */
+  background-color: #fff7ef;
   border-radius: 12px;
   padding: 0;
-  display: inline-flex;               /* <-- important: make it a flex column */
-  flex-direction: column;             /* <-- stack spans vertically */
+  display: inline-flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 4px;                           /* spacing between lines */
+  gap: 4px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   transition: transform 0.18s ease, background-color 0.18s ease;
 }
 
-/* Hover/glow effect */
 .navbar-toggle-custom:hover {
   background-color: #ffe9d4;
   transform: translateY(-2px);
 }
 
-/* The 3 bars */
 .navbar-toggle-custom span {
-  display: block;      /* ensure each is a block so they stack */
-  width: 18px;         /* length of each line */
-  height: 2px;         /* thickness */
-  background-color: #5B66F5; /* line color */
+  display: block;
+  width: 18px;
+  height: 2px;
+  background-color: #5B66F5;
   border-radius: 2px;
   transition: transform 0.18s ease, opacity 0.18s ease;
   box-shadow: none;
 }
 
-/* State when open (Bootstrap toggles .collapsed class — invert selector if needed) */
-/* If Bootstrap adds .collapsed when closed, we use :not(.collapsed) for open state as earlier */
 .navbar-toggle-custom:not(.collapsed) span:nth-child(1) {
   transform: rotate(45deg) translate(4px, 4px);
 }
@@ -80,7 +75,6 @@
   transform: rotate(-45deg) translate(4px, -4px);
 }
 
-
 /* Navigation Wrapper */
 .nav-item-wrapper {
   position: relative;
@@ -90,7 +84,7 @@
 .nav-link-custom {
   font-weight: 500;
   color: #2d3436 !important;
-  margin: 0 15px;
+  margin: 0 10px;
   transition: all 0.3s ease;
   position: relative;
   padding: 8px 0 !important;
@@ -98,10 +92,11 @@
   display: flex;
   align-items: center;
   gap: 5px;
-  font-size: 15px;
+  font-size: 14px;
   background: none !important;
   border: none !important;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 .nav-link-custom:hover,
@@ -123,9 +118,9 @@
 
 /* Header Actions */
 .header-actions {
-  margin-left: 20px;
+  margin-left: 10px;
   display: flex;
-  gap: 15px;
+  gap: 10px;
   align-items: center;
 }
 
@@ -133,11 +128,12 @@
   background: transparent !important;
   color: #2d3436 !important;
   border: 2px solid #2d3436 !important;
-  padding: 10px 24px !important;
+  padding: 8px 18px !important;
   font-weight: 600;
   border-radius: 50px;
   transition: all 0.3s ease;
-  font-size: 14px;
+  font-size: 13px;
+  white-space: nowrap;
 }
 
 .btn-login-header:hover {
@@ -149,11 +145,11 @@
   background: #5B66F5 !important;
   color: #fff !important;
   border: none !important;
-  padding: 10px 24px !important;
+  padding: 8px 18px !important;
   font-weight: 600;
   border-radius: 50px;
   transition: all 0.3s ease;
-  font-size: 14px;
+  font-size: 13px;
   white-space: nowrap;
 }
 
@@ -173,12 +169,14 @@
   border-radius: 20px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
   margin-top: 20px;
-  padding: 40px;
+  padding: 30px;
   z-index: 999;
   animation: dropdownFade 0.3s ease;
   max-height: 75vh;
   overflow-y: auto;
   overflow-x: hidden;
+  max-width: 90vw;
+  width: auto;
 }
 
 /* Scrollbar styling */
@@ -213,22 +211,22 @@
 
 /* Common Dropdown Elements */
 .dropdown-header {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .dropdown-header h2 {
-  font-size: 32px;
+  font-size: 24px;
   font-weight: 700;
   color: #2d3436;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   line-height: 1.2;
 }
 
 .dropdown-subtitle {
-  font-size: 16px;
+  font-size: 14px;
   color: #636e72;
   margin: 0;
-  line-height: 1.5;
+  line-height: 1.4;
 }
 
 .dropdown-subtitle a {
@@ -237,10 +235,10 @@
 }
 
 .section-heading {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
   color: #95a5a6;
-  margin: 0 0 16px 0;
+  margin: 0 0 12px 0;
   text-transform: capitalize;
   letter-spacing: 0.3px;
 }
@@ -248,13 +246,13 @@
 .section-items {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
 }
 
 .dropdown-item {
   display: flex;
-  gap: 14px;
-  padding: 10px 12px;
+  gap: 10px;
+  padding: 8px 10px;
   border-radius: 8px;
   transition: all 0.2s ease;
   cursor: pointer;
@@ -266,46 +264,47 @@
 }
 
 .item-icon {
-  font-size: 22px;
+  font-size: 18px;
   flex-shrink: 0;
-  width: 28px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .item-text h4 {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
   color: #2d3436;
-  margin: 0 0 4px 0;
+  margin: 0 0 3px 0;
   line-height: 1.3;
 }
 
 .item-text p {
-  font-size: 13px;
+  font-size: 12px;
   color: #636e72;
   margin: 0;
-  line-height: 1.4;
+  line-height: 1.3;
 }
 
 /* OFFERS DROPDOWN */
 .offers-dropdown {
-  width: 900px;
+  max-width: 850px;
+  width: auto;
 }
 
 .offers-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 50px;
-  margin-bottom: 30px;
+  gap: 30px;
+  margin-bottom: 20px;
 }
 
 .offers-column {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 20px;
 }
 
 .dropdown-section {
@@ -314,38 +313,39 @@
 }
 
 .bottom-card {
-  padding: 24px 28px;
+  padding: 18px 20px;
   border-radius: 12px;
   margin-top: 10px;
 }
 
 .bottom-card h4 {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 700;
   color: #2d3436;
-  margin: 0 0 8px 0;
+  margin: 0 0 6px 0;
 }
 
 .bottom-card p {
-  font-size: 14px;
+  font-size: 13px;
   color: #636e72;
   margin: 0;
-  line-height: 1.5;
+  line-height: 1.4;
 }
 
 /* WHY Lifesecure DROPDOWN */
 .why-Lifesecure-dropdown {
-  width: 950px;
+  max-width: 850px;
+  width: 80vw;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 50px;
+  gap: 30px;
 }
 
 .section-main-heading {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
   color: #95a5a6;
-  margin: 0 0 24px 0;
+  margin: 0 0 18px 0;
   text-transform: capitalize;
   letter-spacing: 0.3px;
 }
@@ -353,14 +353,14 @@
 .benefits-list {
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  margin-bottom: 20px;
+  gap: 18px;
+  margin-bottom: 15px;
 }
 
 .benefit-item {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 }
 
 .benefit-image-placeholder {
@@ -378,29 +378,28 @@
   border-radius: 12px;
 }
 
-
 .benefit-content h4 {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   color: #2d3436;
-  margin: 0 0 6px 0;
-  line-height: 1.4;
+  margin: 0 0 4px 0;
+  line-height: 1.3;
 }
 
 .benefit-content p {
-  font-size: 14px;
+  font-size: 13px;
   color: #636e72;
   margin: 0;
-  line-height: 1.4;
+  line-height: 1.3;
 }
 
 .link-more {
   color: #5B66F5;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
   text-decoration: none;
   display: inline-block;
-  margin-top: 10px;
+  margin-top: 8px;
 }
 
 .link-more:hover {
@@ -408,15 +407,15 @@
 }
 
 .right-section {
-  padding: 30px;
+  padding: 25px;
   border-radius: 16px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
 }
 
 .section-title {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 700;
   color: #2d3436;
   margin: 0;
@@ -424,27 +423,27 @@
 }
 
 .section-description {
-  font-size: 14px;
+  font-size: 13px;
   color: #636e72;
   margin: 0;
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 .section-buttons {
   display: flex;
   flex-direction: column;
-  gap: 12px;
-  margin-top: 8px;
+  gap: 10px;
+  margin-top: 5px;
 }
 
 .section-buttons .btn-primary {
   background: #5B66F5;
   color: white;
   border: none;
-  padding: 12px 24px;
+  padding: 10px 20px;
   border-radius: 50px;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 13px;
   cursor: pointer;
   transition: all 0.3s ease;
   text-align: center;
@@ -459,10 +458,10 @@
   background: transparent;
   color: #5B66F5;
   border: 2px solid #5B66F5;
-  padding: 10px 24px;
+  padding: 8px 20px;
   border-radius: 50px;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 13px;
   cursor: pointer;
   transition: all 0.3s ease;
   text-align: center;
@@ -487,33 +486,34 @@
   border-radius: 12px;
 }
 
-
 /* RESOURCES DROPDOWN */
 .resources-dropdown {
-  width: 950px;
+  max-width: 850px;
+  width: auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  gap: 30px;
 }
 
 .resources-left {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 25px;
 }
 
 .resources-right {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
 }
 
 .resource-card {
-  padding: 28px;
+  padding: 20px;
   border-radius: 16px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 12px;
+  width: auto;
 }
 
 .card-image-placeholder {
@@ -531,33 +531,32 @@
   border-radius: 12px;
 }
 
-
 .resource-card h4 {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
   margin: 0;
   line-height: 1.3;
 }
 
 .resource-card p {
-  font-size: 14px;
+  font-size: 13px;
   margin: 0;
   opacity: 0.9;
-  line-height: 1.4;
+  line-height: 1.3;
 }
 
 .btn-download {
   background: #5B66F5;
   color: white;
   border: none;
-  padding: 12px 28px;
+  padding: 10px 20px;
   border-radius: 50px;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 13px;
   cursor: pointer;
   transition: all 0.3s ease;
   align-self: flex-start;
-  margin-top: 8px;
+  margin-top: 5px;
 }
 
 .btn-download:hover {
@@ -568,10 +567,11 @@
 
 /* ABOUT Lifesecure DROPDOWN */
 .about-dropdown {
-  width: 850px;
+  max-width: 800px;
+  width: auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  gap: 30px;
 }
 
 .about-left {
@@ -580,16 +580,17 @@
 }
 
 .about-card {
-  padding: 32px;
+  padding: 25px;
   border-radius: 16px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
   height: 100%;
+  width: 20vw;
 }
 
 .about-card h3 {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 700;
   color: #2d3436;
   margin: 0;
@@ -597,24 +598,24 @@
 }
 
 .about-card p {
-  font-size: 14px;
+  font-size: 13px;
   color: #636e72;
   margin: 0;
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 .btn-learn-more {
   background: #5B66F5;
   color: white;
   border: none;
-  padding: 12px 28px;
+  padding: 10px 20px;
   border-radius: 50px;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 13px;
   cursor: pointer;
   transition: all 0.3s ease;
   align-self: flex-start;
-  margin-top: 8px;
+  margin-top: 5px;
 }
 
 .btn-learn-more:hover {
@@ -638,11 +639,10 @@
   border-radius: 12px;
 }
 
-
 .about-right {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 25px;
 }
 
 /* Mobile Menu Overlay */
@@ -715,58 +715,6 @@
   width: 100%;
   max-width: 200px;
   margin: 0 auto;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 991px) {
-  .desktop-nav {
-    display: none !important;
-  }
-
-  .header {
-    padding: 15px 0;
-  }
-
-  .mega-dropdown {
-    display: none !important;
-  }
-}
-
-@media (max-width: 767px) {
-  .header {
-    padding: 10px 0;
-  }
-
-  .mobile-menu-content {
-    padding: 20px 20px;
-  }
-
-  .mobile-nav-link {
-    font-size: 0.95rem;
-  }
-
-  .mobile-login-btn .btn-login-header {
-    max-width: 100%;
-  }
-}
-
-@media (min-width: 992px) and (max-width: 1400px) {
-  .mega-dropdown {
-    max-width: 850px;
-  }
-
-  .offers-dropdown {
-    width: 800px;
-  }
-
-  .why-Lifesecure-dropdown,
-  .resources-dropdown {
-    width: 850px;
-  }
-
-  .about-dropdown {
-    width: 750px;
-  }
 }
 
 /* Mobile Dropdown Styles */
@@ -1046,6 +994,494 @@
   object-fit: cover;
 }
 
+/* Responsive Adjustments */
+@media (max-width: 991px) {
+  .desktop-nav {
+    display: none !important;
+  }
+
+  .header {
+    padding: 15px 0;
+  }
+
+  .mega-dropdown {
+    display: none !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .header {
+    padding: 10px 0;
+  }
+
+  .mobile-menu-content {
+    padding: 20px 20px;
+  }
+
+  .mobile-nav-link {
+    font-size: 0.95rem;
+  }
+
+  .mobile-login-btn .btn-login-header {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1400px) {
+  .mega-dropdown {
+    max-width: 85vw;
+    padding: 25px;
+  }
+
+  .offers-dropdown {
+    max-width: 750px;
+  }
+
+  .why-Lifesecure-dropdown,
+  .resources-dropdown {
+    max-width: 750px;
+  }
+
+  .about-dropdown {
+    max-width: 700px;
+  }
+
+  .nav-link-custom {
+    font-size: 13px;
+    margin: 0 8px;
+  }
+
+  .header-actions {
+    margin-left: 8px;
+    gap: 8px;
+  }
+
+  .btn-login-header,
+  .btn-quote-header {
+    padding: 7px 16px !important;
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 1401px) and (max-width: 1600px) {
+  .mega-dropdown {
+    max-width: 80vw;
+  }
+}
+
+@media (min-width: 1601px) {
+  .mega-dropdown {
+    max-width: 75vw;
+  }
+}
+
+
+/* Mobile Menu Overlay */
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: white;
+  z-index: 999;
+  display: none;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 20px;
+  overflow-y: auto;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+}
+
+.mobile-menu-overlay.show {
+  display: flex;
+  transform: translateX(0);
+}
+
+.mobile-menu-content {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 2.5rem;
+  color: #333;
+  align-self: flex-end;
+  cursor: pointer;
+  margin-bottom: 30px;
+  line-height: 1;
+  padding: 0;
+  transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+  color: #5B66F5;
+}
+
+.mobile-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 30px;
+}
+
+.mobile-nav-item {
+  border-bottom: 1px solid #eee;
+  padding: 15px 0;
+}
+
+.mobile-nav-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background: none;
+  border: none;
+  color: #2d3436;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 5px 0;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.mobile-nav-link:hover {
+  color: #5B66F5;
+}
+
+.mobile-dropdown-indicator {
+  font-size: 0.8rem;
+  color: #666;
+  transition: transform 0.3s ease;
+}
+
+.mobile-nav-item.active .mobile-dropdown-indicator {
+  transform: rotate(180deg);
+}
+
+.mobile-login-btn {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.mobile-login-btn .btn-login-header {
+  width: 100%;
+  max-width: 200px;
+  margin: 0 auto;
+  padding: 12px 24px !important;
+  font-size: 1rem;
+}
+
+/* Mobile Dropdown Styles */
+.mobile-dropdown-content {
+  padding: 20px 0;
+  width: 100%;
+  background: #f8f9fa;
+  border-radius: 12px;
+  margin-top: 10px;
+}
+
+.mobile-dropdown-header {
+  margin-bottom: 20px;
+  padding: 0 15px;
+}
+
+.mobile-dropdown-header h4 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #2d3436;
+}
+
+.mobile-dropdown-header p {
+  font-size: 0.9rem;
+  color: #636e72;
+}
+
+.mobile-dropdown-column {
+  margin-bottom: 20px;
+  padding: 0 15px;
+}
+
+.mobile-dropdown-section {
+  margin-bottom: 20px;
+}
+
+.mobile-dropdown-section h5 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #2d3436;
+}
+
+.mobile-dropdown-items {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.mobile-dropdown-item {
+  display: flex;
+  gap: 15px;
+  padding: 15px;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mobile-dropdown-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.mobile-item-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.mobile-dropdown-item h6 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 5px;
+  color: #2d3436;
+}
+
+.mobile-dropdown-item p {
+  font-size: 0.85rem;
+  color: #636e72;
+  margin: 0;
+}
+
+.mobile-bottom-card {
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 15px;
+  margin: 0 15px;
+}
+
+.mobile-bottom-card h5 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 10px;
+  color: #2d3436;
+}
+
+.mobile-bottom-card p {
+  font-size: 0.9rem;
+  margin: 0;
+  color: #636e72;
+}
+
+/* Why Lifesecure Mobile Styles */
+.mobile-benefit-item {
+  margin-bottom: 25px;
+  padding: 0 15px;
+}
+
+.mobile-benefit-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.mobile-benefit-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.mobile-benefit-content h5 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 8px;
+  color: #2d3436;
+}
+
+.mobile-benefit-content p {
+  font-size: 0.9rem;
+  color: #636e72;
+  margin: 0;
+}
+
+.mobile-link-more {
+  display: block;
+  color: #5B66F5;
+  font-weight: 600;
+  margin: 20px 0;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0 15px;
+}
+
+.mobile-right-section {
+  padding: 25px;
+  border-radius: 15px;
+  margin-top: 25px;
+  margin: 0 15px;
+}
+
+.mobile-right-section h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 12px;
+  color: #2d3436;
+}
+
+.mobile-right-section h5 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0 0 12px;
+  color: #2d3436;
+}
+
+.mobile-right-section p {
+  font-size: 0.9rem;
+  color: #636e72;
+  margin: 0 0 20px;
+}
+
+.mobile-section-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.mobile-section-buttons .btn-primary,
+.mobile-section-buttons .btn-secondary {
+  width: 100%;
+  padding: 15px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.mobile-section-buttons .btn-primary {
+  background: #5B66F5;
+  color: white;
+  border: none;
+}
+
+.mobile-section-buttons .btn-secondary {
+  background: transparent;
+  color: #5B66F5;
+  border: 2px solid #5B66F5;
+}
+
+.mobile-section-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.mobile-section-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Resources Mobile Styles */
+.mobile-resource-card {
+  padding: 25px;
+  border-radius: 15px;
+  margin-bottom: 25px;
+  margin: 0 15px 25px;
+}
+
+.mobile-card-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.mobile-card-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.mobile-resource-card h5 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0 0 12px;
+}
+
+.mobile-resource-card p {
+  font-size: 0.9rem;
+  margin: 0 0 20px;
+  opacity: 0.9;
+}
+
+.mobile-resource-card .btn-download {
+  background: #5B66F5;
+  color: white;
+  border: none;
+  padding: 15px 25px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* About Mobile Styles */
+.mobile-about-card {
+  padding: 25px;
+  border-radius: 15px;
+  margin-bottom: 25px;
+  margin: 0 15px 25px;
+}
+
+.mobile-about-card h4 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0 0 12px;
+}
+
+.mobile-about-card p {
+  font-size: 0.9rem;
+  color: #636e72;
+  margin: 0 0 20px;
+}
+
+.mobile-about-card .btn-learn-more {
+  background: #5B66F5;
+  color: white;
+  border: none;
+  padding: 15px 25px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.mobile-about-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.mobile-about-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
 /* Mobile Menu Adjustments */
 @media (max-width: 991px) {
   .mobile-menu-overlay {
@@ -1061,36 +1497,49 @@
     justify-content: flex-start;
     padding: 20px;
     overflow-y: auto;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
   }
 
   .mobile-menu-overlay.show {
     display: flex;
+    transform: translateX(0);
   }
 
   .mobile-menu-content {
     width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 20px 0;
   }
 
   .close-btn {
     background: none;
     border: none;
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: #333;
     align-self: flex-end;
     cursor: pointer;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    line-height: 1;
+    padding: 0;
+    transition: color 0.3s ease;
+  }
+
+  .close-btn:hover {
+    color: #5B66F5;
   }
 
   .mobile-nav-list {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
     margin-bottom: 30px;
   }
 
   .mobile-nav-item {
     border-bottom: 1px solid #eee;
-    padding: 10px 0;
+    padding: 15px 0;
   }
 
   .mobile-nav-link {
@@ -1100,12 +1549,17 @@
     width: 100%;
     background: none;
     border: none;
-    color: #333;
+    color: #2d3436;
     text-decoration: none;
-    font-weight: 500;
-    font-size: 1rem;
+    font-weight: 600;
+    font-size: 1.1rem;
     padding: 5px 0;
     cursor: pointer;
+    transition: color 0.3s ease;
+  }
+
+  .mobile-nav-link:hover {
+    color: #5B66F5;
   }
 
   .mobile-dropdown-indicator {
@@ -1127,16 +1581,23 @@
     width: 100%;
     max-width: 200px;
     margin: 0 auto;
+    padding: 12px 24px !important;
+    font-size: 1rem;
   }
 }
 
 @media (max-width: 767px) {
   .mobile-menu-content {
-    padding: 15px;
+    padding: 15px 0;
+  }
+
+  .close-btn {
+    font-size: 2rem;
+    margin-bottom: 20px;
   }
 
   .mobile-nav-link {
-    font-size: 0.95rem;
+    font-size: 1rem;
   }
 
   .mobile-login-btn .btn-login-header {

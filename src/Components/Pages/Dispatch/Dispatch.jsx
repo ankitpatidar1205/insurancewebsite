@@ -127,10 +127,10 @@ const Dispatch = () => {
         </div>
 
         {/* PROGRESS BAR */}
-        <div className="progress-container">
+        {/* <div className="progress-container">
           <ProgressBar now={progressPercentage} className="wizard-progress" />
-          <div className="progress-text">Step {step + 1} of {steps.length}</div>
-        </div>
+          r<div className="progress-text">Step {step + 1} of {steps.length}</div>
+        </div> */}
 
         {/* STEP CONTENT */}
         <div className="wizard-content">
