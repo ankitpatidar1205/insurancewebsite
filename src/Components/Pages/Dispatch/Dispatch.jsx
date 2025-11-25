@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Card, Button, Badge, ProgressBar } from "react-bootstrap";
+import { Card, Button, Badge, ProgressBar, Form } from "react-bootstrap";
 import { FaArrowLeft, FaArrowRight, FaCheckCircle, FaMapMarkerAlt, FaUser, FaUsers, FaHeartbeat, FaFileContract } from "react-icons/fa";
 import "./Dispatch.css";
 
@@ -10,6 +10,16 @@ const Dispatch = () => {
   const [selectedCategory, setSelectedCategory] = useState("");
   const [selectedPlan, setSelectedPlan] = useState("");
   const [showComparison, setShowComparison] = useState(false);
+  const [selectedSelfOption, setSelectedSelfOption] = useState("");
+  const [salary, setSalary] = useState(4000);
+  const [selectedDependenceOption, setSelectedDependenceOption] = useState("");
+  const [enhancedSelections, setEnhancedSelections] = useState({
+    consultation: '',
+    inPatientCopay: '',
+    outPatientCopay: '',
+    medicineLimit: '',
+    medicineCopay: ''
+  });
 
   const steps = [
     { id: 0, title: "Emirate Selection", icon: <FaMapMarkerAlt /> },
@@ -19,9 +29,13 @@ const Dispatch = () => {
   ];
 
   const emirates = [
-    { name: "NE", code: "NE", description: "Northern Emirates" },
     { name: "DUBAI", code: "DXB", description: "Dubai" },
-    { name: "ABU DHABI/Al AIN", code: "AUH", description: "Abu Dhabi & Al Ain" }
+    { name: "ABU DHABI", code: "AUH", description: "Abu Dhabi" },
+    { name: "SHARJAH", code: "SHJ", description: "Sharjah" },
+    { name: "AJMAN", code: "AJM", description: "Ajman" },
+    { name: "UMM AL QUWAIN", code: "UAQ", description: "Umm Al Quwain" },
+    { name: "RAS AL KHAIMAH", code: "RAK", description: "Ras Al Khaimah" },
+    { name: "FUJAIRAH", code: "FUJ", description: "Fujairah" }
   ];
 
   const products = {
@@ -48,6 +62,10 @@ const Dispatch = () => {
           { id: "children", name: "Children", description: "Children Coverage" },
           { id: "parents", name: "Parents", description: "Parents Coverage" }
         ]
+      },
+      { 
+        type: "Enhanced", 
+        options: []
       }
     ]
   };
@@ -57,6 +75,36 @@ const Dispatch = () => {
     { id: "enhanced", name: "Enhanced Plan", price: "AED 499/month", badge: "Recommended" },
     { id: "premium", name: "Premium Plan", price: "AED 799/month", badge: "Best Value" }
   ];
+
+  const enhancedPlanOptions = {
+    consultation: [
+      { id: "consultation1", value: "Nil", label: "Nil" },
+      { id: "consultation2", value: "20%", label: "20%" },
+      { id: "consultation3", value: "ARD 25/2", label: "ARD 25/2" },
+      { id: "consultation4", value: "ARD 50/2", label: "ARD 50/2" }
+    ],
+    inPatientCopay: [
+      { id: "inPatient1", value: "Nil", label: "Nil" },
+      { id: "inPatient2", value: "10%", label: "10%" },
+      { id: "inPatient3", value: "20%", label: "20%" }
+    ],
+    outPatientCopay: [
+      { id: "outPatient1", value: "Nil", label: "Nil" },
+      { id: "outPatient2", value: "10%", label: "10%" },
+      { id: "outPatient3", value: "20%", label: "20%" }
+    ],
+    medicineLimit: [
+      { id: "medicineLimit1", value: "ARD 2500", label: "ARD 2500" },
+      { id: "medicineLimit2", value: "AED 5000", label: "AED 5000" },
+      { id: "medicineLimit3", value: "ARD 7,500", label: "ARD 7,500" }
+    ],
+    medicineCopay: [
+      { id: "medicineCopay1", value: "Nil", label: "Nil" },
+      { id: "medicineCopay2", value: "10%", label: "10%" },
+      { id: "medicineCopay3", value: "20%", label: "20%" },
+      { id: "medicineCopay4", value: "30%", label: "30%" }
+    ]
+  };
 
   const handleEmirateSelect = (emirate) => {
     setSelectedEmirate(emirate.code);
@@ -74,12 +122,30 @@ const Dispatch = () => {
   };
 
   const handleCategorySelect = (category) => {
-    setSelectedCategory(category.id);
+    setSelectedCategory(category.type);
+    if (category.type === "Enhanced") {
+      setStep(3);
+    }
+  };
+
+  const handleSelfOptionSelect = (option) => {
+    setSelectedSelfOption(option.id);
+  };
+
+  const handleDependenceOptionSelect = (option) => {
+    setSelectedDependenceOption(option.id);
     setStep(3);
   };
 
   const handlePlanSelect = (plan) => {
     setSelectedPlan(plan.id);
+  };
+
+  const handleEnhancedSelection = (category, value) => {
+    setEnhancedSelections({
+      ...enhancedSelections,
+      [category]: value
+    });
   };
 
   const handleNext = () => {
@@ -97,6 +163,16 @@ const Dispatch = () => {
     setSelectedCategory("");
     setSelectedPlan("");
     setShowComparison(false);
+    setSelectedSelfOption("");
+    setSalary(4000);
+    setSelectedDependenceOption("");
+    setEnhancedSelections({
+      consultation: '',
+      inPatientCopay: '',
+      outPatientCopay: '',
+      medicineLimit: '',
+      medicineCopay: ''
+    });
   };
 
   const progressPercentage = ((step + 1) / steps.length) * 100;
@@ -125,12 +201,6 @@ const Dispatch = () => {
             ))}
           </div>
         </div>
-
-        {/* PROGRESS BAR */}
-        {/* <div className="progress-container">
-          <ProgressBar now={progressPercentage} className="wizard-progress" />
-          r<div className="progress-text">Step {step + 1} of {steps.length}</div>
-        </div> */}
 
         {/* STEP CONTENT */}
         <div className="wizard-content">
@@ -264,34 +334,107 @@ const Dispatch = () => {
           {step === 2 && selectedEmirate === "DXB" && (
             <>
               <h1 className="wizard-title">Select Your Category</h1>
-              <p className="wizard-sub">Choose between Self or Dependence coverage</p>
+              <p className="wizard-sub">Choose between Self, Dependence or Enhanced coverage</p>
               
               <div className="wizard-list">
                 {categories.DUBAI.map((category, idx) => (
                   <div key={idx}>
-                    <h3 className="category-title">{category.type}</h3>
-                    <div className="category-options">
-                      {category.options.map((option, optIdx) => (
-                        <div 
-                          className={`wizard-card category-card ${selectedCategory === option.id ? "selected" : ""}`} 
-                          key={optIdx} 
-                          onClick={() => handleCategorySelect(option)}
-                        >
-                          <div className="wizard-card-content">
-                            <div className="wizard-card-icon">
-                              {category.type === "Self" ? <FaUser /> : <FaUsers />}
-                            </div>
-                            <div className="wizard-card-text">
-                              <h4>{option.name}</h4>
-                              <span className="wizard-code">{option.description}</span>
-                            </div>
-                            <div className="wizard-card-arrow">
-                              <FaArrowRight />
+                    <div 
+                      className={`wizard-card category-card ${selectedCategory === category.type ? "selected" : ""}`} 
+                      onClick={() => handleCategorySelect(category)}
+                    >
+                      <div className="wizard-card-content">
+                        <div className="wizard-card-icon">
+                          {category.type === "Self" ? <FaUser /> : 
+                           category.type === "Dependence" ? <FaUsers /> : <FaHeartbeat />}
+                        </div>
+                        <div className="wizard-card-text">
+                          <h4>{category.type}</h4>
+                          <span className="wizard-code">
+                            {category.type === "Self" ? "Coverage for yourself" :
+                             category.type === "Dependence" ? "Coverage for dependents" :
+                             "Enhanced coverage options"}
+                          </span>
+                        </div>
+                        <div className="wizard-card-arrow">
+                          <FaArrowRight />
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Self Category Options */}
+                    {selectedCategory === "Self" && category.type === "Self" && (
+                      <div className="category-options">
+                        {category.options.map((option, optIdx) => (
+                          <div 
+                            className={`wizard-card category-card ${selectedSelfOption === option.id ? "selected" : ""}`} 
+                            key={optIdx} 
+                            onClick={() => handleSelfOptionSelect(option)}
+                          >
+                            <div className="wizard-card-content">
+                              <div className="wizard-card-icon">
+                                <FaUser />
+                              </div>
+                              <div className="wizard-card-text">
+                                <h4>{option.name}</h4>
+                                <span className="wizard-code">{option.description}</span>
+                              </div>
                             </div>
                           </div>
-                        </div>
-                      ))}
-                    </div>
+                        ))}
+                        
+                        {selectedSelfOption && (
+                          <div className="salary-slider-container">
+                            <h5>Salary: AED {salary}</h5>
+                            <Form.Range 
+                              min="0" 
+                              max="10000" 
+                              value={salary} 
+                              onChange={(e) => setSalary(parseInt(e.target.value))} 
+                            />
+                            <div className="salary-labels">
+                              <span>0</span>
+                              <span>5000</span>
+                              <span>10000</span>
+                            </div>
+                          </div>
+                        )}
+                        
+                        {selectedSelfOption && (
+                          <div className="wizard-actions">
+                            <Button variant="primary" size="lg" onClick={() => setStep(3)}>
+                              Proceed to Plan Selection <FaArrowRight />
+                            </Button>
+                          </div>
+                        )}
+                      </div>
+                    )}
+
+                    {/* Dependence Category Options */}
+                    {selectedCategory === "Dependence" && category.type === "Dependence" && (
+                      <div className="category-options">
+                        {category.options.map((option, optIdx) => (
+                          <div 
+                            className={`wizard-card category-card ${selectedDependenceOption === option.id ? "selected" : ""}`} 
+                            key={optIdx} 
+                            onClick={() => handleDependenceOptionSelect(option)}
+                          >
+                            <div className="wizard-card-content">
+                              <div className="wizard-card-icon">
+                                <FaUsers />
+                              </div>
+                              <div className="wizard-card-text">
+                                <h4>{option.name}</h4>
+                                <span className="wizard-code">{option.description}</span>
+                              </div>
+                              <div className="wizard-card-arrow">
+                                <FaArrowRight />
+                              </div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>
@@ -304,44 +447,157 @@ const Dispatch = () => {
               <h1 className="wizard-title">Plan Selection</h1>
               <p className="wizard-sub">Choose your insurance plan</p>
               
-              <div className="wizard-list">
-                {plans.map((plan, idx) => (
-                  <div 
-                    className={`wizard-card plan-card ${selectedPlan === plan.id ? "selected" : ""}`} 
-                    key={idx} 
-                    onClick={() => handlePlanSelect(plan)}
-                  >
-                    <div className="wizard-card-content">
-                      <div className="wizard-card-icon">
-                        <FaHeartbeat />
-                      </div>
-                      <div className="wizard-card-text">
-                        <div className="plan-header">
-                          <h4>{plan.name}</h4>
-                          {plan.badge && <Badge bg="secondary" className="plan-badge">{plan.badge}</Badge>}
+              {/* Normal Plan Selection (for non-Enhanced categories) */}
+              {selectedCategory !== "Enhanced" && (
+                <div className="wizard-list">
+                  {plans.map((plan, idx) => (
+                    <div 
+                      className={`wizard-card plan-card ${selectedPlan === plan.id ? "selected" : ""}`} 
+                      key={idx} 
+                      onClick={() => handlePlanSelect(plan)}
+                    >
+                      <div className="wizard-card-content">
+                        <div className="wizard-card-icon">
+                          <FaHeartbeat />
                         </div>
-                        <span className="wizard-price">{plan.price}</span>
-                        <div className="plan-features">
-                          <div className="feature-item">
-                            <FaCheckCircle className="feature-icon" />
-                            Complete Medical Coverage
+                        <div className="wizard-card-text">
+                          <div className="plan-header">
+                            <h4>{plan.name}</h4>
+                            {plan.badge && <Badge bg="secondary" className="plan-badge">{plan.badge}</Badge>}
                           </div>
-                          <div className="feature-item">
-                            <FaCheckCircle className="feature-icon" />
-                            24/7 Emergency Support
-                          </div>
-                          <div className="feature-item">
-                            <FaCheckCircle className="feature-icon" />
-                            Worldwide Coverage
+                          <span className="wizard-price">{plan.price}</span>
+                          <div className="plan-features">
+                            <div className="feature-item">
+                              <FaCheckCircle className="feature-icon" />
+                              Complete Medical Coverage
+                            </div>
+                            <div className="feature-item">
+                              <FaCheckCircle className="feature-icon" />
+                              24/7 Emergency Support
+                            </div>
+                            <div className="feature-item">
+                              <FaCheckCircle className="feature-icon" />
+                              Worldwide Coverage
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                ))}
-              </div>
+                  ))}
+                </div>
+              )}
 
-              {selectedPlan && (
+              {/* Enhanced Plan Selection */}
+              {selectedCategory === "Enhanced" && (
+                <div className="wizard-list">
+                  <h3 className="enhanced-plan-title">Enhanced Plan</h3>
+                  <p className="enhanced-plan-subtitle">Select options for each category:</p>
+                  
+                  <div className="enhanced-plan-categories">
+                    {/* Consultation Category */}
+                    <div className="enhanced-category">
+                      <h4 className="category-heading">Consultation</h4>
+                      <div className="category-options">
+                        {enhancedPlanOptions.consultation.map((option) => (
+                          <div key={option.id} className="category-option">
+                            <Form.Check 
+                              type="radio"
+                              id={option.id}
+                              name="consultation"
+                              label={option.label}
+                              checked={enhancedSelections.consultation === option.value}
+                              onChange={() => handleEnhancedSelection('consultation', option.value)}
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* In-patient Co-pay Category */}
+                    <div className="enhanced-category">
+                      <h4 className="category-heading">In-patient Co-pay</h4>
+                      <div className="category-options">
+                        {enhancedPlanOptions.inPatientCopay.map((option) => (
+                          <div key={option.id} className="category-option">
+                            <Form.Check 
+                              type="radio"
+                              id={option.id}
+                              name="inPatientCopay"
+                              label={option.label}
+                              checked={enhancedSelections.inPatientCopay === option.value}
+                              onChange={() => handleEnhancedSelection('inPatientCopay', option.value)}
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Out-patient Co-pay Category */}
+                    <div className="enhanced-category">
+                      <h4 className="category-heading">Out-patient Co-pay</h4>
+                      <div className="category-options">
+                        {enhancedPlanOptions.outPatientCopay.map((option) => (
+                          <div key={option.id} className="category-option">
+                            <Form.Check 
+                              type="radio"
+                              id={option.id}
+                              name="outPatientCopay"
+                              label={option.label}
+                              checked={enhancedSelections.outPatientCopay === option.value}
+                              onChange={() => handleEnhancedSelection('outPatientCopay', option.value)}
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Medicine Limit Category */}
+                    <div className="enhanced-category">
+                      <h4 className="category-heading">Medicine Limit</h4>
+                      <div className="category-options">
+                        {enhancedPlanOptions.medicineLimit.map((option) => (
+                          <div key={option.id} className="category-option">
+                            <Form.Check 
+                              type="radio"
+                              id={option.id}
+                              name="medicineLimit"
+                              label={option.label}
+                              checked={enhancedSelections.medicineLimit === option.value}
+                              onChange={() => handleEnhancedSelection('medicineLimit', option.value)}
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Medicine Copay Category */}
+                    <div className="enhanced-category">
+                      <h4 className="category-heading">Medicine Copay</h4>
+                      <div className="category-options">
+                        {enhancedPlanOptions.medicineCopay.map((option) => (
+                          <div key={option.id} className="category-option">
+                            <Form.Check 
+                              type="radio"
+                              id={option.id}
+                              name="medicineCopay"
+                              label={option.label}
+                              checked={enhancedSelections.medicineCopay === option.value}
+                              onChange={() => handleEnhancedSelection('medicineCopay', option.value)}
+                            />
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {(selectedPlan || (selectedCategory === "Enhanced" && 
+                enhancedSelections.consultation && 
+                enhancedSelections.inPatientCopay && 
+                enhancedSelections.outPatientCopay && 
+                enhancedSelections.medicineLimit && 
+                enhancedSelections.medicineCopay)) && (
                 <div className="wizard-actions">
                   <Button variant="success" size="lg" onClick={handleReset}>
                     Complete Application <FaCheckCircle />
